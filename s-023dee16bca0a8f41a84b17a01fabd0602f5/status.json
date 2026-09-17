@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T16:11:43Z",
-  "state": "progress",
-  "note": "대시보드 경로 이전",
-  "next": "이전 경로 삭제",
+  "updated": "2026-09-17T16:13:24Z",
+  "state": "done",
+  "note": "대시보드 경로를 144비트 난수로 이전하고 이전 경로 삭제. 공개 호스팅이라는 사실을 STATUS.md에 명시",
+  "next": "04:00 릴레이 첫 실전 실행",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 56,
   "branch": "main",
-  "commit": "2899c0f chore(checkpoint): 릴레이 안정화: 동시 실행 잠금(2시간 stale 회수), DryRun 모드, 함수 내 로그가 반환값을 오염시켜 한도 감지를 깨뜨리던 버그 수정. 교대 페일오버 실측 검증",
+  "commit": "e8fb9ad chore(checkpoint): 대시보드 경로를 144비트 난수로 이전하고 이전 경로 삭제. 공개 호스팅이라는 사실을 STATUS.md에 명시",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
