@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T15:54:52Z",
+  "updated": "2026-09-17T15:56:27Z",
   "state": "done",
-  "note": "자가 리뷰 수정 3건: MaxAssets 축소가 락아웃 되지 않게 저장 검증을 MaxStoredAssets로 분리, fresh의 slots 클램프, 상한 근처에서도 업그레이드 허용. 테스트 53 -> 56",
-  "next": "M3 설계 상세화. Codex 리뷰는 백그라운드 대기 중",
+  "note": "M3 상세 설계 추가: UTC 600초 구간 일정, 구간 분할 정산과 나머지 이월, 온라인/오프라인 구분, 스키마 무변경 근거, 검증 항목 7개",
+  "next": "권한 설정 정리",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 56,
   "branch": "main",
-  "commit": "eea8f86 chore(checkpoint): 자가 리뷰 수정 3건: MaxAssets 축소가 락아웃 되지 않게 저장 검증을 MaxStoredAssets로 분리, fresh의 slots 클램프, 상한 근처에서도 업그레이드 허용. 테스트 53 -> 56",
+  "commit": "7c3cc6a chore(checkpoint): M3 상세 설계 추가: UTC 600초 구간 일정, 구간 분할 정산과 나머지 이월, 온라인/오프라인 구분, 스키마 무변경 근거, 검증 항목 7개",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
