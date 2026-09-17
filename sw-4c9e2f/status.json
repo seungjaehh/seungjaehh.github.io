@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T15:20:58Z",
+  "updated": "2026-09-17T15:21:50Z",
   "state": "progress",
-  "note": "M2 1번 완료: lastCollected 미래값 clamp. 회귀 테스트 추가",
-  "next": "M2 2번 v1/v2 스키마 동시 해독",
+  "note": "보고 대시보드 추가: 공개 Pages의 비공개 경로에 status.json 발행, 30초 자동 갱신",
+  "next": "Pages 빌드 확인 후 M2 2번 v1/v2 스키마",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 29,
   "branch": "main",
-  "commit": "eb3fd34 chore(checkpoint): M2 1번 완료: lastCollected 미래값을 거부 대신 clamp. 회귀 테스트 추가 (28 -> 29)",
+  "commit": "6f9daf7 wip: 보고 대시보드 추가: 공개 Pages의 비공개 경로에 status.json 발행, 30초 자동 갱신",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
