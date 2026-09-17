@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-17T21:49:07Z",
+  "updated": "2026-09-17T21:49:26Z",
   "state": "done",
   "agent": "claude",
-  "note": "릴레이 장애 3건 수정: 한도 오분류(종료코드 우선), stdin 대기로 인한 무한 정지(Start-Process+45분 제한), Codex 샌드박스 .git 차단 대응(릴레이 대행 커밋). STATUS의 오진 기록 정정",
-  "next": "08:00 릴레이 실행에서 수정 효과 확인. 대기열 A3",
+  "note": "STATUS.md 60줄 제한 복구",
+  "next": "08:00 릴레이 실행에서 수정 효과 확인",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 56,
   "branch": "main",
-  "commit": "7fd5523 chore(checkpoint): 릴레이 장애 3건 수정: 한도 오분류(종료코드 우선), stdin 대기로 인한 무한 정지(Start-Process+45분 제한), Codex 샌드박스 .git 차단 대응(릴레이 대행 커밋). STATUS의 오진 기록 정정",
+  "commit": "cd3b67e chore(checkpoint): STATUS.md 60줄 제한 복구",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
