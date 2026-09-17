@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-17T19:41:52Z",
+  "updated": "2026-09-17T19:42:13Z",
   "state": "done",
   "agent": "claude",
-  "note": "릴레이 1회차 결과 저장(A1 서버 리뷰 완료) + 릴레이가 에이전트 대신 커밋하도록 수정. 에이전트가 비대화형에서 checkpoint 실행 권한 거부로 커밋 못 하던 문제",
-  "next": "A2 클라이언트 리뷰. Codex는 05:02까지 쿨다운",
+  "note": "STATUS.md 60줄 제한 복구. 낡은 기록(remote 없음) 제거",
+  "next": "05:02 Codex 쿨다운 해제 후 릴레이 2회차. 다음 항목 A2",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 56,
   "branch": "main",
-  "commit": "449f8e9 chore(checkpoint): 릴레이 1회차 결과 저장(A1 서버 리뷰 완료) + 릴레이가 에이전트 대신 커밋하도록 수정. 에이전트가 비대화형에서 checkpoint 실행 권한 거부로 커밋 못 하던 문제",
+  "commit": "7d5e84f chore(checkpoint): STATUS.md 60줄 제한 복구. 낡은 기록(remote 없음) 제거",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
