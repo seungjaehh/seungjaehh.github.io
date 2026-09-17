@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T15:25:20Z",
-  "state": "progress",
-  "note": "M2 2번 코드 완료: v1/v2 동시 해독 + 승격",
-  "next": "실제 DataStore 승격 확인 필요. 그 사이 M2 3번 복수 배치",
+  "updated": "2026-09-17T15:25:27Z",
+  "state": "done",
+  "note": "M2 2번 코드 완료: v1/v2 동시 해독, v1은 로드 시 v2로 승격(level/slots 추가). 마이그레이션 테스트 5개 추가 (29 -> 34)",
+  "next": "M2 3번: MaxAssets/Slots 확장과 복수 배치",
   "verify": "PASS (compile + tests + sourcemap)",
-  "tests": 29,
+  "tests": 34,
   "branch": "main",
-  "commit": "6f9daf7 wip: 보고 대시보드 추가: 공개 Pages의 비공개 경로에 status.json 발행, 30초 자동 갱신",
+  "commit": "c73ea44 chore(checkpoint): M2 2번 코드 완료: v1/v2 동시 해독, v1은 로드 시 v2로 승격(level/slots 추가). 마이그레이션 테스트 5개 추가 (29 -> 34)",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
