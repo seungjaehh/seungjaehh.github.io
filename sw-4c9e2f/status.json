@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T15:28:24Z",
+  "updated": "2026-09-17T15:31:45Z",
   "state": "done",
-  "note": "M2 3번 코드 완료: 슬롯 4개, Producer 최대 4대 배치, 잠긴 슬롯 거부, 슬롯 UI. 테스트 34 -> 38",
-  "next": "M2 4번 업그레이드 1단계",
+  "note": "M2 4번 코드 완료: 레벨 1~5 업그레이드, 요율 경계 정산, 슬롯 탭 업그레이드 UI, 레벨별 외형. 테스트 38 -> 48",
+  "next": "M2 코드 4단계 전부 완료. 남은 것은 Studio 플레이 확인과 실제 DataStore 승격 검증",
   "verify": "PASS (compile + tests + sourcemap)",
-  "tests": 38,
+  "tests": 48,
   "branch": "main",
-  "commit": "aa57f8d chore(checkpoint): M2 3번 코드 완료: 슬롯 4개, Producer 최대 4대 배치, 잠긴 슬롯 거부, 슬롯 UI. 테스트 34 -> 38",
+  "commit": "8268c4e chore(checkpoint): M2 4번 코드 완료: 레벨 1~5 업그레이드, 요율 경계 정산, 슬롯 탭 업그레이드 UI, 레벨별 외형. 테스트 38 -> 48",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
@@ -26,12 +26,13 @@
         "id": "m2-3",
         "title": "Producer 복수 배치 + 슬롯 4개",
         "status": "review",
-        "hint": "코드·테스트·빌드 통과. Studio 플레이로 슬롯 UI 확인이 남았다."
+        "hint": "코드·테스트·빌드 통과. Studio 플레이 확인이 남았다."
       },
       {
         "id": "m2-4",
-        "title": "업그레이드 1단계",
-        "status": "now"
+        "title": "업그레이드 1단계 (Lv.1~5)",
+        "status": "review",
+        "hint": "코드·테스트·빌드 통과. 요율 경계 정산은 변이 테스트로 확인했다. Studio 플레이 확인이 남았다."
       }
     ]
   }
