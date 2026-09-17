@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T16:13:24Z",
+  "updated": "2026-09-17T16:23:22Z",
   "state": "done",
-  "note": "대시보드 경로를 144비트 난수로 이전하고 이전 경로 삭제. 공개 호스팅이라는 사실을 STATUS.md에 명시",
+  "note": "폴링을 쿨다운으로 교체: 한도 에러에서 리셋 시각을 파싱해 그때까지만 대기. 에이전트별 쿨다운을 state.json에 기록. 예약작업에 깨운 뒤 만회/배터리 실행 허용. 절전·덮개 설정 해제",
   "next": "04:00 릴레이 첫 실전 실행",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 56,
   "branch": "main",
-  "commit": "e8fb9ad chore(checkpoint): 대시보드 경로를 144비트 난수로 이전하고 이전 경로 삭제. 공개 호스팅이라는 사실을 STATUS.md에 명시",
+  "commit": "b827603 chore(checkpoint): 폴링을 쿨다운으로 교체: 한도 에러에서 리셋 시각을 파싱해 그때까지만 대기. 에이전트별 쿨다운을 state.json에 기록. 예약작업에 깨운 뒤 만회/배터리 실행 허용. 절전·덮개 설정 해제",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
