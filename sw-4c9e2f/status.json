@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T15:31:45Z",
+  "updated": "2026-09-17T15:32:54Z",
   "state": "done",
-  "note": "M2 4번 코드 완료: 레벨 1~5 업그레이드, 요율 경계 정산, 슬롯 탭 업그레이드 UI, 레벨별 외형. 테스트 38 -> 48",
-  "next": "M2 코드 4단계 전부 완료. 남은 것은 Studio 플레이 확인과 실제 DataStore 승격 검증",
+  "note": "STATUS.md를 M2 완료 상태로 갱신",
+  "next": "delegate.ps1 (Claude-Codex 상호 호출) 작성과 왕복 검증",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 48,
   "branch": "main",
-  "commit": "8268c4e chore(checkpoint): M2 4번 코드 완료: 레벨 1~5 업그레이드, 요율 경계 정산, 슬롯 탭 업그레이드 UI, 레벨별 외형. 테스트 38 -> 48",
+  "commit": "53d66d3 chore(checkpoint): STATUS.md를 M2 완료 상태로 갱신",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
