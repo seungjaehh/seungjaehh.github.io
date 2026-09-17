@@ -1,0 +1,36 @@
+{
+  "updated": "2026-09-17T15:20:58Z",
+  "state": "progress",
+  "note": "M2 1번 완료: lastCollected 미래값 clamp. 회귀 테스트 추가",
+  "next": "M2 2번 v1/v2 스키마 동시 해독",
+  "verify": "PASS (compile + tests + sourcemap)",
+  "tests": 29,
+  "branch": "main",
+  "commit": "eb3fd34 chore(checkpoint): M2 1번 완료: lastCollected 미래값을 거부 대신 clamp. 회귀 테스트 추가 (28 -> 29)",
+  "milestone": {
+    "current": "M2 성장 기반",
+    "reference": "docs/GAME_DESIGN.md 10절",
+    "steps": [
+      {
+        "id": "m2-1",
+        "title": "lastCollected 미래값 clamp",
+        "status": "done"
+      },
+      {
+        "id": "m2-2",
+        "title": "v1/v2 동시 해독 + v1→v2 승격",
+        "status": "now"
+      },
+      {
+        "id": "m2-3",
+        "title": "Producer 복수 배치 + 슬롯 4개",
+        "status": "todo"
+      },
+      {
+        "id": "m2-4",
+        "title": "업그레이드 1단계",
+        "status": "todo"
+      }
+    ]
+  }
+}
