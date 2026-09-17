@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T16:06:06Z",
+  "updated": "2026-09-17T16:08:19Z",
   "state": "done",
-  "note": "릴레이에 작업 대기열 연결: docs/BACKLOG.md 신설(A 작업7 / B 사람전용 / C 금지), relay 지시문을 대기열 기반으로 교체, 주기 2시간 x 2회차로 상향",
-  "next": "릴레이가 A1(나머지 서버 모듈 적대적 리뷰)부터 시작한다",
+  "note": "릴레이 안정화: 동시 실행 잠금(2시간 stale 회수), DryRun 모드, 함수 내 로그가 반환값을 오염시켜 한도 감지를 깨뜨리던 버그 수정. 교대 페일오버 실측 검증",
+  "next": "04:00 릴레이 첫 실전 실행. BACKLOG A1부터",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 56,
   "branch": "main",
-  "commit": "6e1b106 chore(checkpoint): 릴레이에 작업 대기열 연결: docs/BACKLOG.md 신설(A 작업7 / B 사람전용 / C 금지), relay 지시문을 대기열 기반으로 교체, 주기 2시간 x 2회차로 상향",
+  "commit": "2899c0f chore(checkpoint): 릴레이 안정화: 동시 실행 잠금(2시간 stale 회수), DryRun 모드, 함수 내 로그가 반환값을 오염시켜 한도 감지를 깨뜨리던 버그 수정. 교대 페일오버 실측 검증",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
