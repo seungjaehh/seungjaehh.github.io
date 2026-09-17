@@ -34,6 +34,11 @@ h1{font-size:20px;font-weight:760;letter-spacing:-.6px;margin:0}
 .pill.ok{background:var(--okbg);color:var(--ok)}
 .pill.warn{background:var(--warnbg);color:var(--warn)}
 .pill.bad{background:var(--badbg);color:var(--bad)}
+.pill.who{background:var(--soft);color:var(--muted)}
+.pill.who.claude{background:#e9e2f7;color:#5b3fa8}
+.pill.who.codex{background:#dff0e6;color:#1d6b42}
+@media(prefers-color-scheme:dark){.pill.who.claude{background:#231b33;color:#c0a8f5}
+.pill.who.codex{background:#132318;color:#7ddba4}}
 .row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 ol.steps{list-style:none;margin:0;padding:0}
 ol.steps li{display:flex;align-items:flex-start;gap:11px;padding:9px 0;border-top:1px solid var(--line);font-size:15px}
@@ -69,7 +74,7 @@ footer{margin-top:22px;color:var(--muted);font-size:12px;text-align:center}
   <div class="card">
     <div class="row">
       <p class="label">지금 하는 일</p>
-      <span class="pill warn" id="state">—</span>
+      <span><span class="pill who" id="agent">—</span> <span class="pill warn" id="state">—</span></span>
     </div>
     <p class="big skel" id="note">불러오는 중…</p>
   </div>
@@ -123,6 +128,11 @@ function render(d){
 
   const label = { progress:'진행 중', done:'단위 완료', blocked:'차단됨' }[d.state] || d.state || '—';
   setState($('state'), label, d.state === 'blocked' ? 'bad' : d.state === 'done' ? 'ok' : 'warn');
+
+  const who = d.agent || 'unknown';
+  const whoEl = $('agent');
+  whoEl.textContent = { claude:'Claude', codex:'Codex' }[who] || who;
+  whoEl.className = 'pill who ' + (['claude','codex'].includes(who) ? who : '');
 
   const pass = (d.verify || '').startsWith('PASS');
   const skip = (d.verify || '').startsWith('SKIP');
