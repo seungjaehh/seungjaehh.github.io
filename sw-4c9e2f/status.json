@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T15:32:54Z",
+  "updated": "2026-09-17T15:34:50Z",
   "state": "done",
-  "note": "STATUS.md를 M2 완료 상태로 갱신",
-  "next": "delegate.ps1 (Claude-Codex 상호 호출) 작성과 왕복 검증",
+  "note": "delegate.cmd (Claude-Codex 상호 호출) 추가, KICKOFF_PROMPT를 현재 상태로 갱신",
+  "next": "사용자 GUI 검증 2개: 실제 DataStore v1->v2 승격, Studio 플레이로 슬롯/업그레이드 확인",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 48,
   "branch": "main",
-  "commit": "53d66d3 chore(checkpoint): STATUS.md를 M2 완료 상태로 갱신",
+  "commit": "7b01eee chore(checkpoint): delegate.cmd (Claude-Codex 상호 호출) 추가, KICKOFF_PROMPT를 현재 상태로 갱신",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
