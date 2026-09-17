@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T15:56:27Z",
+  "updated": "2026-09-17T16:03:15Z",
   "state": "done",
-  "note": "M3 상세 설계 추가: UTC 600초 구간 일정, 구간 분할 정산과 나머지 이월, 온라인/오프라인 구분, 스키마 무변경 근거, 검증 항목 7개",
-  "next": "권한 설정 정리",
+  "note": "Claude-Codex 릴레이 구축: relay.cmd + 예약작업 2개(3:20 Codex 리뷰, 04:00부터 3시간마다 릴레이). 중복 실행 방지 표식 추가",
+  "next": "릴레이 첫 실행 04:00 관찰. 사용자 GUI 검증 2건은 여전히 대기",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 56,
   "branch": "main",
-  "commit": "7c3cc6a chore(checkpoint): M3 상세 설계 추가: UTC 600초 구간 일정, 구간 분할 정산과 나머지 이월, 온라인/오프라인 구분, 스키마 무변경 근거, 검증 항목 7개",
+  "commit": "61049ed chore(checkpoint): Claude-Codex 릴레이 구축: relay.cmd + 예약작업 2개(3:20 Codex 리뷰, 04:00부터 3시간마다 릴레이). 중복 실행 방지 표식 추가",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
