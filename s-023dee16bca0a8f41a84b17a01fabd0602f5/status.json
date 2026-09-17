@@ -1,0 +1,39 @@
+{
+  "updated": "2026-09-17T16:11:43Z",
+  "state": "progress",
+  "note": "대시보드 경로 이전",
+  "next": "이전 경로 삭제",
+  "verify": "PASS (compile + tests + sourcemap)",
+  "tests": 56,
+  "branch": "main",
+  "commit": "2899c0f chore(checkpoint): 릴레이 안정화: 동시 실행 잠금(2시간 stale 회수), DryRun 모드, 함수 내 로그가 반환값을 오염시켜 한도 감지를 깨뜨리던 버그 수정. 교대 페일오버 실측 검증",
+  "milestone": {
+    "current": "M2 성장 기반",
+    "reference": "docs/GAME_DESIGN.md 10절",
+    "steps": [
+      {
+        "id": "m2-1",
+        "title": "lastCollected 미래값 clamp",
+        "status": "done"
+      },
+      {
+        "id": "m2-2",
+        "title": "v1/v2 동시 해독 + v1→v2 승격",
+        "status": "review",
+        "hint": "코드·로컬 테스트 완료. 실제 DataStore로 $270 프로필 승격 확인이 남았다."
+      },
+      {
+        "id": "m2-3",
+        "title": "Producer 복수 배치 + 슬롯 4개",
+        "status": "review",
+        "hint": "코드·테스트·빌드 통과. Studio 플레이 확인이 남았다."
+      },
+      {
+        "id": "m2-4",
+        "title": "업그레이드 1단계 (Lv.1~5)",
+        "status": "review",
+        "hint": "코드·테스트·빌드 통과. 요율 경계 정산은 변이 테스트로 확인했다. Studio 플레이 확인이 남았다."
+      }
+    ]
+  }
+}
