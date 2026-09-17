@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T16:03:15Z",
+  "updated": "2026-09-17T16:06:06Z",
   "state": "done",
-  "note": "Claude-Codex 릴레이 구축: relay.cmd + 예약작업 2개(3:20 Codex 리뷰, 04:00부터 3시간마다 릴레이). 중복 실행 방지 표식 추가",
-  "next": "릴레이 첫 실행 04:00 관찰. 사용자 GUI 검증 2건은 여전히 대기",
+  "note": "릴레이에 작업 대기열 연결: docs/BACKLOG.md 신설(A 작업7 / B 사람전용 / C 금지), relay 지시문을 대기열 기반으로 교체, 주기 2시간 x 2회차로 상향",
+  "next": "릴레이가 A1(나머지 서버 모듈 적대적 리뷰)부터 시작한다",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 56,
   "branch": "main",
-  "commit": "61049ed chore(checkpoint): Claude-Codex 릴레이 구축: relay.cmd + 예약작업 2개(3:20 Codex 리뷰, 04:00부터 3시간마다 릴레이). 중복 실행 방지 표식 추가",
+  "commit": "6e1b106 chore(checkpoint): 릴레이에 작업 대기열 연결: docs/BACKLOG.md 신설(A 작업7 / B 사람전용 / C 금지), relay 지시문을 대기열 기반으로 교체, 주기 2시간 x 2회차로 상향",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
