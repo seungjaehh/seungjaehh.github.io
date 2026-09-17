@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-17T15:35:46Z",
+  "updated": "2026-09-17T15:51:00Z",
   "state": "done",
-  "note": "verify-datastore.ps1 추가: Open Cloud로 저장 프로필을 읽어 v1/v2 승격을 스크립트로 확인",
-  "next": "사용자: Open Cloud 키(Read 전용) 발급 후 실제 DataStore 승격 검증",
+  "note": "저장 락아웃 3곳 수정: slots/level 범위 초과는 clamp, 없어진 슬롯의 기계는 배치만 해제, 저장 좌표 대조 제거(어차피 정의에서 재계산). 설정 변경 불일치는 보정, 구조 손상은 거부라는 기준을 명문화. 테스트 48 -> 53",
+  "next": "Codex 리뷰 예약, M2 자가 리뷰 기록, M3 설계 상세화",
   "verify": "PASS (compile + tests + sourcemap)",
-  "tests": 48,
+  "tests": 53,
   "branch": "main",
-  "commit": "5478777 chore(checkpoint): verify-datastore.ps1 추가: Open Cloud로 저장 프로필을 읽어 v1/v2 승격을 스크립트로 확인",
+  "commit": "aa50f8a chore(checkpoint): 저장 락아웃 3곳 수정: slots/level 범위 초과는 clamp, 없어진 슬롯의 기계는 배치만 해제, 저장 좌표 대조 제거(어차피 정의에서 재계산). 설정 변경 불일치는 보정, 구조 손상은 거부라는 기준을 명문화. 테스트 48 -> 53",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
