@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-17T16:28:12Z",
+  "updated": "2026-09-17T19:41:52Z",
   "state": "done",
   "agent": "claude",
-  "note": "작업자 귀속 수정: checkpoint가 agent를 하드코딩해 Codex 작업이 claude로 기록되던 버그. SKYWORKS_AGENT로 릴레이가 전달하고 status.json/대시보드에 배지로 표시",
-  "next": "Codex 인계. BACKLOG A1(나머지 서버 모듈 적대적 리뷰)부터 시작한다",
+  "note": "릴레이 1회차 결과 저장(A1 서버 리뷰 완료) + 릴레이가 에이전트 대신 커밋하도록 수정. 에이전트가 비대화형에서 checkpoint 실행 권한 거부로 커밋 못 하던 문제",
+  "next": "A2 클라이언트 리뷰. Codex는 05:02까지 쿨다운",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 56,
   "branch": "main",
-  "commit": "92c9ad6 chore(checkpoint): 작업자 귀속 수정: checkpoint가 agent를 하드코딩해 Codex 작업이 claude로 기록되던 버그. SKYWORKS_AGENT로 릴레이가 전달하고 status.json/대시보드에 배지로 표시",
+  "commit": "449f8e9 chore(checkpoint): 릴레이 1회차 결과 저장(A1 서버 리뷰 완료) + 릴레이가 에이전트 대신 커밋하도록 수정. 에이전트가 비대화형에서 checkpoint 실행 권한 거부로 커밋 못 하던 문제",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
