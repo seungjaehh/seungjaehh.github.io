@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T11:46:42Z",
+  "updated": "2026-09-18T12:17:48Z",
   "state": "done",
   "agent": "claude",
-  "note": "B2 완료 표시 및 결과 요약을 대기열에 기록",
-  "next": "릴레이가 B3(이벤트 게임 루프 연결 점검)부터 진행",
+  "note": "C1 슬롯 해금 구현: 슬롯 1개로 시작해 4/6/12로 코인 해금(400/3000/25000). 슬롯 좌표 12개로 확장하되 기존 1~4는 유지. UnlockSlot 명령, 서버 가격 재검증, 격자 UI(12개도 터치 가능). 저장 스키마 변경 없음. 테스트 69 -> 72",
+  "next": "C2 기계 2종 추가",
   "verify": "PASS (compile + tests + sourcemap)",
-  "tests": 69,
+  "tests": 72,
   "branch": "main",
-  "commit": "eaa6b71 chore(checkpoint): B2 완료 표시 및 결과 요약을 대기열에 기록",
+  "commit": "579cefa chore(checkpoint): C1 슬롯 해금 구현: 슬롯 1개로 시작해 4/6/12로 코인 해금(400/3000/25000). 슬롯 좌표 12개로 확장하되 기존 1~4는 유지. UnlockSlot 명령, 서버 가격 재검증, 격자 UI(12개도 터치 가능). 저장 스키마 변경 없음. 테스트 69 -> 72",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
