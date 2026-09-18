@@ -1,39 +1,57 @@
 {
-  "updated": "2026-09-18T13:13:36Z",
-  "state": "progress",
+  "updated": "2026-09-18T13:15:14Z",
+  "state": "done",
   "agent": "claude",
-  "note": "대시보드에 릴레이 상태 추가",
-  "next": "C6 기계 외형",
-  "verify": "PASS",
+  "note": "대시보드에 릴레이 상태 브리핑 추가: 작업중/대기중 큰 표시와 비콘, 다음 실행까지 남은 시간, 러너 4종의 사용가능/한도/수동 상태와 리셋 시각·최근 실행. 마일스톤 카드를 낡은 M2에서 현재 C 대기열로 교체",
+  "next": "릴레이가 00:00에 C6(기계 외형) 진행",
+  "verify": "PASS (compile + tests + sourcemap)",
   "tests": 72,
   "branch": "main",
-  "commit": "ebf49bc chore(checkpoint): 계획 재점검을 GAME_DESIGN에 추가: 미술을 M5에서 앞으로 당김(Roblox에서 시각은 발견 경로), 새 시스템보다 콘텐츠 총량 우선, 이벤트는 화면 확인 전까지 동작한다고 말하지 않음, 중앙 광장 계속 보류. 그래픽 항목 C6(기계 외형) C7(섬 색 구분) 추가",
+  "commit": "86447db chore(checkpoint): 대시보드에 릴레이 상태 브리핑 추가: 작업중/대기중 큰 표시와 비콘, 다음 실행까지 남은 시간, 러너 4종의 사용가능/한도/수동 상태와 리셋 시각·최근 실행. 마일스톤 카드를 낡은 M2에서 현재 C 대기열로 교체",
   "milestone": {
-    "current": "M2 성장 기반",
-    "reference": "docs/GAME_DESIGN.md 10절",
+    "current": "C 콘텐츠 대기열",
+    "reference": "docs/BACKLOG.md",
     "steps": [
       {
-        "id": "m2-1",
-        "title": "lastCollected 미래값 clamp",
+        "id": "c1",
+        "title": "생산 슬롯 해금 (1→4→6→12)",
         "status": "done"
       },
       {
-        "id": "m2-2",
-        "title": "v1/v2 동시 해독 + v1→v2 승격",
-        "status": "review",
-        "hint": "코드·로컬 테스트 완료. 실제 DataStore로 $270 프로필 승격 확인이 남았다."
+        "id": "c6",
+        "title": "기계 외형 (노란 상자 → 조립 모델)",
+        "status": "now"
       },
       {
-        "id": "m2-3",
-        "title": "Producer 복수 배치 + 슬롯 4개",
-        "status": "review",
-        "hint": "코드·테스트·빌드 통과. Studio 플레이 확인이 남았다."
+        "id": "c7",
+        "title": "섬마다 색 구분",
+        "status": "todo"
       },
       {
-        "id": "m2-4",
-        "title": "업그레이드 1단계 (Lv.1~5)",
+        "id": "c2",
+        "title": "기계 2종 추가",
+        "status": "todo"
+      },
+      {
+        "id": "c3",
+        "title": "이벤트 주기 조정",
+        "status": "todo"
+      },
+      {
+        "id": "c5",
+        "title": "낙하 안전망",
+        "status": "todo"
+      },
+      {
+        "id": "c4",
+        "title": "목표 표시 HUD",
+        "status": "todo"
+      },
+      {
+        "id": "human",
+        "title": "사람: Studio Lighting.Technology → Future, 이벤트 플레이 확인",
         "status": "review",
-        "hint": "코드·테스트·빌드 통과. 요율 경계 정산은 변이 테스트로 확인했다. Studio 플레이 확인이 남았다."
+        "hint": "무인 에이전트가 할 수 없다. 이것들이 남은 사람 작업이다."
       }
     ]
   },
