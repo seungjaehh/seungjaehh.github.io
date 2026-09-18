@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T11:37:29Z",
+  "updated": "2026-09-18T11:42:29Z",
   "state": "done",
   "agent": "claude",
-  "note": "저장 세션 잠금 검증 강화: expires를 숫자 여부만 봐서 math.huge는 영구 입장 불가, NaN은 잠금 무력화(두 서버 동시 쓰기)를 허용했다. activeLock으로 유한값만 인정하고 읽을 수 없는 잠금은 없는 것으로 처리. 회귀 테스트 3개 추가(66 -> 69), 변이 테스트로 검증. Codex 리뷰가 찾아준 결함",
-  "next": "delegate의 한글 다중행 인자 전달 문제 수정 후 Codex 화면 검증 재시도",
+  "note": "도구 경로 자동해석기 toolchain.ps1 신설. Codex(해시 디렉터리)와 Claude(2.1.271->2.1.275)가 하루에 둘 다 업데이트되며 경로가 사라져 릴레이/델리게이트가 죽었다. relay와 delegate가 공용으로 다시 찾고 기록에 되쓴다. delegate에 -TaskFile 추가(긴 한글 지시문의 인자 인코딩 깨짐 회피)",
+  "next": "Codex 화면 검증 재시도",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 69,
   "branch": "main",
-  "commit": "8453724 chore(checkpoint): 저장 세션 잠금 검증 강화: expires를 숫자 여부만 봐서 math.huge는 영구 입장 불가, NaN은 잠금 무력화(두 서버 동시 쓰기)를 허용했다. activeLock으로 유한값만 인정하고 읽을 수 없는 잠금은 없는 것으로 처리. 회귀 테스트 3개 추가(66 -> 69), 변이 테스트로 검증. Codex 리뷰가 찾아준 결함",
+  "commit": "84a04b9 chore(checkpoint): 도구 경로 자동해석기 toolchain.ps1 신설. Codex(해시 디렉터리)와 Claude(2.1.271->2.1.275)가 하루에 둘 다 업데이트되며 경로가 사라져 릴레이/델리게이트가 죽었다. relay와 delegate가 공용으로 다시 찾고 기록에 되쓴다. delegate에 -TaskFile 추가(긴 한글 지시문의 인자 인코딩 깨짐 회피)",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
