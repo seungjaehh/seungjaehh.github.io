@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T11:42:29Z",
+  "updated": "2026-09-18T11:46:14Z",
   "state": "done",
   "agent": "claude",
-  "note": "도구 경로 자동해석기 toolchain.ps1 신설. Codex(해시 디렉터리)와 Claude(2.1.271->2.1.275)가 하루에 둘 다 업데이트되며 경로가 사라져 릴레이/델리게이트가 죽었다. relay와 delegate가 공용으로 다시 찾고 기록에 되쓴다. delegate에 -TaskFile 추가(긴 한글 지시문의 인자 인코딩 깨짐 회피)",
-  "next": "Codex 화면 검증 재시도",
+  "note": "Codex 화면 제어 한계 확인 및 기록: cua 도구는 있으나 Studio가 연결 안 됨(apps=[], Chrome만). Studio 검증은 사람 몫으로 확정. 도구 경로 부패와 긴 지시문 전달 함정도 RELAY.md에 기록",
+  "next": "사용자가 Studio에서 이벤트 줄 확인. B3 이후 대기열은 릴레이가 진행",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 69,
   "branch": "main",
-  "commit": "84a04b9 chore(checkpoint): 도구 경로 자동해석기 toolchain.ps1 신설. Codex(해시 디렉터리)와 Claude(2.1.271->2.1.275)가 하루에 둘 다 업데이트되며 경로가 사라져 릴레이/델리게이트가 죽었다. relay와 delegate가 공용으로 다시 찾고 기록에 되쓴다. delegate에 -TaskFile 추가(긴 한글 지시문의 인자 인코딩 깨짐 회피)",
+  "commit": "5513a30 chore(checkpoint): Codex 화면 제어 한계 확인 및 기록: cua 도구는 있으나 Studio가 연결 안 됨(apps=[], Chrome만). Studio 검증은 사람 몫으로 확정. 도구 경로 부패와 긴 지시문 전달 함정도 RELAY.md에 기록",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
