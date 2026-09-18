@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T12:24:39Z",
+  "updated": "2026-09-18T12:34:59Z",
   "state": "done",
   "agent": "claude",
-  "note": "부유섬 외형 추가(Codex 작성, 사람 수정). 바닥+트림4+암석4층+기둥4, 섬당 14파트. Codex가 Cylinder의 Size.X가 축 길이인 것을 놓쳐 암석이 높이 32 기둥이 되어 바닥을 뚫었다. Size 순서를 (두께,지름,지름)으로 고쳐 -0.5~-13 연속 테이퍼로 맞춤",
-  "next": "Studio에서 섬 외형 확인. 릴레이는 C2(기계 2종)",
+  "note": "섬 8개를 중앙을 둘러싼 고리로 배치하고 각 섬이 중앙을 향하도록 회전(CFrame 기반으로 전환, render도 함께). 테마 장식 추가: 모서리 기둥+네온 등, 섬 아래 청록 결정, 스폰 앞 진입 아치. 섬당 24파트. 반지름 62.7, 섬 간격 12",
+  "next": "Studio에서 고리 배치 확인. 중앙 광장은 이벤트 현장이 생길 때",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 72,
   "branch": "main",
-  "commit": "1fca3f7 chore(checkpoint): 부유섬 외형 추가(Codex 작성, 사람 수정). 바닥+트림4+암석4층+기둥4, 섬당 14파트. Codex가 Cylinder의 Size.X가 축 길이인 것을 놓쳐 암석이 높이 32 기둥이 되어 바닥을 뚫었다. Size 순서를 (두께,지름,지름)으로 고쳐 -0.5~-13 연속 테이퍼로 맞춤",
+  "commit": "1a93dcf chore(checkpoint): 섬 8개를 중앙을 둘러싼 고리로 배치하고 각 섬이 중앙을 향하도록 회전(CFrame 기반으로 전환, render도 함께). 테마 장식 추가: 모서리 기둥+네온 등, 섬 아래 청록 결정, 스폰 앞 진입 아치. 섬당 24파트. 반지름 62.7, 섬 간격 12",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
