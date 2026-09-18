@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-18T13:09:33Z",
-  "state": "done",
+  "updated": "2026-09-18T13:13:36Z",
+  "state": "progress",
   "agent": "claude",
-  "note": "계획 재점검을 GAME_DESIGN에 추가: 미술을 M5에서 앞으로 당김(Roblox에서 시각은 발견 경로), 새 시스템보다 콘텐츠 총량 우선, 이벤트는 화면 확인 전까지 동작한다고 말하지 않음, 중앙 광장 계속 보류. 그래픽 항목 C6(기계 외형) C7(섬 색 구분) 추가",
-  "next": "릴레이가 C6부터 진행. 사용자는 Studio에서 Lighting.Technology를 Future로",
-  "verify": "PASS (compile + tests + sourcemap)",
+  "note": "대시보드에 릴레이 상태 추가",
+  "next": "C6 기계 외형",
+  "verify": "PASS",
   "tests": 72,
   "branch": "main",
   "commit": "ebf49bc chore(checkpoint): 계획 재점검을 GAME_DESIGN에 추가: 미술을 M5에서 앞으로 당김(Roblox에서 시각은 발견 경로), 새 시스템보다 콘텐츠 총량 우선, 이벤트는 화면 확인 전까지 동작한다고 말하지 않음, 중앙 광장 계속 보류. 그래픽 항목 C6(기계 외형) C7(섬 색 구분) 추가",
@@ -34,6 +34,38 @@
         "title": "업그레이드 1단계 (Lv.1~5)",
         "status": "review",
         "hint": "코드·테스트·빌드 통과. 요율 경계 정산은 변이 테스트로 확인했다. Studio 플레이 확인이 남았다."
+      }
+    ]
+  },
+  "relay": {
+    "running": false,
+    "runningSince": null,
+    "nextRun": "2026-09-19T00:00:00",
+    "cycles": 26,
+    "runners": [
+      {
+        "name": "claude",
+        "state": "ready",
+        "resetAt": null,
+        "lastRun": "2026-09-18T20:05:19"
+      },
+      {
+        "name": "codex-astra-low",
+        "state": "ready",
+        "resetAt": null,
+        "lastRun": "2026-09-18T22:01:37"
+      },
+      {
+        "name": "codex-luna",
+        "state": "ready",
+        "resetAt": null,
+        "lastRun": "2026-09-18T22:02:35"
+      },
+      {
+        "name": "codex-astra-high",
+        "state": "ready",
+        "resetAt": null,
+        "lastRun": null
       }
     ]
   }
