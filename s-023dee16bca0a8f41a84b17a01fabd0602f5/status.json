@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T13:15:14Z",
+  "updated": "2026-09-18T13:25:23Z",
   "state": "done",
   "agent": "claude",
-  "note": "대시보드에 릴레이 상태 브리핑 추가: 작업중/대기중 큰 표시와 비콘, 다음 실행까지 남은 시간, 러너 4종의 사용가능/한도/수동 상태와 리셋 시각·최근 실행. 마일스톤 카드를 낡은 M2에서 현재 C 대기열로 교체",
-  "next": "릴레이가 00:00에 C6(기계 외형) 진행",
+  "note": "코어 루프의 빈 칸 채움: 생산 자산 3종(Producer 50 / SolarCollector 400 / CloudCondenser 3200)으로 '더 좋은 자산 구매' 단계 신설. 외형을 AssetDefinitions의 평문 데이터로 분리해 Plots.render가 종류별 색·크기·재질을 읽는다(Color3/Enum은 순수 Luau 테스트가 깨지므로 금지). Plots.new가 definitions를 주입받도록 변경. MaxAssets 4->12로 슬롯과 일치. 클라이언트 상점 행 추가. 테스트 72->76",
+  "next": "NOW 남은 항목: 목표 표시 HUD, 낙하 안전망",
   "verify": "PASS (compile + tests + sourcemap)",
-  "tests": 72,
+  "tests": 76,
   "branch": "main",
-  "commit": "86447db chore(checkpoint): 대시보드에 릴레이 상태 브리핑 추가: 작업중/대기중 큰 표시와 비콘, 다음 실행까지 남은 시간, 러너 4종의 사용가능/한도/수동 상태와 리셋 시각·최근 실행. 마일스톤 카드를 낡은 M2에서 현재 C 대기열로 교체",
+  "commit": "81fabc6 chore(checkpoint): 코어 루프의 빈 칸 채움: 생산 자산 3종(Producer 50 / SolarCollector 400 / CloudCondenser 3200)으로 '더 좋은 자산 구매' 단계 신설. 외형을 AssetDefinitions의 평문 데이터로 분리해 Plots.render가 종류별 색·크기·재질을 읽는다(Color3/Enum은 순수 Luau 테스트가 깨지므로 금지). Plots.new가 definitions를 주입받도록 변경. MaxAssets 4->12로 슬롯과 일치. 클라이언트 상점 행 추가. 테스트 72->76",
   "milestone": {
     "current": "C 콘텐츠 대기열",
     "reference": "docs/BACKLOG.md",
