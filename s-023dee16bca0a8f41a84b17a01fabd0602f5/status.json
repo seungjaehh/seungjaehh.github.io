@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T10:35:36Z",
+  "updated": "2026-09-18T10:44:14Z",
   "state": "done",
   "agent": "claude",
-  "note": "M2 완료 확정(게시된 장소 실제 DataStore에서 v2 저장·복원 확인). A4 사람 교차검토 완료. 대기열을 B(교차검증·밸런스 해석·이벤트 연결·모바일 UI·부하)로 전환",
-  "next": "릴레이가 B1(A5·A6·A7 교차 검증)부터 진행",
+  "note": "이벤트 안내가 화면에 안 보이던 버그 수정: production 라벨이 1줄 높이인데 TextWrapped라 둘째 줄이 조용히 잘렸다. 2줄로 늘리고 아래 요소를 내려 패널을 322로 확장",
+  "next": "사용자: Rojo 재동기화 후 Play해서 이벤트 카운트다운이 보이는지 확인",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 66,
   "branch": "main",
-  "commit": "cd7a4ec chore(checkpoint): M2 완료 확정(게시된 장소 실제 DataStore에서 v2 저장·복원 확인). A4 사람 교차검토 완료. 대기열을 B(교차검증·밸런스 해석·이벤트 연결·모바일 UI·부하)로 전환",
+  "commit": "c1a04de chore(checkpoint): 이벤트 안내가 화면에 안 보이던 버그 수정: production 라벨이 1줄 높이인데 TextWrapped라 둘째 줄이 조용히 잘렸다. 2줄로 늘리고 아래 요소를 내려 패널을 322로 확장",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
