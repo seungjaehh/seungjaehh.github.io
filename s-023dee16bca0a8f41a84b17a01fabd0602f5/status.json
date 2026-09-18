@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T07:03:30Z",
+  "updated": "2026-09-18T07:12:29Z",
   "state": "progress",
-  "agent": "codex",
-  "note": "릴레이 자동 저장 (codex-luna 작업분)",
+  "agent": "claude",
+  "note": "릴레이 자동 저장 (claude 작업분)",
   "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 66,
   "branch": "main",
-  "commit": "84b2c6b wip: 릴레이 자동 저장 (codex-luna 작업분)",
+  "commit": "ac442c3 wip: 릴레이 자동 저장 (claude 작업분)",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
