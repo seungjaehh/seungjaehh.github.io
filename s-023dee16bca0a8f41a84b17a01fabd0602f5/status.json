@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T15:55:29Z",
+  "updated": "2026-09-18T17:08:03Z",
   "state": "progress",
-  "agent": "claude",
-  "note": "낙하 안전망이 실제로 죽었다. 1초 주기 + 임계값 -150 + 파괴 높이 -500 조합으로는 낙하 속도를 못 이긴다(중력 196.2에서 -150 통과 시 이미 242 stud/s, 다음 검사까지 350스터드 추가 낙하해 파괴 높이를 지나친다). Heartbeat 매 프레임 검사, 임계값 -60, 파괴 높이 -5000으로 바꿨다. 섬 색도 실제로 구분이 안 됐다(상판 RGB 차이 20 미만). 색상환 8등분으로 바꾸고 등과 결정에도 같은 색을 태웠다. 상판 색 최소 거리 45를 강제하는 회귀 테스트 추가. 테스트 82 -> 83",
-  "next": "플레이 재확인: 떨어져도 안 죽는지, 섬 색이 구분되는지, 이벤트 카운트다운",
+  "agent": "codex",
+  "note": "릴레이 자동 저장 (codex-luna 작업분)",
+  "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 83,
   "branch": "main",
-  "commit": "4959adb wip: 낙하 안전망이 실제로 죽었다. 1초 주기 + 임계값 -150 + 파괴 높이 -500 조합으로는 낙하 속도를 못 이긴다(중력 196.2에서 -150 통과 시 이미 242 stud/s, 다음 검사까지 350스터드 추가 낙하해 파괴 높이를 지나친다). Heartbeat 매 프레임 검사, 임계값 -60, 파괴 높이 -5000으로 바꿨다. 섬 색도 실제로 구분이 안 됐다(상판 RGB 차이 20 미만). 색상환 8등분으로 바꾸고 등과 결정에도 같은 색을 태웠다. 상판 색 최소 거리 45를 강제하는 회귀 테스트 추가. 테스트 82 -> 83",
+  "commit": "cc8f29e wip: 릴레이 자동 저장 (codex-luna 작업분)",
   "milestone": {
     "current": "C 콘텐츠 대기열",
     "reference": "docs/BACKLOG.md",
@@ -56,32 +56,32 @@
     ]
   },
   "relay": {
-    "running": false,
-    "runningSince": null,
-    "nextRun": "2026-09-19T02:00:00",
+    "running": true,
+    "runningSince": "2026-09-19T02:00:02",
+    "nextRun": "2026-09-19T04:00:00",
     "cycles": 28,
     "runners": [
       {
         "name": "claude",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-19T00:06:39"
       },
       {
         "name": "codex-astra-low",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-19T00:09:03"
       },
       {
         "name": "codex-luna",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-18T22:02:35"
+        "lastRun": "2026-09-19T02:07:59"
       },
       {
         "name": "codex-astra-high",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": null
       }
