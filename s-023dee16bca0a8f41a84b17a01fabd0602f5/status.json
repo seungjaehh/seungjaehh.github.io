@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T11:05:23Z",
-  "state": "progress",
+  "updated": "2026-09-18T11:32:42Z",
+  "state": "done",
   "agent": "claude",
-  "note": "릴레이 자동 저장 (claude 작업분)",
-  "next": "docs/BACKLOG.md 다음 항목",
+  "note": "이벤트 표시를 독립 라벨(eventLine)로 분리. 생산 텍스트에 이어붙이면 줄바꿈이 잘려 안 보였다. 레이아웃 전체 재배치(패널 336, 겹침 없음 검증). B2 밸런스 시뮬 실행·해석 완료 -> docs/BALANCE.md",
+  "next": "Codex 화면 제어로 Studio Play UI 검증",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 66,
   "branch": "main",
-  "commit": "c40acbf wip: 由대젅???먮룞 ???(claude ?묒뾽遺?",
+  "commit": "2abc79e chore(checkpoint): 이벤트 표시를 독립 라벨(eventLine)로 분리. 생산 텍스트에 이어붙이면 줄바꿈이 잘려 안 보였다. 레이아웃 전체 재배치(패널 336, 겹침 없음 검증). B2 밸런스 시뮬 실행·해석 완료 -> docs/BALANCE.md",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
