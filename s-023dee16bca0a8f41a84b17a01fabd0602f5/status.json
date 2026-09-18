@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T10:24:30Z",
+  "updated": "2026-09-18T10:35:36Z",
   "state": "done",
   "agent": "claude",
-  "note": "진행 저장. 19:22 세션이 미게시 로컬 파일(placeid 0)이라 PREVIEW 모드로 떠서 새 프로필로 보인 것. 실제 DataStore 데이터는 안전. 재발 방지 기록을 VALIDATION/STATUS에 추가",
-  "next": "사용자: 게시된 테스트 장소(81654860396195)에서 Stop->Play로 기계 4대·레벨 복원 확인",
+  "note": "M2 완료 확정(게시된 장소 실제 DataStore에서 v2 저장·복원 확인). A4 사람 교차검토 완료. 대기열을 B(교차검증·밸런스 해석·이벤트 연결·모바일 UI·부하)로 전환",
+  "next": "릴레이가 B1(A5·A6·A7 교차 검증)부터 진행",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 66,
   "branch": "main",
-  "commit": "fa68d7c chore(checkpoint): 진행 저장. 19:22 세션이 미게시 로컬 파일(placeid 0)이라 PREVIEW 모드로 떠서 새 프로필로 보인 것. 실제 DataStore 데이터는 안전. 재발 방지 기록을 VALIDATION/STATUS에 추가",
+  "commit": "cd7a4ec chore(checkpoint): M2 완료 확정(게시된 장소 실제 DataStore에서 v2 저장·복원 확인). A4 사람 교차검토 완료. 대기열을 B(교차검증·밸런스 해석·이벤트 연결·모바일 UI·부하)로 전환",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
