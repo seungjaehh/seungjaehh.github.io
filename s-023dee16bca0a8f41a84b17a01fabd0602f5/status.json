@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T12:17:48Z",
+  "updated": "2026-09-18T12:24:39Z",
   "state": "done",
   "agent": "claude",
-  "note": "C1 슬롯 해금 구현: 슬롯 1개로 시작해 4/6/12로 코인 해금(400/3000/25000). 슬롯 좌표 12개로 확장하되 기존 1~4는 유지. UnlockSlot 명령, 서버 가격 재검증, 격자 UI(12개도 터치 가능). 저장 스키마 변경 없음. 테스트 69 -> 72",
-  "next": "C2 기계 2종 추가",
+  "note": "부유섬 외형 추가(Codex 작성, 사람 수정). 바닥+트림4+암석4층+기둥4, 섬당 14파트. Codex가 Cylinder의 Size.X가 축 길이인 것을 놓쳐 암석이 높이 32 기둥이 되어 바닥을 뚫었다. Size 순서를 (두께,지름,지름)으로 고쳐 -0.5~-13 연속 테이퍼로 맞춤",
+  "next": "Studio에서 섬 외형 확인. 릴레이는 C2(기계 2종)",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 72,
   "branch": "main",
-  "commit": "579cefa chore(checkpoint): C1 슬롯 해금 구현: 슬롯 1개로 시작해 4/6/12로 코인 해금(400/3000/25000). 슬롯 좌표 12개로 확장하되 기존 1~4는 유지. UnlockSlot 명령, 서버 가격 재검증, 격자 UI(12개도 터치 가능). 저장 스키마 변경 없음. 테스트 69 -> 72",
+  "commit": "1fca3f7 chore(checkpoint): 부유섬 외형 추가(Codex 작성, 사람 수정). 바닥+트림4+암석4층+기둥4, 섬당 14파트. Codex가 Cylinder의 Size.X가 축 길이인 것을 놓쳐 암석이 높이 32 기둥이 되어 바닥을 뚫었다. Size 순서를 (두께,지름,지름)으로 고쳐 -0.5~-13 연속 테이퍼로 맞춤",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
