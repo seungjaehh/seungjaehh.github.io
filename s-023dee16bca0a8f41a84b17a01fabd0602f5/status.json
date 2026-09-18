@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T14:50:17Z",
+  "updated": "2026-09-18T15:06:45Z",
   "state": "progress",
   "agent": "claude",
-  "note": "낙하 안전망과 다음 목표 HUD. 고리 중앙이 허공이라 섬을 못 받거나 스폰이 빗나가면 무한 낙하였다. 중앙 광장(지름 60)에 실제 바닥과 중립 스폰을 놓고, y<-150으로 떨어진 캐릭터를 죽이지 않고 제 섬으로 되돌린다. 목표 HUD는 서버가 후보(새 종류/슬롯 해금/업그레이드) 중 지금 못 사는 가장 싼 것을 고르고 수금 안 한 생산도 잔액에 넣는다. 놓을 자리가 없으면 구매를 목표로 내놓지 않는다. 테스트 76 -> 82",
-  "next": "플레이 화면 검증: 이벤트 카운트다운, 낙하 복귀, 중앙 광장 스폰",
+  "note": "릴레이 자동 저장 (claude 작업분)",
+  "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 82,
   "branch": "main",
-  "commit": "28d264b wip: 낙하 안전망과 다음 목표 HUD. 고리 중앙이 허공이라 섬을 못 받거나 스폰이 빗나가면 무한 낙하였다. 중앙 광장(지름 60)에 실제 바닥과 중립 스폰을 놓고, y<-150으로 떨어진 캐릭터를 죽이지 않고 제 섬으로 되돌린다. 목표 HUD는 서버가 후보(새 종류/슬롯 해금/업그레이드) 중 지금 못 사는 가장 싼 것을 고르고 수금 안 한 생산도 잔액에 넣는다. 놓을 자리가 없으면 구매를 목표로 내놓지 않는다. 테스트 76 -> 82",
+  "commit": "5dd1e88 wip: 由대젅???먮룞 ???(claude ?묒뾽遺?",
   "milestone": {
     "current": "C 콘텐츠 대기열",
     "reference": "docs/BACKLOG.md",
@@ -56,32 +56,32 @@
     ]
   },
   "relay": {
-    "running": false,
-    "runningSince": null,
-    "nextRun": "2026-09-19T00:00:00",
+    "running": true,
+    "runningSince": "2026-09-19T00:00:03",
+    "nextRun": "2026-09-19T02:00:00",
     "cycles": 26,
     "runners": [
       {
         "name": "claude",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-18T20:05:19"
+        "lastRun": "2026-09-19T00:06:39"
       },
       {
         "name": "codex-astra-low",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-18T22:01:37"
       },
       {
         "name": "codex-luna",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-18T22:02:35"
       },
       {
         "name": "codex-astra-high",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": null
       }
