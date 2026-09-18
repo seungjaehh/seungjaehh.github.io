@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18T10:18:30Z",
+  "updated": "2026-09-18T10:24:30Z",
   "state": "done",
   "agent": "claude",
-  "note": "스키마 v2 실제 DataStore 쓰기 검증: Studio 로그에서 Rojo sync OK -> Profile ready -> Saved 3회, PREVIEW 없음, 오류 없음. v1->v2 승격이 실제 저장소에서 동작함을 확인. 재접속 복원만 남음",
-  "next": "사용자: Studio Stop -> Play로 기계 4대와 레벨 복원 확인",
+  "note": "진행 저장. 19:22 세션이 미게시 로컬 파일(placeid 0)이라 PREVIEW 모드로 떠서 새 프로필로 보인 것. 실제 DataStore 데이터는 안전. 재발 방지 기록을 VALIDATION/STATUS에 추가",
+  "next": "사용자: 게시된 테스트 장소(81654860396195)에서 Stop->Play로 기계 4대·레벨 복원 확인",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 66,
   "branch": "main",
-  "commit": "2d6443a chore(checkpoint): 스키마 v2 실제 DataStore 쓰기 검증: Studio 로그에서 Rojo sync OK -> Profile ready -> Saved 3회, PREVIEW 없음, 오류 없음. v1->v2 승격이 실제 저장소에서 동작함을 확인. 재접속 복원만 남음",
+  "commit": "fa68d7c chore(checkpoint): 진행 저장. 19:22 세션이 미게시 로컬 파일(placeid 0)이라 PREVIEW 모드로 떠서 새 프로필로 보인 것. 실제 DataStore 데이터는 안전. 재발 방지 기록을 VALIDATION/STATUS에 추가",
   "milestone": {
     "current": "M2 성장 기반",
     "reference": "docs/GAME_DESIGN.md 10절",
