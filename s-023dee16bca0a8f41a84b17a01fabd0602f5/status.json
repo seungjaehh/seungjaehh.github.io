@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T14:05:15Z",
+  "updated": "2026-09-19T15:13:22Z",
   "state": "progress",
-  "agent": "codex",
-  "note": "릴레이 67회차 종료. 마지막 실행: codex-luna",
-  "next": "docs/CHECKPOINT.md 참고",
-  "verify": "릴레이 로그: work/relay/relay.log",
+  "agent": "claude",
+  "note": "분담이 실제로 맞물렸다. Codex가 StormHarvester/VoidWarden 리그를 렌더러에 넣었고(자기 범위), 나는 정의 쪽을 이었다(내 범위) - 충돌 없이 합쳐졌다. 4번째 직업이 연금술사 리그를 색만 바꿔 쓰던 임시 상태를 끊고 전용 리그를 가리키게 했다. 5번째 직업 Void Warden(204800, 앞의 8배 간격을 이음)을 추가해 동료 11종이 됐다. 경제 값 가드 표에 승인 기록으로 등록했다. 패널 레이아웃이 계산식이라 상점이 3줄로 늘어도 UI가 자동으로 맞는다. 109개 테스트와 Build 통과",
+  "next": "화면 확인. 탐험 보상 수치",
+  "verify": "PASS (compile + tests + sourcemap)",
   "tests": 109,
   "branch": "main",
-  "commit": "fdec883 wip: 由대젅???먮룞 ???(codex-luna ?묒뾽遺?",
+  "commit": "3c90499 wip: 분담이 실제로 맞물렸다. Codex가 StormHarvester/VoidWarden 리그를 렌더러에 넣었고(자기 범위), 나는 정의 쪽을 이었다(내 범위) - 충돌 없이 합쳐졌다. 4번째 직업이 연금술사 리그를 색만 바꿔 쓰던 임시 상태를 끊고 전용 리그를 가리키게 했다. 5번째 직업 Void Warden(204800, 앞의 8배 간격을 이음)을 추가해 동료 11종이 됐다. 경제 값 가드 표에 승인 기록으로 등록했다. 패널 레이아웃이 계산식이라 상점이 3줄로 늘어도 UI가 자동으로 맞는다. 109개 테스트와 Build 통과",
   "milestone": {
     "current": "N. NPC 동료 전환",
     "reference": "docs/BACKLOG.md",
@@ -216,27 +216,27 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-19T23:00:05",
-    "nextRun": "2026-09-19T23:30:00",
+    "runningSince": "2026-09-19T23:30:03",
+    "nextRun": "2026-09-20T00:30:00",
     "cycles": 67,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-19T23:02:05"
+        "lastRun": "2026-09-20T00:12:55"
       },
       {
         "name": "codex-astra-low",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-19T23:03:43"
+        "state": "cooldown",
+        "resetAt": "2026-09-20T00:30:39",
+        "lastRun": "2026-09-19T23:30:12"
       },
       {
         "name": "codex-luna",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-19T23:05:08"
+        "state": "cooldown",
+        "resetAt": "2026-09-20T00:30:46",
+        "lastRun": "2026-09-19T23:30:39"
       },
       {
         "name": "codex-astra-high",
