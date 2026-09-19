@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T01:56:25Z",
+  "updated": "2026-09-19T03:01:21Z",
   "state": "progress",
-  "agent": "claude",
-  "note": "N6 자동화 가능한 부분. 8명x12동료 최대 상태에서 리그 수명/파트 예산/재렌더 비용/퇴장 정리/재접속 복원을 재는 테스트 추가(94개). mutation으로 실제로 무는 것을 확인했다. 모바일 실제 버그 수정: 패널이 460px 고정이라 가로 모드 휴대폰(375~430px)에서 Collect 버튼과 저장 상태 줄이 화면 밖으로 밀려나 수금 자체가 불가능했다. 화면 높이에 맞추고 넘치면 스크롤하도록 바꿨고 노치 회피(DeviceSafeInsets)도 넣었다",
-  "next": "사람 확인: 죽는 위치 로그, 휴대폰에서 Collect 보이는지, 3직업 화면",
+  "agent": "codex",
+  "note": "릴레이 자동 저장 (codex-astra-low 작업분)",
+  "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 94,
   "branch": "main",
-  "commit": "67089e9 wip: N6 자동화 가능한 부분. 8명x12동료 최대 상태에서 리그 수명/파트 예산/재렌더 비용/퇴장 정리/재접속 복원을 재는 테스트 추가(94개). mutation으로 실제로 무는 것을 확인했다. 모바일 실제 버그 수정: 패널이 460px 고정이라 가로 모드 휴대폰(375~430px)에서 Collect 버튼과 저장 상태 줄이 화면 밖으로 밀려나 수금 자체가 불가능했다. 화면 높이에 맞추고 넘치면 스크롤하도록 바꿨고 노치 회피(DeviceSafeInsets)도 넣었다",
+  "commit": "f178ac7 wip: 릴레이 자동 저장 (codex-astra-low 작업분)",
   "milestone": {
     "current": "C 콘텐츠 대기열",
     "reference": "docs/BACKLOG.md",
@@ -56,32 +56,32 @@
     ]
   },
   "relay": {
-    "running": false,
-    "runningSince": null,
-    "nextRun": "2026-09-19T12:00:00",
+    "running": true,
+    "runningSince": "2026-09-19T12:00:02",
+    "nextRun": "2026-09-19T14:00:00",
     "cycles": 38,
     "runners": [
       {
         "name": "claude",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-19T10:04:59"
       },
       {
         "name": "codex-astra-low",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-19T08:05:29"
+        "lastRun": "2026-09-19T12:01:16"
       },
       {
         "name": "codex-luna",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-19T10:02:43"
       },
       {
         "name": "codex-astra-high",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": null
       }
