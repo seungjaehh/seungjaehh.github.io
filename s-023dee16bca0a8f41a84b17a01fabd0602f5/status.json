@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T01:05:03Z",
+  "updated": "2026-09-19T01:30:27Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 38회차 종료. 마지막 실행: codex-astra-low",
-  "next": "docs/CHECKPOINT.md 참고",
-  "verify": "릴레이 로그: work/relay/relay.log",
+  "note": "땅 구역 확장(승인: 시작 슬롯 1->3, 단계 3/6/9/12)이 NPC 리그 작업과 충돌 없이 합쳐진 것을 확인했다. api.render가 applyZones를 먼저 부르고 그 위에 직업별 리그를 세운다. 동기화 표식을 19d로 올려 화면 확인 때 무엇을 보고 있는지 구분되게 했다. 93개 테스트와 Build 통과. N2/N3/N4는 코드가 준비됐고 사람 화면 확인만 남았다",
+  "next": "사람 화면 확인 1회로 밀린 항목 전부 소화: 땅 구매, 낙하 복귀, 섬 색, 3직업 연출, 이벤트 카운트다운",
+  "verify": "PASS (compile + tests + sourcemap)",
   "tests": 93,
   "branch": "main",
-  "commit": "2714744 wip: 릴레이 자동 저장 (claude 작업분)",
+  "commit": "ad5ee75 wip: 땅 구역 확장(승인: 시작 슬롯 1->3, 단계 3/6/9/12)이 NPC 리그 작업과 충돌 없이 합쳐진 것을 확인했다. api.render가 applyZones를 먼저 부르고 그 위에 직업별 리그를 세운다. 동기화 표식을 19d로 올려 화면 확인 때 무엇을 보고 있는지 구분되게 했다. 93개 테스트와 Build 통과. N2/N3/N4는 코드가 준비됐고 사람 화면 확인만 남았다",
   "milestone": {
     "current": "C 콘텐츠 대기열",
     "reference": "docs/BACKLOG.md",
@@ -56,32 +56,32 @@
     ]
   },
   "relay": {
-    "running": true,
-    "runningSince": "2026-09-19T10:00:02",
+    "running": false,
+    "runningSince": null,
     "nextRun": "2026-09-19T12:00:00",
     "cycles": 38,
     "runners": [
       {
         "name": "claude",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T10:04:59"
       },
       {
         "name": "codex-astra-low",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T08:05:29"
       },
       {
         "name": "codex-luna",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T10:02:43"
       },
       {
         "name": "codex-astra-high",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": null
       }
