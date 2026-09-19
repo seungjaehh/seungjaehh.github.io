@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T11:32:51Z",
+  "updated": "2026-09-19T11:33:51Z",
   "state": "progress",
-  "agent": "claude",
-  "note": "릴레이 자동 저장 (claude 작업분)",
+  "agent": "codex",
+  "note": "릴레이 자동 저장 (codex-astra-low 작업분)",
   "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 96,
   "branch": "main",
-  "commit": "1febdc8 wip: 由대젅???먮룞 ???(claude ?묒뾽遺?",
+  "commit": "4ae9528 wip: 由대젅???먮룞 ???(codex-astra-low ?묒뾽遺?",
   "milestone": {
     "current": "N. NPC 동료 전환",
     "reference": "docs/BACKLOG.md",
@@ -112,7 +112,7 @@
         "id": "n5",
         "title": "등급·특성 프리뷰 카탈로그",
         "verified": "code",
-        "note": "프리뷰 전용. 실제 상점·경제에는 미등록"
+        "note": "프리뷰 전용. 가격은 사용자 결정으로 나중에 정한다 — 그때까지 상점·경제에 등록하지 않는다"
       },
       {
         "id": "n6auto",
@@ -166,9 +166,9 @@
       },
       {
         "id": "n6",
-        "title": "N6 실기기 측정과 경제 승인",
+        "title": "N6 실기기 측정",
         "status": "now",
-        "hint": "자동 측정은 통과. 저사양 휴대폰 프레임·터치와 N5 가격 승인이 남았다."
+        "hint": "자동 측정은 통과. 저사양 휴대폰 프레임·터치 실측만 남았다. 등급 가격은 사용자 결정으로 나중에 정하기로 해 더 이상 차단 요소가 아니다."
       },
       {
         "id": "island1",
@@ -200,7 +200,7 @@
     "running": true,
     "runningSince": "2026-09-19T20:30:03",
     "nextRun": "2026-09-19T21:00:00",
-    "cycles": 49,
+    "cycles": 50,
     "runners": [
       {
         "name": "claude",
@@ -212,7 +212,7 @@
         "name": "codex-astra-low",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-19T20:03:06"
+        "lastRun": "2026-09-19T20:33:48"
       },
       {
         "name": "codex-luna",
