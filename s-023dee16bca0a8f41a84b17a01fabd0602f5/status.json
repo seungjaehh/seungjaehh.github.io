@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T13:04:14Z",
+  "updated": "2026-09-19T13:06:09Z",
   "state": "progress",
   "agent": "codex",
-  "note": "릴레이 자동 저장 (codex-astra-low 작업분)",
+  "note": "릴레이 자동 저장 (codex-luna 작업분)",
   "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 105,
   "branch": "main",
-  "commit": "47d25a3 wip: 由대젅???먮룞 ???(codex-astra-low ?묒뾽遺?",
+  "commit": "b284880 wip: 由대젅???먮룞 ???(codex-luna ?묒뾽遺?",
   "milestone": {
     "current": "N. NPC 동료 전환",
     "reference": "docs/BACKLOG.md",
@@ -212,7 +212,7 @@
     "running": true,
     "runningSince": "2026-09-19T22:00:03",
     "nextRun": "2026-09-19T22:30:00",
-    "cycles": 59,
+    "cycles": 60,
     "runners": [
       {
         "name": "claude",
@@ -230,7 +230,7 @@
         "name": "codex-luna",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-19T21:33:51"
+        "lastRun": "2026-09-19T22:06:05"
       },
       {
         "name": "codex-astra-high",
