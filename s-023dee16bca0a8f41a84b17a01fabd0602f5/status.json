@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-19T13:06:09Z",
+  "updated": "2026-09-19T13:06:11Z",
   "state": "progress",
   "agent": "codex",
-  "note": "릴레이 자동 저장 (codex-luna 작업분)",
-  "next": "docs/BACKLOG.md 다음 항목",
-  "verify": "PASS (compile + tests + sourcemap)",
+  "note": "릴레이 61회차 종료. 마지막 실행: codex-luna",
+  "next": "docs/CHECKPOINT.md 참고",
+  "verify": "릴레이 로그: work/relay/relay.log",
   "tests": 105,
   "branch": "main",
   "commit": "b284880 wip: 由대젅???먮룞 ???(codex-luna ?묒뾽遺?",
@@ -212,7 +212,7 @@
     "running": true,
     "runningSince": "2026-09-19T22:00:03",
     "nextRun": "2026-09-19T22:30:00",
-    "cycles": 60,
+    "cycles": 61,
     "runners": [
       {
         "name": "claude",
