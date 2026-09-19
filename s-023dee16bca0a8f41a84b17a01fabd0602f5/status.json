@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19T18:48:32Z",
+  "updated": "2026-09-19T19:48:06Z",
   "state": "progress",
   "agent": "claude",
   "note": "릴레이 89회차 종료. 마지막 실행: claude",
@@ -184,27 +184,27 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-20T03:30:17",
-    "nextRun": "2026-09-20T04:00:00",
+    "runningSince": "2026-09-20T04:00:31",
+    "nextRun": "2026-09-20T05:00:00",
     "cycles": 89,
     "runners": [
       {
         "name": "claude",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-20T03:47:53"
+        "state": "cooldown",
+        "resetAt": "2026-09-20T05:07:45",
+        "lastRun": "2026-09-20T04:47:43"
       },
       {
         "name": "codex-astra-low",
         "state": "cooldown",
-        "resetAt": "2026-09-20T04:37:18",
-        "lastRun": "2026-09-20T03:36:41"
+        "resetAt": "2026-09-20T05:46:19",
+        "lastRun": "2026-09-20T04:45:39"
       },
       {
         "name": "codex-luna",
         "state": "cooldown",
-        "resetAt": "2026-09-20T04:37:35",
-        "lastRun": "2026-09-20T03:37:19"
+        "resetAt": "2026-09-20T05:46:54",
+        "lastRun": "2026-09-20T04:46:20"
       },
       {
         "name": "codex-astra-high",
