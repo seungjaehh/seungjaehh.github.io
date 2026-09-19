@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T11:42:18Z",
+  "updated": "2026-09-19T12:01:45Z",
   "state": "progress",
   "agent": "claude",
-  "note": "프로토타입 1차: 포탈과 탐험 섬과 이벤트 3종. 이 월드에는 갈 곳이 없었다 - 접속하면 제 섬에 놓이고 섬 사이가 173스터드 허공이라 고리로 배치한 의미가 없었다. 포탈로 섬<->광장<->탐험 섬을 잇는다. 탐험은 동료를 보내는 방식이 아니라 플레이어가 직접 가는 장소로 만들었다. 동료를 보내려면 생산을 멈추고(정산 실수 시 돈이 사라진다) 귀환 시각을 저장해야 하는데(스키마 v3, 금지) 프로토타입에서 그 둘을 감당할 이유가 없다. 결정을 주우면 보상, 30초 후 재생성, 통화 상한에 닿으면 결정을 남긴다. 이벤트는 3종이 UTC 구간으로 순환하고 배수는 전부 동일하다(하나만 올리면 그 순간 경제가 바뀐다). 하늘도 종류마다 다르다. 테스트 96 -> 99",
-  "next": "2단계 광산 단구. 포탈/탐험 화면 확인",
+  "note": "릴레이 자동 저장 (claude 작업분)",
+  "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 99,
   "branch": "main",
-  "commit": "e0e1905 wip: 프로토타입 1차: 포탈과 탐험 섬과 이벤트 3종. 이 월드에는 갈 곳이 없었다 - 접속하면 제 섬에 놓이고 섬 사이가 173스터드 허공이라 고리로 배치한 의미가 없었다. 포탈로 섬<->광장<->탐험 섬을 잇는다. 탐험은 동료를 보내는 방식이 아니라 플레이어가 직접 가는 장소로 만들었다. 동료를 보내려면 생산을 멈추고(정산 실수 시 돈이 사라진다) 귀환 시각을 저장해야 하는데(스키마 v3, 금지) 프로토타입에서 그 둘을 감당할 이유가 없다. 결정을 주우면 보상, 30초 후 재생성, 통화 상한에 닿으면 결정을 남긴다. 이벤트는 3종이 UTC 구간으로 순환하고 배수는 전부 동일하다(하나만 올리면 그 순간 경제가 바뀐다). 하늘도 종류마다 다르다. 테스트 96 -> 99",
+  "commit": "934eb5b wip: 由대젅???먮룞 ???(claude ?묒뾽遺?",
   "milestone": {
     "current": "N. NPC 동료 전환",
     "reference": "docs/BACKLOG.md",
@@ -197,32 +197,32 @@
     ]
   },
   "relay": {
-    "running": false,
-    "runningSince": null,
-    "nextRun": "2026-09-19T21:00:00",
+    "running": true,
+    "runningSince": "2026-09-19T21:00:02",
+    "nextRun": "2026-09-19T21:30:00",
     "cycles": 52,
     "runners": [
       {
         "name": "claude",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-19T20:32:47"
+        "lastRun": "2026-09-19T21:01:39"
       },
       {
         "name": "codex-astra-low",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-19T20:33:48"
       },
       {
         "name": "codex-luna",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-19T20:34:48"
       },
       {
         "name": "codex-astra-high",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": null
       }
