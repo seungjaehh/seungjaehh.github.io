@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T12:33:56Z",
+  "updated": "2026-09-19T12:35:43Z",
   "state": "progress",
-  "agent": "codex",
-  "note": "릴레이 58회차 종료. 마지막 실행: codex-luna",
-  "next": "docs/CHECKPOINT.md 참고",
-  "verify": "릴레이 로그: work/relay/relay.log",
-  "tests": 99,
+  "agent": "claude",
+  "note": "개발용 초기화. Open Cloud 키가 없어 저장소에 직접 못 쓰므로 게임 안에서 초기화하는 경로를 만들었다. 프로필을 새 것과 같게 비우고 통화를 10만으로 둔다. 돈을 주는 코드라 두 겹으로 잠갔다: Commands는 options.allowDevReset이 없으면 이 명령 자체가 존재하지 않고(기본 꺼짐), 허용 판정은 Studio이거나 장소 주인일 때만 참이다. 금액도 서버 설정에서만 읽어 클라이언트가 숫자를 부를 수 없다. 버튼 숨김은 화면 정리일 뿐 방어가 아니라는 것을 주석에 적었다. 기본 거부/타인 거부/클라이언트 금액 무시/저장 복원을 테스트했다. 99 -> 101",
+  "next": "낙하 사망 좌표",
+  "verify": "PASS (compile + tests + sourcemap)",
+  "tests": 101,
   "branch": "main",
-  "commit": "ebdc770 wip: 由대젅???먮룞 ???(codex-luna ?묒뾽遺?",
+  "commit": "928a837 wip: 개발용 초기화. Open Cloud 키가 없어 저장소에 직접 못 쓰므로 게임 안에서 초기화하는 경로를 만들었다. 프로필을 새 것과 같게 비우고 통화를 10만으로 둔다. 돈을 주는 코드라 두 겹으로 잠갔다: Commands는 options.allowDevReset이 없으면 이 명령 자체가 존재하지 않고(기본 꺼짐), 허용 판정은 Studio이거나 장소 주인일 때만 참이다. 금액도 서버 설정에서만 읽어 클라이언트가 숫자를 부를 수 없다. 버튼 숨김은 화면 정리일 뿐 방어가 아니라는 것을 주석에 적었다. 기본 거부/타인 거부/클라이언트 금액 무시/저장 복원을 테스트했다. 99 -> 101",
   "milestone": {
     "current": "N. NPC 동료 전환",
     "reference": "docs/BACKLOG.md",
@@ -203,32 +203,32 @@
     ]
   },
   "relay": {
-    "running": true,
-    "runningSince": "2026-09-19T21:30:02",
+    "running": false,
+    "runningSince": null,
     "nextRun": "2026-09-19T22:00:00",
     "cycles": 58,
     "runners": [
       {
         "name": "claude",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T21:32:02"
       },
       {
         "name": "codex-astra-low",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T21:33:08"
       },
       {
         "name": "codex-luna",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T21:33:51"
       },
       {
         "name": "codex-astra-high",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": null
       }
