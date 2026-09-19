@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T13:27:25Z",
+  "updated": "2026-09-19T13:35:31Z",
   "state": "progress",
   "agent": "claude",
-  "note": "자율 루프 점검. 내가 직접 가장 위험하다고 표시한 상점 3줄 레이아웃을 좌표로 검산했더니 실제로 어긋나 있었다 - 상태 줄을 unlockY+148에 두었는데 Collect가 +98에서 끝나 50px가 빈 채로 버려지고 패널만 길어져 휴대폰에서 불필요한 스크롤이 생겼다. 이동 모드 토글 아래로 슬롯 힌트 글씨가 깔리는 것도 같이 고쳤다. 근본 원인은 좌표를 눈으로 더한 것이고 이번이 세 번째다(개발 버튼이 캔버스 바닥에 걸친 것, 상점 3줄로 아래가 밀린 것, 이번 50px). 계산을 src/shared/PanelLayout.luau 순수 함수로 빼고 클라이언트가 그것만 쓰게 했다. 테스트가 동료 1~24종 모든 경우에 대해 겹침 없음과 캔버스가 마지막 요소를 덮되 남기지 않음을 검사한다. 107 -> 108",
-  "next": "화면 확인. 다음 자율 점검에서 남은 큐 확인",
+  "note": "릴레이 자동 저장 (claude 작업분)",
+  "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 108,
   "branch": "main",
-  "commit": "e7796d5 wip: 자율 루프 점검. 내가 직접 가장 위험하다고 표시한 상점 3줄 레이아웃을 좌표로 검산했더니 실제로 어긋나 있었다 - 상태 줄을 unlockY+148에 두었는데 Collect가 +98에서 끝나 50px가 빈 채로 버려지고 패널만 길어져 휴대폰에서 불필요한 스크롤이 생겼다. 이동 모드 토글 아래로 슬롯 힌트 글씨가 깔리는 것도 같이 고쳤다. 근본 원인은 좌표를 눈으로 더한 것이고 이번이 세 번째다(개발 버튼이 캔버스 바닥에 걸친 것, 상점 3줄로 아래가 밀린 것, 이번 50px). 계산을 src/shared/PanelLayout.luau 순수 함수로 빼고 클라이언트가 그것만 쓰게 했다. 테스트가 동료 1~24종 모든 경우에 대해 겹침 없음과 캔버스가 마지막 요소를 덮되 남기지 않음을 검사한다. 107 -> 108",
+  "commit": "9ddd16a wip: 由대젅???먮룞 ???(claude ?묒뾽遺?",
   "milestone": {
     "current": "N. NPC 동료 전환",
     "reference": "docs/BACKLOG.md",
@@ -215,32 +215,32 @@
     ]
   },
   "relay": {
-    "running": false,
-    "runningSince": null,
-    "nextRun": "2026-09-19T22:30:00",
+    "running": true,
+    "runningSince": "2026-09-19T22:30:02",
+    "nextRun": "2026-09-19T23:00:00",
     "cycles": 61,
     "runners": [
       {
         "name": "claude",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-19T22:02:05"
+        "lastRun": "2026-09-19T22:35:24"
       },
       {
         "name": "codex-astra-low",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-19T22:04:10"
       },
       {
         "name": "codex-luna",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-19T22:06:05"
       },
       {
         "name": "codex-astra-high",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": null
       }
