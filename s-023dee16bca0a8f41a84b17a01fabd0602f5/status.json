@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T11:34:52Z",
+  "updated": "2026-09-19T11:35:47Z",
   "state": "progress",
-  "agent": "codex",
-  "note": "릴레이 52회차 종료. 마지막 실행: codex-luna",
-  "next": "docs/CHECKPOINT.md 참고",
-  "verify": "릴레이 로그: work/relay/relay.log",
+  "agent": "claude",
+  "note": "정사각형 자국 제거. TrimA~D 네 파트가 상판 위에 네모 테두리를 그리고 있었다. 상판이 네모 한 장이던 시절 가장자리를 만들어주던 장치인데, 구역을 단계별 섬으로 바꾸기 시작하면서 남은 것은 바닥에 그어진 사각형 자국뿐이었고 집 구역이 둥글어진 뒤로 특히 어긋나 보였다. 가장자리는 아래 암석 테이퍼가 이미 그린다. 그리고 가격 결정을 나중으로 미루는 사용자 결정을 BACKLOG의 사람 확인 목록에서 차단 요소가 아니라고 명시했다. 무인 회차가 이 승인을 기다리며 정지하는 것을 막기 위해서다. 96개 테스트와 Build 통과",
+  "next": "2단계 광산 단구. 모든 구역의 바닥 높이는 같아야 하므로(render가 고정 높이에 기계를 놓는다) 단구는 암벽과 광맥으로 표현한다",
+  "verify": "PASS (compile + tests + sourcemap)",
   "tests": 96,
   "branch": "main",
-  "commit": "f5fa331 wip: 由대젅???먮룞 ???(codex-luna ?묒뾽遺?",
+  "commit": "55dd1ae wip: 정사각형 자국 제거. TrimA~D 네 파트가 상판 위에 네모 테두리를 그리고 있었다. 상판이 네모 한 장이던 시절 가장자리를 만들어주던 장치인데, 구역을 단계별 섬으로 바꾸기 시작하면서 남은 것은 바닥에 그어진 사각형 자국뿐이었고 집 구역이 둥글어진 뒤로 특히 어긋나 보였다. 가장자리는 아래 암석 테이퍼가 이미 그린다. 그리고 가격 결정을 나중으로 미루는 사용자 결정을 BACKLOG의 사람 확인 목록에서 차단 요소가 아니라고 명시했다. 무인 회차가 이 승인을 기다리며 정지하는 것을 막기 위해서다. 96개 테스트와 Build 통과",
   "milestone": {
     "current": "N. NPC 동료 전환",
     "reference": "docs/BACKLOG.md",
@@ -197,32 +197,32 @@
     ]
   },
   "relay": {
-    "running": true,
-    "runningSince": "2026-09-19T20:30:03",
+    "running": false,
+    "runningSince": null,
     "nextRun": "2026-09-19T21:00:00",
     "cycles": 52,
     "runners": [
       {
         "name": "claude",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T20:32:47"
       },
       {
         "name": "codex-astra-low",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T20:33:48"
       },
       {
         "name": "codex-luna",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T20:34:48"
       },
       {
         "name": "codex-astra-high",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": null
       }
