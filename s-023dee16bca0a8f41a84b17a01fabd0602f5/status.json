@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T11:04:39Z",
+  "updated": "2026-09-19T11:32:51Z",
   "state": "progress",
-  "agent": "codex",
-  "note": "릴레이 49회차 종료. 마지막 실행: codex-luna",
-  "next": "docs/CHECKPOINT.md 참고",
-  "verify": "릴레이 로그: work/relay/relay.log",
+  "agent": "claude",
+  "note": "릴레이 자동 저장 (claude 작업분)",
+  "next": "docs/BACKLOG.md 다음 항목",
+  "verify": "PASS (compile + tests + sourcemap)",
   "tests": 96,
   "branch": "main",
-  "commit": "c9e3ed8 wip: 由대젅???먮룞 ???(codex-luna ?묒뾽遺?",
+  "commit": "1febdc8 wip: 由대젅???먮룞 ???(claude ?묒뾽遺?",
   "milestone": {
     "current": "N. NPC 동료 전환",
     "reference": "docs/BACKLOG.md",
@@ -198,15 +198,15 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-19T20:00:03",
-    "nextRun": "2026-09-19T20:30:00",
+    "runningSince": "2026-09-19T20:30:03",
+    "nextRun": "2026-09-19T21:00:00",
     "cycles": 49,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-19T20:02:03"
+        "lastRun": "2026-09-19T20:32:47"
       },
       {
         "name": "codex-astra-low",
