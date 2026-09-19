@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T10:46:35Z",
+  "updated": "2026-09-19T11:02:08Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 공백을 줄였다. 회차 안에서는 원래 대기가 없었고(한 에이전트 종료 1초 뒤 다음 러너 시작) 공백은 회차 사이 2시간이었다. 트리거를 30분으로 줄이고 한 실행당 왕복을 2->3회로 늘렸다. MultipleInstances=IgnoreNew라 실행 중이면 새 신호는 무시되므로 30분마다 새로 도는 것이 아니라 놀고 있을 때만 다시 시작한다. ExecutionTimeLimit을 2->4시간으로 올려 MaxCycles x AgentTimeout(135분)이 제한을 넘지 않게 맞췄다. 이 관계가 깨지면 커밋 전에 강제 종료되어 회차 작업이 통째로 버려진다",
-  "next": "화면 확인 대기 중이라 당분간은 무인 회차가 할 일이 적다",
+  "note": "릴레이 자동 저장 (claude 작업분)",
+  "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 96,
   "branch": "main",
-  "commit": "8c2dcb5 wip: 릴레이 공백을 줄였다. 회차 안에서는 원래 대기가 없었고(한 에이전트 종료 1초 뒤 다음 러너 시작) 공백은 회차 사이 2시간이었다. 트리거를 30분으로 줄이고 한 실행당 왕복을 2->3회로 늘렸다. MultipleInstances=IgnoreNew라 실행 중이면 새 신호는 무시되므로 30분마다 새로 도는 것이 아니라 놀고 있을 때만 다시 시작한다. ExecutionTimeLimit을 2->4시간으로 올려 MaxCycles x AgentTimeout(135분)이 제한을 넘지 않게 맞췄다. 이 관계가 깨지면 커밋 전에 강제 종료되어 회차 작업이 통째로 버려진다",
+  "commit": "4536165 wip: 由대젅???먮룞 ???(claude ?묒뾽遺?",
   "milestone": {
     "current": "N. NPC 동료 전환",
     "reference": "docs/BACKLOG.md",
@@ -197,32 +197,32 @@
     ]
   },
   "relay": {
-    "running": false,
-    "runningSince": null,
-    "nextRun": "2026-09-19T20:00:00",
+    "running": true,
+    "runningSince": "2026-09-19T20:00:03",
+    "nextRun": "2026-09-19T20:30:00",
     "cycles": 46,
     "runners": [
       {
         "name": "claude",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-19T16:02:09"
+        "lastRun": "2026-09-19T20:02:03"
       },
       {
         "name": "codex-astra-low",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-19T18:01:10"
       },
       {
         "name": "codex-luna",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": "2026-09-19T18:02:04"
       },
       {
         "name": "codex-astra-high",
-        "state": "ready",
+        "state": "idle",
         "resetAt": null,
         "lastRun": null
       }
