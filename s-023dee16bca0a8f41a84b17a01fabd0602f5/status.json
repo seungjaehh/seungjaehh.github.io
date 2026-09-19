@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-19T09:02:09Z",
+  "updated": "2026-09-19T09:17:07Z",
   "state": "progress",
-  "agent": "codex",
-  "note": "릴레이 46회차 종료. 마지막 실행: claude",
-  "next": "docs/CHECKPOINT.md 참고",
-  "verify": "릴레이 로그: work/relay/relay.log",
+  "agent": "claude",
+  "note": "안 산 땅이 열려 보인다는 보고. 원인: applyZones 주석에는 '안 산 땅은 회색으로 둔다'고 써놓고 실제로 색을 바꾸는 코드가 없었다. 섬 색 그대로에 투명도만 0.75라 그냥 땅으로 보였다. 잠긴 땅을 차가운 청회색 + ForceField 재질로 바꿔 밟을 수 없다는 것이 재질만 보고도 읽히게 했다. 표지 문구도 한국어로. 재질/투명도 회귀 검사를 규모 테스트에 추가했다(색은 이 하네스가 전부 같은 객체라 검사 불가). 94개 테스트와 Build 통과",
+  "next": "슬롯 버튼이 12개면 옛 저장본이라 땅이 이미 제 것이 맞다. 새 프로필은 로컬 프리뷰에서 확인",
+  "verify": "PASS (compile + tests + sourcemap)",
   "tests": 94,
   "branch": "main",
-  "commit": "99b93d1 wip: 릴레이 자동 저장 (codex-luna 작업분)",
+  "commit": "6d8c8ac wip: 안 산 땅이 열려 보인다는 보고. 원인: applyZones 주석에는 '안 산 땅은 회색으로 둔다'고 써놓고 실제로 색을 바꾸는 코드가 없었다. 섬 색 그대로에 투명도만 0.75라 그냥 땅으로 보였다. 잠긴 땅을 차가운 청회색 + ForceField 재질로 바꿔 밟을 수 없다는 것이 재질만 보고도 읽히게 했다. 표지 문구도 한국어로. 재질/투명도 회귀 검사를 규모 테스트에 추가했다(색은 이 하네스가 전부 같은 객체라 검사 불가). 94개 테스트와 Build 통과",
   "milestone": {
     "current": "C 콘텐츠 대기열",
     "reference": "docs/BACKLOG.md",
@@ -56,32 +56,32 @@
     ]
   },
   "relay": {
-    "running": true,
-    "runningSince": "2026-09-19T18:00:02",
+    "running": false,
+    "runningSince": null,
     "nextRun": "2026-09-19T20:00:00",
     "cycles": 46,
     "runners": [
       {
         "name": "claude",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T16:02:09"
       },
       {
         "name": "codex-astra-low",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T18:01:10"
       },
       {
         "name": "codex-luna",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": "2026-09-19T18:02:04"
       },
       {
         "name": "codex-astra-high",
-        "state": "idle",
+        "state": "ready",
         "resetAt": null,
         "lastRun": null
       }
