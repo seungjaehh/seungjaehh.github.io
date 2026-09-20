@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T09:42:22Z",
+  "updated": "2026-09-20T10:25:18Z",
   "state": "progress",
   "agent": "claude",
   "note": "릴레이 128회차 종료. 마지막 실행: claude",
@@ -365,15 +365,15 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-20T18:00:02",
-    "nextRun": "2026-09-20T19:00:00",
+    "runningSince": "2026-09-20T19:00:03",
+    "nextRun": "2026-09-20T19:30:00",
     "cycles": 128,
     "runners": [
       {
         "name": "claude",
         "state": "cooldown",
-        "resetAt": "2026-09-20T19:02:21",
-        "lastRun": "2026-09-20T18:42:21"
+        "resetAt": "2026-09-20T19:45:12",
+        "lastRun": "2026-09-20T19:25:11"
       },
       {
         "name": "codex-astra-low",
