@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T11:47:35Z",
+  "updated": "2026-09-20T13:12:16Z",
   "state": "progress",
   "agent": "claude",
   "note": "릴레이 131회차 종료. 마지막 실행: claude",
@@ -7,7 +7,7 @@
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": 126,
   "branch": "main",
-  "commit": "5e24245 wip: 릴레이 자동 저장 (claude 작업분)",
+  "commit": "f19f8fe N16 완료: 광장 60 → 160과 그에 딸린 네 가지 (문서)",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -25,9 +25,9 @@
         {
           "zone": "지상",
           "name": "광장 + 개인섬 8",
-          "state": "작업 중",
-          "detail": "광장 지름 60 → 160 · 집 · 유물 전시 · 꾸미기",
-          "fit": "지금은 광장(60)이 개인섬 최대 지름(80)보다 작다"
+          "state": "광장 완료 (N16)",
+          "detail": "광장 지름 160 · 집 · 유물 전시 · 꾸미기(전시·꾸미기는 N20)",
+          "fit": "다리는 최대 단계 섬 기준 106 남는다. 160을 넘겨 키우면 고리 반지름부터 다시 잡아야 하고 테스트가 먼저 운다"
         },
         {
           "zone": "바다",
@@ -85,7 +85,7 @@
         "level": "med",
         "title": "Plots.luau 동시 수정",
         "detail": "N16·N17·N18이 전부 같은 파일을 건드린다. 병렬로 돌리면 충돌한다",
-        "fix": "N16 먼저, N17·N18은 N15 이후 순차"
+        "fix": "N16 완료로 파일이 풀렸다. N17이 다음이고, 잡는 세션이 혼자 써라"
       },
       {
         "level": "low",
@@ -95,9 +95,9 @@
       },
       {
         "level": "low",
-        "title": "낡은 주석",
-        "detail": "Plots.luau:151이 고리 반지름을 130.7로 적었으나 실제는 226.2다",
-        "fix": "N16에서 같이 고친다"
+        "title": "광장 상수를 따라오지 않는 값",
+        "detail": "광장 지름 하나에 다리 길이·스폰 자리·낙하 안전망 구역이 달려 있다. N16에서 셋 다 계산으로 바꿨지만, 새 장소(N17·N18)가 또 상수를 박으면 같은 일이 반복된다",
+        "fix": "장소 관련 숫자는 Plots/Portals가 내보내고 Main은 받아 쓴다. plots.plazaPlaceRadius가 그 본보기다"
       }
     ],
     "done": [
@@ -376,27 +376,27 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-20T20:30:04",
-    "nextRun": "2026-09-20T21:00:00",
+    "runningSince": "2026-09-20T21:30:03",
+    "nextRun": "2026-09-20T22:30:00",
     "cycles": 131,
     "runners": [
       {
         "name": "claude",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-20T20:47:26"
+        "state": "cooldown",
+        "resetAt": "2026-09-20T22:32:15",
+        "lastRun": "2026-09-20T22:12:14"
       },
       {
         "name": "codex-astra-low",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-20T19:47:03"
+        "state": "cooldown",
+        "resetAt": "2026-09-20T23:12:11",
+        "lastRun": "2026-09-20T22:12:07"
       },
       {
         "name": "codex-luna",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-20T19:47:11"
+        "state": "cooldown",
+        "resetAt": "2026-09-20T23:12:13",
+        "lastRun": "2026-09-20T22:12:11"
       },
       {
         "name": "codex-astra-high",
