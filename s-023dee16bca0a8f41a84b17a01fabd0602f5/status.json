@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T08:32:01Z",
+  "updated": "2026-09-20T09:42:22Z",
   "state": "progress",
   "agent": "claude",
   "note": "릴레이 128회차 종료. 마지막 실행: claude",
@@ -7,10 +7,87 @@
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": 115,
   "branch": "main",
-  "commit": "f4b60ce 사람이 직접 실행하는 런처 추가 (launch.cmd / launch.ps1)",
+  "commit": "aeacd48 chore: automaton 클론 관련 gitignore 항목 제거 (실험 종료, 로컬 파일 삭제됨)",
   "milestone": {
-    "current": "중간 점검 (2026-09-20)",
-    "reference": "STATUS.md",
+    "current": "구조 개편 (N15~N20)",
+    "reference": "README.md · STATUS.md",
+    "design": {
+      "title": "세 층 구조",
+      "why": "집을 업그레이드·꾸미면 생산 슬롯과 자리 싸움이 난다. 표현 공간과 생산 공간을 나눈다.",
+      "layers": [
+        {
+          "zone": "하늘",
+          "name": "작업장섬",
+          "state": "설계",
+          "detail": "8구역(4+4) · 중앙 통로 · 구역마다 3×3 슬롯",
+          "fit": "RING_SLOTS=8 ↔ 8구역이라 섬 번호=구역 번호. 배정 로직이 필요 없다"
+        },
+        {
+          "zone": "지상",
+          "name": "광장 + 개인섬 8",
+          "state": "작업 중",
+          "detail": "광장 지름 60 → 160 · 집 · 유물 전시 · 꾸미기",
+          "fit": "지금은 광장(60)이 개인섬 최대 지름(80)보다 작다"
+        },
+        {
+          "zone": "바다",
+          "name": "탐험섬",
+          "state": "설계",
+          "detail": "지상 채집 + 지하 동굴 · 유물 드랍",
+          "fit": "Y축으로 띄워야 낙하 안전망에 안 걸린다"
+        }
+      ],
+      "rules": [
+        "아무도 죽이지 않는다 — 낙하도 익사도 되돌린다",
+        "뽑기는 게임 내 재화로만. Robux 직접 구매 없음",
+        "중복은 퍼즐조각으로 전환. 수명(내구도)은 넣지 않는다",
+        "다른 섬은 개인섬에서 보이지 않는다 — 포탈 연출로 이동"
+      ]
+    },
+    "risks": [
+      {
+        "level": "high",
+        "title": "지하 ↔ 낙하 안전망 충돌",
+        "detail": "FALL_RESCUE_Y가 -60 하나뿐이다. 지하가 그보다 낮으면 동굴을 탐험하는 플레이어를 안전망이 계속 지상으로 끌어올린다. 지하 시스템 자체가 성립하지 않는다",
+        "fix": "N15에서 장소별 임계값으로 바꾸고, 탐험섬을 Y축으로 띄운다"
+      },
+      {
+        "level": "high",
+        "title": "MaxPlayers 미확인",
+        "detail": "RING_SLOTS=8인데 서버 정원이 확인된 적이 없다. 9명째가 들어오면 개인섬도 작업장 구역도 모자란다",
+        "fix": "Studio에서 확인. N17 전체가 이 값에 걸려 있다"
+      },
+      {
+        "level": "med",
+        "title": "복귀 지점이 둘뿐",
+        "detail": "rescue()가 plot.spawn 아니면 plaza.spawn으로만 되돌린다. 작업장섬에서 떨어지면 광장으로 가서 포탈을 다시 타야 한다",
+        "fix": "N15에서 장소별 앵커 추가"
+      },
+      {
+        "level": "med",
+        "title": "StreamingEnabled 미적용",
+        "detail": "섬이 3종이 되면 저사양 모바일에서 메모리를 넘긴다",
+        "fix": "개편과 함께 켜고 실기기로 확인"
+      },
+      {
+        "level": "med",
+        "title": "Plots.luau 동시 수정",
+        "detail": "N16·N17·N18이 전부 같은 파일을 건드린다. 병렬로 돌리면 충돌한다",
+        "fix": "N16 먼저, N17·N18은 N15 이후 순차"
+      },
+      {
+        "level": "low",
+        "title": "Rojo 포트 단일 점유",
+        "detail": "34872를 하나만 잡을 수 있어 여러 세션이 동시에 Validate를 돌리면 실패한다",
+        "fix": "검증 세션이 전담"
+      },
+      {
+        "level": "low",
+        "title": "낡은 주석",
+        "detail": "Plots.luau:151이 고리 반지름을 130.7로 적었으나 실제는 226.2다",
+        "fix": "N16에서 같이 고친다"
+      }
+    ],
     "done": [
       {
         "id": "m1",
@@ -128,125 +205,187 @@
         "id": "pads",
         "title": "번호 붙은 슬롯 거치대",
         "verified": "code",
-        "note": "12자리에 번호판. 잠김은 어둡고 번호 없음, 열림은 '비어 있음', 사용 중은 번호만. 판은 섬에 붙여 단계 교체에도 안 사라진다"
+        "note": "12자리에 번호판. 판은 섬에 붙여 단계 교체에도 안 사라진다"
       },
       {
         "id": "aura",
         "title": "등급 오라",
         "verified": "code",
-        "note": "일반 없음·희귀 보라·영웅 붉은색. 원반과 입자 둘. 없는 것이 기본이어야 있는 것이 눈에 띈다"
+        "note": "일반 없음·희귀 보라·영웅 붉은색. 없는 것이 기본이어야 있는 것이 눈에 띈다"
       },
       {
         "id": "visit",
         "title": "섬 목록과 방문",
         "verified": "code",
-        "note": "순자산 순위로 줄 세우고 누르면 그 섬으로 간다. 순위가 보여야 갈 이유가 생긴다. 대상은 서버가 다시 확인한다"
+        "note": "순자산 순위로 줄 세우고 누르면 그 섬으로 간다. 대상은 서버가 다시 확인한다"
       },
       {
         "id": "tutorial",
         "title": "첫 5분 안내",
         "verified": "code",
-        "note": "상점→자리→Collect를 한 번에 하나씩. 지금 누를 곳에 테두리를 켠다. 저장 안 함 — 상태로 매번 다시 판단한다"
+        "note": "상점→자리→Collect를 한 번에 하나씩. 저장 안 함 — 상태로 매번 다시 판단한다"
       },
       {
         "id": "landslot",
         "title": "땅과 자리 분리 (저장 스키마 v3)",
         "verified": "code",
-        "note": "큰 결제 한 번(땅)과 작은 결제 세 번(자리). 합계는 예전과 똑같이 맞춰 v2 승격에도 순자산이 안 변한다. 마이그레이션 무손실"
+        "note": "큰 결제 한 번(땅)과 작은 결제 세 번(자리). 마이그레이션 무손실"
       },
       {
         "id": "likes",
         "title": "섬 목록 좋아요",
         "verified": "code",
-        "note": "서버 인스턴스 한정 카운트라 저장 스키마를 안 건드린다. 자기 자신 불가, 같은 대상 1회"
+        "note": "서버 인스턴스 한정 카운트라 저장 스키마를 안 건드린다"
       },
       {
         "id": "bridge",
         "title": "광장-섬 다리",
         "verified": "code",
-        "note": "장식 전용. 섬 쪽 끝만 단계 반지름을 따라가 4단계에서 땅에 안 박힌다. 파트를 새로 안 만들어 재렌더는 여전히 공짜"
+        "note": "장식 전용. 섬 쪽 끝만 단계 반지름을 따라가 4단계에서 땅에 안 박힌다"
+      },
+      {
+        "id": "crystalmat",
+        "title": "탐험 결정을 업그레이드 재료로 (N14)",
+        "verified": "code",
+        "note": "결정으로만 살 수 있는 것이 생겨 탐험 섬에 갈 이유가 만들어졌다. 화면 확인은 남았다"
       },
       {
         "id": "relay",
         "title": "무인 릴레이",
         "verified": "code",
         "note": "30분 주기. Claude↔Codex 파일 범위 분담이 실제로 맞물렸다"
+      },
+      {
+        "id": "launcher",
+        "title": "사람 실행 런처",
+        "verified": "code",
+        "note": "무인 세션이 승인 게이트에 막히던 것을 우회. 출력이 work/logs/에 남아 다음 세션이 읽는다"
       }
     ],
     "steps": [
       {
-        "id": "play2",
-        "title": "2인 이상 동시 플레이 확인",
+        "id": "n15",
+        "title": "N15 낙하 안전망 장소별 분리",
         "status": "now",
-        "hint": "지금 가장 큰 미검증 구간. 충돌 차단·남의 섬 이름표·순자산 비교·포탈이 전부 여러 명을 전제로 만들어졌는데 한 번도 둘이서 돌려본 적이 없다."
+        "owner": "claude",
+        "hint": "선행조건. 임계값이 전 서버 공통 -60 하나뿐이라 새 장소를 먼저 만들면 만들자마자 고쳐야 한다. 복귀 지점도 장소별로 나눈다."
+      },
+      {
+        "id": "n16",
+        "title": "N16 광장 확대 60 → 160",
+        "status": "now",
+        "owner": "claude",
+        "hint": "지금 광장이 개인섬보다 작다. 다리 길이는 고리반지름(226.2) − 광장반지름이라 80까지 안전. 낡은 주석도 같이 고친다."
+      },
+      {
+        "id": "n19",
+        "title": "N19 퍼즐조각 뽑기",
+        "status": "todo",
+        "owner": "claude",
+        "hint": "중복은 조각으로 전환. 조각은 등급별 1종만 둔다 — 직업×등급으로 만들면 종류가 폭발한다. 게임 내 재화로만."
+      },
+      {
+        "id": "n17",
+        "title": "N17 작업장섬",
+        "status": "todo",
+        "owner": "claude",
+        "hint": "N15 이후. 난간+투명 배리어로 두르고 절벽은 쓰지 않는다 — 통로에서 남의 작업장이 보이는 것이 목적이다."
+      },
+      {
+        "id": "n18",
+        "title": "N18 탐험섬 재배치와 지하",
+        "status": "todo",
+        "owner": "claude",
+        "hint": "N15 이후. 바다 가운데 + Y축으로 띄움. 진짜 Terrain 물을 쓰되 익사는 만들지 않는다."
+      },
+      {
+        "id": "n20",
+        "title": "N20 유물 전시와 세트 보너스",
+        "status": "todo",
+        "owner": "claude",
+        "hint": "전시한 유물 조합이 생산 보너스. 탐험→유물→전시→방문·좋아요로 루프가 닫힌다."
+      },
+      {
+        "id": "n7",
+        "title": "N7 4·5번째 직업 리그 화면 확인",
+        "status": "review",
+        "owner": "codex",
+        "hint": "폭풍 포획사·공허 감시자가 다른 셋과 구분되는지."
+      },
+      {
+        "id": "maxplayers",
+        "title": "서버 MaxPlayers가 8인지 확인",
+        "status": "review",
+        "owner": "human",
+        "hint": "N17 전체가 이 값에 걸려 있다. Studio에서 확인."
+      },
+      {
+        "id": "play2",
+        "title": "2인 이상 동시 플레이",
+        "status": "review",
+        "owner": "human",
+        "hint": "가장 큰 미검증 구간. 충돌 차단·이름표·순위·포탈·방문·좋아요가 전부 여러 명을 전제로 만들어졌는데 한 번도 둘이서 안 돌렸다."
       },
       {
         "id": "phone",
         "title": "실제 휴대폰에서 한 판",
-        "status": "now",
+        "status": "review",
+        "owner": "human",
         "hint": "패널·터치·프레임. 자동 테스트가 대신하지 못한다."
       },
       {
         "id": "bug",
         "title": "낙하 사망 재확인",
         "status": "review",
-        "hint": "체력 되돌리기와 즉시 부활을 넣은 뒤 재보고가 없다. 원인은 끝내 확인되지 않았다."
-      },
-      {
-        "id": "rig45",
-        "title": "4·5번째 직업 화면 확인",
-        "status": "review",
-        "hint": "폭풍 포획사·공허 감시자 리그가 다른 셋과 구분되는지."
-      },
-      {
-        "id": "sound",
-        "title": "배경음과 효과음",
-        "status": "todo",
-        "hint": "지금 완전히 무음이다. 레이어 구조는 있고 SoundId가 비어 있다. 음원 권한 필요."
-      },
-      {
-        "id": "crystalmat",
-        "title": "탐험 결정을 업그레이드 재료로",
-        "status": "todo",
-        "hint": "지금 탐험은 돈만 준다. 돈은 동료가 더 잘 번다. 결정으로만 살 수 있는 것이 있어야 탐험 섬에 갈 이유가 생긴다."
+        "owner": "human",
+        "hint": "원인이 끝내 확인되지 않았다. N15가 같은 코드를 건드리므로 좌표가 있으면 함께 고칠 수 있다."
       },
       {
         "id": "lighting",
         "title": "Lighting.Technology → Future",
         "status": "review",
+        "owner": "human",
         "hint": "스크립트로 못 바꾸는 place 속성. Studio에서 직접."
+      },
+      {
+        "id": "sound",
+        "title": "배경음과 효과음",
+        "status": "todo",
+        "owner": "human",
+        "hint": "지금 완전히 무음이다. 레이어 구조는 있고 SoundId가 비어 있다. 음원 권한 필요."
       },
       {
         "id": "name",
         "title": "게임 이름·아이콘·썸네일",
         "status": "todo",
-        "hint": "게시 전에 필요하다. 힉스필드 $3 일회성이면 충분하다."
+        "owner": "human",
+        "hint": "게시 전에 필요하다."
       }
     ]
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-20T17:30:02",
-    "nextRun": "2026-09-20T18:00:00",
+    "runningSince": "2026-09-20T18:00:02",
+    "nextRun": "2026-09-20T19:00:00",
     "cycles": 128,
     "runners": [
       {
         "name": "claude",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-20T17:32:00"
+        "state": "cooldown",
+        "resetAt": "2026-09-20T19:02:21",
+        "lastRun": "2026-09-20T18:42:21"
       },
       {
         "name": "codex-astra-low",
         "state": "cooldown",
-        "resetAt": "2026-09-20T18:30:46",
-        "lastRun": "2026-09-20T17:30:43"
+        "resetAt": "2026-09-20T19:42:12",
+        "lastRun": "2026-09-20T18:42:07"
       },
       {
         "name": "codex-luna",
         "state": "cooldown",
-        "resetAt": "2026-09-20T18:30:49",
-        "lastRun": "2026-09-20T17:30:46"
+        "resetAt": "2026-09-20T19:42:19",
+        "lastRun": "2026-09-20T18:42:12"
       },
       {
         "name": "codex-astra-high",
