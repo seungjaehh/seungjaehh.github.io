@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-20T19:33:41Z",
+  "updated": "2026-09-20T20:21:49Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 146회차 종료. 마지막 실행: claude",
+  "note": "릴레이 147회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": null,
@@ -374,15 +374,15 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T04:30:02",
-    "nextRun": "2026-09-21T05:00:00",
-    "cycles": 146,
+    "runningSince": "2026-09-21T05:00:02",
+    "nextRun": "2026-09-21T05:30:00",
+    "cycles": 147,
     "runners": [
       {
         "name": "claude",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-21T04:33:40"
+        "state": "cooldown",
+        "resetAt": "2026-09-21T05:41:48",
+        "lastRun": "2026-09-21T05:21:48"
       },
       {
         "name": "codex-astra-low",
