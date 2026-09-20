@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-20T11:36:30Z",
+  "updated": "2026-09-20T11:47:32Z",
   "state": "progress",
   "agent": "claude",
   "note": "릴레이 자동 저장 (claude 작업분)",
   "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
-  "tests": 121,
+  "tests": 126,
   "branch": "main",
-  "commit": "5eaa76f wip: 릴레이 자동 저장 (claude 작업분)",
+  "commit": "5e24245 wip: 릴레이 자동 저장 (claude 작업분)",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -46,10 +46,10 @@
     },
     "risks": [
       {
-        "level": "high",
+        "level": "done",
         "title": "지하 ↔ 낙하 안전망 충돌",
-        "detail": "FALL_RESCUE_Y가 -60 하나뿐이다. 지하가 그보다 낮으면 동굴을 탐험하는 플레이어를 안전망이 계속 지상으로 끌어올린다. 지하 시스템 자체가 성립하지 않는다",
-        "fix": "N15에서 장소별 임계값으로 바꾸고, 탐험섬을 Y축으로 띄운다"
+        "detail": "FALL_RESCUE_Y가 -60 하나뿐이었다. N15에서 장소별 임계값으로 갈랐다. 남은 주의점은 다른 것이다 — 지상/지하 두 층의 [floorY, ceilingY]에 틈이 있으면 그 구간에서 장소 기억이 멈춘다",
+        "fix": "N18은 두 층을 맞붙여라. FallSafety.gaps가 틈을 찾고 테스트가 문다"
       },
       {
         "level": "high",
@@ -58,10 +58,22 @@
         "fix": "Studio에서 확인. N17 전체가 이 값에 걸려 있다"
       },
       {
-        "level": "med",
+        "level": "done",
         "title": "복귀 지점이 둘뿐",
-        "detail": "rescue()가 plot.spawn 아니면 plaza.spawn으로만 되돌린다. 작업장섬에서 떨어지면 광장으로 가서 포탈을 다시 타야 한다",
-        "fix": "N15에서 장소별 앵커 추가"
+        "detail": "rescue()가 plot.spawn 아니면 plaza.spawn으로만 되돌렸다. N15에서 장소별 앵커(Plaza/Home/Expedition)로 갈랐다",
+        "fix": "새 장소는 PLACES에 줄 하나 + ANCHORS에 이름 하나를 더한다"
+      },
+      {
+        "level": "high",
+        "title": "세션 여럿이 한 워킹트리를 동시에 고친다",
+        "detail": "2026-09-20에 N15 하나를 세 세션이 동시에 구현했고 서로의 파일을 덮어썼다. 한 세션이 남의 초안을 지우기까지 했다. STATUS.md만 읽고 다음 항목으로 들어가는 규칙은 세션이 하나일 때만 맞는다",
+        "fix": "시작 전에 ListAgents로 살아있는 세션을 확인하고 SendMessage로 파일 범위를 나눈다"
+      },
+      {
+        "level": "med",
+        "title": "Plots.luau 주석 81줄 깨짐",
+        "detail": "luau 24개 중 이 파일 하나만 988줄 중 81줄이 깨진 채 저장돼 있다. 판별법은 한자가 든 줄 세기. 동작에는 영향 없음(전부 주석). 예전 STATUS의 '소스 mojibake는 없다'는 틀렸다",
+        "fix": "CP949 왕복으로 뜻은 되살아난다(소실 바이트 자리에 ?가 남아 완전 자동 복구는 안 됨). Plots.luau를 건드리는 N16~N18이 손대는 범위만 그 복구본을 보고 다시 쓴다"
       },
       {
         "level": "med",
@@ -259,17 +271,16 @@
         "id": "launcher",
         "title": "사람 실행 런처",
         "verified": "code",
-        "note": "무인 세션이 승인 게이트에 막히던 것을 우회. 출력이 work/logs/에 남아 다음 세션이 읽는다"
+        "note": "무인 세션이 승인 게이트에 막히던 것을 우회. 다만 그 게이트는 현재 세션들에는 없고 런처는 아직 한 번도 실행되지 않았다 (work/logs/ 비어 있음)"
+      },
+      {
+        "id": "n15",
+        "title": "장소별 낙하 안전망 (N15)",
+        "verified": "code",
+        "note": "임계값과 복귀 지점이 장소마다 갈라졌다. 판정은 순수 Luau(shared/FallSafety), 좌표는 Main.server의 PLACES/ANCHORS. 반지름이 작은 장소가 이기므로 N17·N18이 구역을 촘촘히 맞출 필요가 없다. 탐험섬 바닥은 isleCentre.Y-60이라 섬을 옮기면 따라간다. 테스트 115 → 121"
       }
     ],
     "steps": [
-      {
-        "id": "n15",
-        "title": "N15 낙하 안전망 장소별 분리",
-        "status": "now",
-        "owner": "claude",
-        "hint": "선행조건. 임계값이 전 서버 공통 -60 하나뿐이라 새 장소를 먼저 만들면 만들자마자 고쳐야 한다. 복귀 지점도 장소별로 나눈다."
-      },
       {
         "id": "n16",
         "title": "N16 광장 확대 60 → 160",
@@ -367,24 +378,24 @@
     "running": true,
     "runningSince": "2026-09-20T20:30:04",
     "nextRun": "2026-09-20T21:00:00",
-    "cycles": 128,
+    "cycles": 130,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-20T20:36:23"
+        "lastRun": "2026-09-20T20:47:26"
       },
       {
         "name": "codex-astra-low",
-        "state": "cooldown",
-        "resetAt": "2026-09-20T20:47:11",
+        "state": "idle",
+        "resetAt": null,
         "lastRun": "2026-09-20T19:47:03"
       },
       {
         "name": "codex-luna",
-        "state": "cooldown",
-        "resetAt": "2026-09-20T20:47:14",
+        "state": "idle",
+        "resetAt": null,
         "lastRun": "2026-09-20T19:47:11"
       },
       {
