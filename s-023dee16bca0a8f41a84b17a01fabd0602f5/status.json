@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20T01:25:34Z",
+  "updated": "2026-09-20T01:37:59Z",
   "state": "progress",
   "agent": "claude",
   "note": "릴레이 자동 저장 (claude 작업분)",
@@ -7,7 +7,7 @@
   "verify": "FAIL (C:\\Users\\hongs\\Documents\\Codex\\2026-09-16\\new-chat\\work\\tools\\luau\\luau.exe failed with exit code 1) — work/checkpoint-verify.log 참고",
   "tests": null,
   "branch": "main",
-  "commit": "2b8ab5d wip: 由대젅???먮룞 ???(claude ?묒뾽遺?",
+  "commit": "c632d65 wip: 由대젅???먮룞 ???(claude ?묒뾽遺?",
   "milestone": {
     "current": "중간 점검 (2026-09-20)",
     "reference": "STATUS.md",
@@ -215,25 +215,25 @@
   "relay": {
     "running": true,
     "runningSince": "2026-09-20T10:00:04",
-    "nextRun": "2026-09-20T10:30:00",
-    "cycles": 106,
+    "nextRun": "2026-09-20T11:00:00",
+    "cycles": 107,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-20T10:25:29"
+        "lastRun": "2026-09-20T10:37:56"
       },
       {
         "name": "codex-astra-low",
-        "state": "cooldown",
-        "resetAt": "2026-09-20T10:32:09",
+        "state": "idle",
+        "resetAt": null,
         "lastRun": "2026-09-20T09:32:04"
       },
       {
         "name": "codex-luna",
-        "state": "cooldown",
-        "resetAt": "2026-09-20T10:32:12",
+        "state": "idle",
+        "resetAt": null,
         "lastRun": "2026-09-20T09:32:09"
       },
       {
