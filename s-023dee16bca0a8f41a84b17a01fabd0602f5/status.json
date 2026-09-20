@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-20T07:34:48Z",
+  "updated": "2026-09-20T08:08:25Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 122회차 종료. 마지막 실행: claude",
+  "note": "릴레이 125회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": 115,
   "branch": "main",
-  "commit": "e301595 wip: 由대젅???먮룞 ???(claude ?묒뾽遺?",
+  "commit": "8e78b13 docs: N 목록 재확인 및 인코딩 수정 정적 재검증 (코드 변경 없음)",
   "milestone": {
     "current": "중간 점검 (2026-09-20)",
     "reference": "STATUS.md",
@@ -226,15 +226,15 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-20T16:30:02",
-    "nextRun": "2026-09-20T17:00:00",
-    "cycles": 122,
+    "runningSince": "2026-09-20T17:00:02",
+    "nextRun": "2026-09-20T17:30:00",
+    "cycles": 125,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-20T16:34:47"
+        "lastRun": "2026-09-20T17:08:23"
       },
       {
         "name": "codex-astra-low",
