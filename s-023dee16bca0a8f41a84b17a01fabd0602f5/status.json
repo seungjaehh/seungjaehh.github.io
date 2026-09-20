@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-20T23:06:33Z",
+  "updated": "2026-09-20T23:35:10Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 152회차 종료. 마지막 실행: claude",
+  "note": "릴레이 155회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": null,
   "branch": "main",
-  "commit": "1f51775 wip: 세션 17 확인 — 승인 차단 지속, 코드 변경 없음",
+  "commit": "eb7857d wip: 세션 20 확인 — 승인 차단 지속, 코드 변경 없음",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -374,15 +374,15 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T08:00:02",
-    "nextRun": "2026-09-21T08:30:00",
-    "cycles": 152,
+    "runningSince": "2026-09-21T08:30:02",
+    "nextRun": "2026-09-21T09:00:00",
+    "cycles": 155,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-21T08:06:31"
+        "lastRun": "2026-09-21T08:35:08"
       },
       {
         "name": "codex-astra-low",
