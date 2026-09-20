@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-20T19:02:05Z",
+  "updated": "2026-09-20T19:31:44Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 143회차 종료. 마지막 실행: claude",
-  "next": "docs/CHECKPOINT.md 참고",
-  "verify": "릴레이 로그: work/relay/relay.log",
+  "note": "릴레이 자동 저장 (claude 작업분)",
+  "next": "docs/BACKLOG.md 다음 항목",
+  "verify": "FAIL (C:\\Users\\hongs\\Documents\\Codex\\2026-09-16\\new-chat\\work\\tools\\luau\\luau-compile.exe failed with exit code 1) — work/checkpoint-verify.log 참고",
   "tests": null,
   "branch": "main",
-  "commit": "59d6a88 wip: 릴레이 자동 저장 (claude 작업분)",
+  "commit": "e77b31f wip: 릴레이 자동 저장 (claude 작업분)",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -374,26 +374,26 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T04:00:02",
-    "nextRun": "2026-09-21T04:30:00",
+    "runningSince": "2026-09-21T04:30:02",
+    "nextRun": "2026-09-21T05:00:00",
     "cycles": 143,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-21T04:02:04"
+        "lastRun": "2026-09-21T04:31:40"
       },
       {
         "name": "codex-astra-low",
-        "state": "cooldown",
-        "resetAt": "2026-09-21T04:30:23",
+        "state": "idle",
+        "resetAt": null,
         "lastRun": "2026-09-21T03:30:12"
       },
       {
         "name": "codex-luna",
-        "state": "cooldown",
-        "resetAt": "2026-09-21T04:30:29",
+        "state": "idle",
+        "resetAt": null,
         "lastRun": "2026-09-21T03:30:23"
       },
       {
