@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-20T14:38:15Z",
+  "updated": "2026-09-20T17:57:14Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 131회차 종료. 마지막 실행: claude",
+  "note": "릴레이 134회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": 126,
   "branch": "main",
-  "commit": "f19f8fe N16 완료: 광장 60 → 160과 그에 딸린 네 가지 (문서)",
+  "commit": "18bf762 docs: N18 지형 테스트 분리 체크포인트 기록",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -278,36 +278,34 @@
         "title": "장소별 낙하 안전망 (N15)",
         "verified": "code",
         "note": "임계값과 복귀 지점이 장소마다 갈라졌다. 판정은 순수 Luau(shared/FallSafety), 좌표는 Main.server의 PLACES/ANCHORS. 반지름이 작은 장소가 이기므로 N17·N18이 구역을 촘촘히 맞출 필요가 없다. 탐험섬 바닥은 isleCentre.Y-60이라 섬을 옮기면 따라간다. 테스트 115 → 121"
-      }
-    ],
-    "steps": [
+      },
       {
         "id": "n16",
-        "title": "N16 광장 확대 60 → 160",
-        "status": "now",
-        "owner": "claude",
-        "hint": "지금 광장이 개인섬보다 작다. 다리 길이는 고리반지름(226.2) − 광장반지름이라 80까지 안전. 낡은 주석도 같이 고친다."
+        "title": "광장 확대 60 → 160 (N16)",
+        "verified": "code",
+        "note": "지름 하나에 암석 실루엣·다리 길이·스폰·N15 안전망 구역이 달려 있어 넷 다 같이 고쳤다. plots.plazaPlaceRadius로 받게 해 다음에 또 키워도 안전망이 따라온다"
       },
       {
         "id": "n19",
-        "title": "N19 퍼즐조각 뽑기",
-        "status": "todo",
-        "owner": "claude",
-        "hint": "중복은 조각으로 전환. 조각은 등급별 1종만 둔다 — 직업×등급으로 만들면 종류가 폭발한다. 게임 내 재화로만."
-      },
+        "title": "퍼즐조각 뽑기 (N19)",
+        "verified": "code",
+        "note": "Economy의 gachaPool/draw/craft 백엔드는 이전 세션이, 클라이언트 UI(조각 줄·뽑기 버튼·확률표·제작 칸)는 이번 세션이 붙였다. 확률표는 서버 계산을 그대로 찍는다(README 3절). 화면 확인은 남았다"
+      }
+    ],
+    "steps": [
       {
         "id": "n17",
         "title": "N17 작업장섬",
         "status": "todo",
         "owner": "claude",
-        "hint": "N15 이후. 난간+투명 배리어로 두르고 절벽은 쓰지 않는다 — 통로에서 남의 작업장이 보이는 것이 목적이다."
+        "hint": "N15·N16 이후 열렸지만 MaxPlayers=8 확인(사람 항목)에 전체가 걸려 있다. 난간+투명 배리어로 두르고 절벽은 쓰지 않는다 — 통로에서 남의 작업장이 보이는 것이 목적이다."
       },
       {
         "id": "n18",
         "title": "N18 탐험섬 재배치와 지하",
-        "status": "todo",
-        "owner": "claude",
-        "hint": "N15 이후. 바다 가운데 + Y축으로 띄움. 진짜 Terrain 물을 쓰되 익사는 만들지 않는다."
+        "status": "review",
+        "owner": "human",
+        "hint": "코드(크리스탈-동굴 배선 + 나선/지형 순수 함수 테스트 6개)는 끝났다. 남은 것은 수영·계단 경사·FillCylinder 레이스의 화면 확인뿐."
       },
       {
         "id": "n20",
@@ -376,27 +374,27 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-20T23:00:02",
-    "nextRun": "2026-09-21T00:00:00",
-    "cycles": 131,
+    "runningSince": "2026-09-21T02:30:02",
+    "nextRun": "2026-09-21T03:00:00",
+    "cycles": 134,
     "runners": [
       {
         "name": "claude",
-        "state": "cooldown",
-        "resetAt": "2026-09-20T23:58:13",
-        "lastRun": "2026-09-20T23:38:12"
+        "state": "idle",
+        "resetAt": null,
+        "lastRun": "2026-09-21T02:57:07"
       },
       {
         "name": "codex-astra-low",
         "state": "cooldown",
-        "resetAt": "2026-09-21T00:17:04",
-        "lastRun": "2026-09-20T23:17:02"
+        "resetAt": "2026-09-21T03:30:12",
+        "lastRun": "2026-09-21T02:30:02"
       },
       {
         "name": "codex-luna",
         "state": "cooldown",
-        "resetAt": "2026-09-21T00:17:06",
-        "lastRun": "2026-09-20T23:17:04"
+        "resetAt": "2026-09-21T03:30:15",
+        "lastRun": "2026-09-21T02:30:12"
       },
       {
         "name": "codex-astra-high",
