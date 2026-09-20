@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-20T08:08:25Z",
+  "updated": "2026-09-20T08:32:01Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 125회차 종료. 마지막 실행: claude",
+  "note": "릴레이 128회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": 115,
   "branch": "main",
-  "commit": "8e78b13 docs: N 목록 재확인 및 인코딩 수정 정적 재검증 (코드 변경 없음)",
+  "commit": "f4b60ce 사람이 직접 실행하는 런처 추가 (launch.cmd / launch.ps1)",
   "milestone": {
     "current": "중간 점검 (2026-09-20)",
     "reference": "STATUS.md",
@@ -226,27 +226,27 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-20T17:00:02",
-    "nextRun": "2026-09-20T17:30:00",
-    "cycles": 125,
+    "runningSince": "2026-09-20T17:30:02",
+    "nextRun": "2026-09-20T18:00:00",
+    "cycles": 128,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-20T17:08:23"
+        "lastRun": "2026-09-20T17:32:00"
       },
       {
         "name": "codex-astra-low",
         "state": "cooldown",
-        "resetAt": "2026-09-20T17:30:06",
-        "lastRun": "2026-09-20T16:30:02"
+        "resetAt": "2026-09-20T18:30:46",
+        "lastRun": "2026-09-20T17:30:43"
       },
       {
         "name": "codex-luna",
         "state": "cooldown",
-        "resetAt": "2026-09-20T17:30:08",
-        "lastRun": "2026-09-20T16:30:06"
+        "resetAt": "2026-09-20T18:30:49",
+        "lastRun": "2026-09-20T17:30:46"
       },
       {
         "name": "codex-astra-high",
