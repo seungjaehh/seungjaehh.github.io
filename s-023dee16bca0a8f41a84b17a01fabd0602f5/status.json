@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-21T09:32:51Z",
+  "updated": "2026-09-21T10:08:25Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 205회차 종료. 마지막 실행: claude",
+  "note": "릴레이 208회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": null,
   "branch": "main",
-  "commit": "b8de281 STATUS: 세션 69 — N 목록 소진 재확인(변동 없음)",
+  "commit": "953612b STATUS: 세션 4 — N 목록 재확인, READY 항목 없음(코드 변경 없음)",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -18,7 +18,7 @@
         {
           "zone": "하늘",
           "name": "작업장섬",
-          "state": "설계",
+          "state": "코드 완료 (N17)",
           "detail": "8구역(4+4) · 중앙 통로 · 구역마다 3×3 슬롯",
           "fit": "RING_SLOTS=8 ↔ 8구역이라 섬 번호=구역 번호. 배정 로직이 필요 없다"
         },
@@ -52,10 +52,10 @@
         "fix": "N18은 두 층을 맞붙여라. FallSafety.gaps가 틈을 찾고 테스트가 문다"
       },
       {
-        "level": "high",
+        "level": "done",
         "title": "MaxPlayers 미확인",
-        "detail": "RING_SLOTS=8인데 서버 정원이 확인된 적이 없다. 9명째가 들어오면 개인섬도 작업장 구역도 모자란다",
-        "fix": "Studio에서 확인. N17 전체가 이 값에 걸려 있다"
+        "detail": "RING_SLOTS=8인데 서버 정원이 확인된 적이 없다고 여겨졌으나, api.allocate(Plots.luau:569)가 빈 섬이 없으면 buildIsland(#islands+1)로 바깥 고리(ring=floor((index-1)/slots))에 새로 짓는다. 인원 상한이 없다(2026-09-21 실측).",
+        "fix": "N17의 진짜 제약은 정원이 아니라 작업장이 같은 (ring,slot) 방식으로 늘어나는가였다. DECISIONS.md 참고."
       },
       {
         "level": "done",
@@ -290,16 +290,15 @@
         "title": "퍼즐조각 뽑기 (N19)",
         "verified": "code",
         "note": "Economy의 gachaPool/draw/craft 백엔드는 이전 세션이, 클라이언트 UI(조각 줄·뽑기 버튼·확률표·제작 칸)는 이번 세션이 붙였다. 확률표는 서버 계산을 그대로 찍는다(README 3절). 화면 확인은 남았다"
+      },
+      {
+        "id": "n17",
+        "title": "작업장섬 (N17)",
+        "verified": "code",
+        "note": "지오메트리·안전망·포탈·동료 렌더링까지 연결. 같은 profile.assets를 zone.padOffsets로 매핑해 스키마 변경 없이 개인섬과 별도로 그린다. 자동 테스트 추가, Validate 통과. Studio 화면 확인은 남음."
       }
     ],
     "steps": [
-      {
-        "id": "n17",
-        "title": "N17 작업장섬",
-        "status": "todo",
-        "owner": "claude",
-        "hint": "N15·N16 이후 열렸지만 MaxPlayers=8 확인(사람 항목)에 전체가 걸려 있다. 난간+투명 배리어로 두르고 절벽은 쓰지 않는다 — 통로에서 남의 작업장이 보이는 것이 목적이다."
-      },
       {
         "id": "n18",
         "title": "N18 탐험섬 재배치와 지하",
@@ -374,15 +373,15 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T18:30:03",
-    "nextRun": "2026-09-21T19:00:00",
-    "cycles": 205,
+    "runningSince": "2026-09-21T19:00:03",
+    "nextRun": "2026-09-21T19:30:00",
+    "cycles": 208,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-21T18:32:49"
+        "lastRun": "2026-09-21T19:08:23"
       },
       {
         "name": "codex-astra-low",
