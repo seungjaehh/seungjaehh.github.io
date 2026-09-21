@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-21T08:50:22Z",
+  "updated": "2026-09-21T09:03:41Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 199회차 종료. 마지막 실행: claude",
+  "note": "릴레이 202회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": null,
   "branch": "main",
-  "commit": "fa31685 STATUS: 세션 65 — N 목록이 사람 확인 대기로 소진 상태임을 기록",
+  "commit": "ad82a24 STATUS: 세션 67 — N 목록 소진·승인 게이트 재확인(변동 없음)",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -374,15 +374,15 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T17:30:03",
-    "nextRun": "2026-09-21T18:00:00",
-    "cycles": 199,
+    "runningSince": "2026-09-21T18:00:03",
+    "nextRun": "2026-09-21T18:30:00",
+    "cycles": 202,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-21T17:50:21"
+        "lastRun": "2026-09-21T18:03:39"
       },
       {
         "name": "codex-astra-low",
