@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-21T04:03:20Z",
+  "updated": "2026-09-21T04:32:42Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 182회차 종료. 마지막 실행: claude",
+  "note": "릴레이 185회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": null,
   "branch": "main",
-  "commit": "8cae1c7 wip: 세션 47 확인 — 진행 가능한 N 항목 없음(화면/사람 확인/Codex 담당 차단 지속), checkpoint.cmd 재시도 생략(위임된 신뢰 절차 적용), 코드 변경 없음",
+  "commit": "1437b40 wip: 세션 50 확인 — 진행 가능한 N 항목 없음(화면/사람 확인/Codex 담당 차단 지속), checkpoint.cmd 재시도 생략(위임된 신뢰 절차 적용), 코드 변경 없음",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -374,27 +374,27 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T13:00:02",
-    "nextRun": "2026-09-21T13:30:00",
-    "cycles": 182,
+    "runningSince": "2026-09-21T13:30:02",
+    "nextRun": "2026-09-21T14:00:00",
+    "cycles": 185,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-21T13:03:19"
+        "lastRun": "2026-09-21T13:32:41"
       },
       {
         "name": "codex-astra-low",
         "state": "cooldown",
-        "resetAt": "2026-09-21T13:31:11",
-        "lastRun": "2026-09-21T12:31:07"
+        "resetAt": "2026-09-21T14:31:53",
+        "lastRun": "2026-09-21T13:31:44"
       },
       {
         "name": "codex-luna",
         "state": "cooldown",
-        "resetAt": "2026-09-21T13:31:14",
-        "lastRun": "2026-09-21T12:31:11"
+        "resetAt": "2026-09-21T14:31:56",
+        "lastRun": "2026-09-21T13:31:53"
       },
       {
         "name": "codex-astra-high",
