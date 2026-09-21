@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-21T12:28:42Z",
+  "updated": "2026-09-21T13:44:26Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 211회차 종료. 마지막 실행: claude",
+  "note": "릴레이 212회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": 146,
   "branch": "main",
-  "commit": "1bcde0f 문서: QUEUE/STATUS를 N17·Overdrive 완료 상태로 다시 맞춘다",
+  "commit": "c9fb440 STATUS: N 목록 재확인, READY 없음(코드 변경 없음)",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -373,27 +373,27 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T21:00:06",
-    "nextRun": "2026-09-21T21:30:00",
-    "cycles": 211,
+    "runningSince": "2026-09-21T22:00:03",
+    "nextRun": "2026-09-21T23:00:00",
+    "cycles": 212,
     "runners": [
       {
         "name": "claude",
-        "state": "cooldown",
-        "resetAt": "2026-09-21T21:48:33",
-        "lastRun": "2026-09-21T21:28:31"
+        "state": "idle",
+        "resetAt": null,
+        "lastRun": "2026-09-21T22:44:23"
       },
       {
         "name": "codex-astra-low",
         "state": "cooldown",
-        "resetAt": "2026-09-21T21:44:59",
-        "lastRun": "2026-09-21T20:44:26"
+        "resetAt": "2026-09-21T23:00:07",
+        "lastRun": "2026-09-21T22:00:03"
       },
       {
         "name": "codex-luna",
         "state": "cooldown",
-        "resetAt": "2026-09-21T21:45:15",
-        "lastRun": "2026-09-21T20:44:59"
+        "resetAt": "2026-09-21T23:00:10",
+        "lastRun": "2026-09-21T22:00:07"
       },
       {
         "name": "codex-astra-high",
