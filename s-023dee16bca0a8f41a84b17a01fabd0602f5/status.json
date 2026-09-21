@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-21T02:03:23Z",
+  "updated": "2026-09-21T02:33:58Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 170회차 종료. 마지막 실행: claude",
+  "note": "릴레이 173회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": null,
   "branch": "main",
-  "commit": "758bf3d wip: 세션 35 확인 — 승인 차단 지속(도구는 존재, 호출 승인 게이트), 도구 연결 없음, 코드 변경 없음",
+  "commit": "f0942c3 wip: 세션 38 확인 — 승인 차단 지속(checkpoint.cmd 호출 승인 게이트), 도구 연결 없음, 코드 변경 없음",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -374,27 +374,27 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T11:00:02",
-    "nextRun": "2026-09-21T11:30:00",
-    "cycles": 170,
+    "runningSince": "2026-09-21T11:30:02",
+    "nextRun": "2026-09-21T12:00:00",
+    "cycles": 173,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-21T11:03:22"
+        "lastRun": "2026-09-21T11:33:56"
       },
       {
         "name": "codex-astra-low",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-21T10:02:00"
+        "state": "cooldown",
+        "resetAt": "2026-09-21T12:30:06",
+        "lastRun": "2026-09-21T11:30:02"
       },
       {
         "name": "codex-luna",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-21T10:02:05"
+        "state": "cooldown",
+        "resetAt": "2026-09-21T12:30:09",
+        "lastRun": "2026-09-21T11:30:06"
       },
       {
         "name": "codex-astra-high",
