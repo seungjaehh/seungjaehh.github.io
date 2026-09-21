@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21T06:34:45Z",
+  "updated": "2026-09-21T07:52:39Z",
   "state": "progress",
   "agent": "claude",
   "note": "릴레이 197회차 종료. 마지막 실행: claude",
@@ -7,7 +7,7 @@
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": null,
   "branch": "main",
-  "commit": "9bc962f wip: 세션 62 확인 — 진행 가능한 N 항목 없음(화면/사람 확인/Codex 담당 차단 지속), checkpoint.cmd/dev.ps1 재시도 생략(40회 이상 동일 결과), mojibake 정리 시도했으나 스크립트 실행 차단으로 포기, 코드 변경 없음",
+  "commit": "82ea028 N17의 MaxPlayers 블로커를 폐기한다 — 코드가 이미 인원 확장을 한다",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -374,27 +374,27 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T15:30:02",
-    "nextRun": "2026-09-21T16:00:00",
+    "runningSince": "2026-09-21T16:00:02",
+    "nextRun": "2026-09-21T17:00:00",
     "cycles": 197,
     "runners": [
       {
         "name": "claude",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-21T15:34:43"
+        "state": "cooldown",
+        "resetAt": "2026-09-21T17:12:38",
+        "lastRun": "2026-09-21T16:52:38"
       },
       {
         "name": "codex-astra-low",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-21T14:32:29"
+        "state": "cooldown",
+        "resetAt": "2026-09-21T17:00:06",
+        "lastRun": "2026-09-21T16:00:02"
       },
       {
         "name": "codex-luna",
-        "state": "idle",
-        "resetAt": null,
-        "lastRun": "2026-09-21T14:32:33"
+        "state": "cooldown",
+        "resetAt": "2026-09-21T17:00:09",
+        "lastRun": "2026-09-21T16:00:06"
       },
       {
         "name": "codex-astra-high",
