@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-21T03:04:36Z",
+  "updated": "2026-09-21T03:34:25Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 176회차 종료. 마지막 실행: claude",
+  "note": "릴레이 179회차 종료. 마지막 실행: claude",
   "next": "docs/CHECKPOINT.md 참고",
   "verify": "릴레이 로그: work/relay/relay.log",
   "tests": null,
   "branch": "main",
-  "commit": "8cd640f wip: 세션 41 확인 — 승인 차단 지속(dev.ps1/checkpoint.cmd 호출 승인 게이트), 도구 연결 없음, 코드 변경 없음",
+  "commit": "5458231 wip: 세션 44 확인 — 진행 가능한 N 항목 없음(화면/사람 확인/Codex 담당 차단 지속), 도구 연결 없음, 코드 변경 없음",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -374,27 +374,27 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T12:00:02",
-    "nextRun": "2026-09-21T12:30:00",
-    "cycles": 176,
+    "runningSince": "2026-09-21T12:30:02",
+    "nextRun": "2026-09-21T13:00:00",
+    "cycles": 179,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-21T12:04:35"
+        "lastRun": "2026-09-21T12:34:23"
       },
       {
         "name": "codex-astra-low",
         "state": "cooldown",
-        "resetAt": "2026-09-21T12:30:06",
-        "lastRun": "2026-09-21T11:30:02"
+        "resetAt": "2026-09-21T13:31:11",
+        "lastRun": "2026-09-21T12:31:07"
       },
       {
         "name": "codex-luna",
         "state": "cooldown",
-        "resetAt": "2026-09-21T12:30:09",
-        "lastRun": "2026-09-21T11:30:06"
+        "resetAt": "2026-09-21T13:31:14",
+        "lastRun": "2026-09-21T12:31:11"
       },
       {
         "name": "codex-astra-high",
