@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-21T10:08:25Z",
+  "updated": "2026-09-21T10:31:41Z",
   "state": "progress",
   "agent": "claude",
-  "note": "릴레이 208회차 종료. 마지막 실행: claude",
-  "next": "docs/CHECKPOINT.md 참고",
-  "verify": "릴레이 로그: work/relay/relay.log",
-  "tests": null,
+  "note": "릴레이 자동 저장 (claude 작업분)",
+  "next": "docs/BACKLOG.md 다음 항목",
+  "verify": "PASS (compile + tests + sourcemap)",
+  "tests": 146,
   "branch": "main",
-  "commit": "953612b STATUS: 세션 4 — N 목록 재확인, READY 항목 없음(코드 변경 없음)",
+  "commit": "bfa3a59 wip: 릴레이 자동 저장 (claude 작업분)",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -373,26 +373,26 @@
   },
   "relay": {
     "running": true,
-    "runningSince": "2026-09-21T19:00:03",
-    "nextRun": "2026-09-21T19:30:00",
+    "runningSince": "2026-09-21T19:30:03",
+    "nextRun": "2026-09-21T20:00:00",
     "cycles": 208,
     "runners": [
       {
         "name": "claude",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-21T19:08:23"
+        "lastRun": "2026-09-21T19:31:35"
       },
       {
         "name": "codex-astra-low",
-        "state": "cooldown",
-        "resetAt": "2026-09-21T19:30:07",
+        "state": "idle",
+        "resetAt": null,
         "lastRun": "2026-09-21T18:30:03"
       },
       {
         "name": "codex-luna",
-        "state": "cooldown",
-        "resetAt": "2026-09-21T19:30:10",
+        "state": "idle",
+        "resetAt": null,
         "lastRun": "2026-09-21T18:30:07"
       },
       {
