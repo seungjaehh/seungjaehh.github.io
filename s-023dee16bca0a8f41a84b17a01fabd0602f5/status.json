@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-23T08:01:36Z",
+  "updated": "2026-09-23T08:03:43Z",
   "state": "progress",
   "agent": "codex",
-  "note": "릴레이 자동 저장 (codex-astra-low 작업분)",
+  "note": "릴레이 자동 저장 (codex-luna 작업분)",
   "next": "docs/BACKLOG.md 다음 항목",
   "verify": "PASS (compile + tests + sourcemap)",
   "tests": 150,
   "branch": "main",
-  "commit": "f394fc0 wip: 릴레이 자동 저장 (codex-astra-low 작업분)",
+  "commit": "698530a wip: 릴레이 자동 저장 (codex-luna 작업분)",
   "milestone": {
     "current": "구조 개편 (N15~N20)",
     "reference": "README.md · STATUS.md",
@@ -375,7 +375,7 @@
     "running": true,
     "runningSince": "2026-09-23T17:00:02",
     "nextRun": "2026-09-23T17:30:00",
-    "cycles": 344,
+    "cycles": 345,
     "runners": [
       {
         "name": "claude",
@@ -393,7 +393,7 @@
         "name": "codex-luna",
         "state": "idle",
         "resetAt": null,
-        "lastRun": "2026-09-23T16:51:32"
+        "lastRun": "2026-09-23T17:03:40"
       },
       {
         "name": "codex-astra-high",
