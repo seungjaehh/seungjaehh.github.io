@@ -461,7 +461,8 @@ a{color:var(--accent)}
   <span class="sec-no">10 · 점검 ① 편향과 예스맨</span>
   <h2>엔진이 AI의 예스맨·편향 문제를 막고 있나</h2>
   <p><b>결론: 코드 결과물에 대한 예스맨은 구조적으로 잘 막혀 있어요.</b> 하지만 세 곳이 비어 있어요. 검토자가 같은 모델 계열이라 같은 맹점을 공유하고, 목표 자체가 맞는지 반박하는 장치가 없고, 내용의 사실성이나 편향을 판정하는 장치도 없어요.</p>
-  <p class="note">09-28 리서치 업데이트 출처: <a href="https://arxiv.org/pdf/2608.18091" target="_blank" rel="noopener noreferrer">Self- and Other-Labels Induce Bidirectional Bias in LLM Judges (arXiv:2608.18091)</a> · <a href="https://arxiv.org/pdf/2607.25152" target="_blank" rel="noopener noreferrer">When Do Agent Loops Mistake Stagnation for Progress? (arXiv:2607.25152)</a> · <a href="https://aclanthology.org/2026.findings-acl.1759/" target="_blank" rel="noopener noreferrer">SycoBench-600 (ACL 2026 Findings)</a> · <a href="https://arxiv.org/pdf/2609.16287" target="_blank" rel="noopener noreferrer">AgentGuard (arXiv:2609.16287)</a></p>
+  <p>예스맨·편향 말고 이 구조에서 따로 봐야 할 문제 세 가지를 더 찾았어요(09-28). <b>스펙 게이밍</b>(보이는 테스트만 통과하도록 하드코딩·눈속임하는 것 — 자기 선호 편향과는 다른 문제), <b>과도한 거부</b>(반대 방향: 풀 수 있는데 지레 포기 — 지금 허니팟 둘 다 "무조건 해내려는" 쪽만 잡음), <b>간접 프롬프트 인젝션</b>(12번의 "리서치" 제안이 웹을 열면서 새로 생기는 위험)이에요. 아래 표 마지막 세 줄.</p>
+  <p class="note">09-28 리서치 업데이트 출처: <a href="https://arxiv.org/pdf/2608.18091" target="_blank" rel="noopener noreferrer">Self- and Other-Labels Induce Bidirectional Bias in LLM Judges (arXiv:2608.18091)</a> · <a href="https://arxiv.org/pdf/2607.25152" target="_blank" rel="noopener noreferrer">When Do Agent Loops Mistake Stagnation for Progress? (arXiv:2607.25152)</a> · <a href="https://aclanthology.org/2026.findings-acl.1759/" target="_blank" rel="noopener noreferrer">SycoBench-600 (ACL 2026 Findings)</a> · <a href="https://arxiv.org/pdf/2609.16287" target="_blank" rel="noopener noreferrer">AgentGuard (arXiv:2609.16287)</a> · <a href="https://arxiv.org/pdf/2605.21384" target="_blank" rel="noopener noreferrer">SpecBench (arXiv:2605.21384)</a> · <a href="https://arxiv.org/pdf/2604.27202" target="_blank" rel="noopener noreferrer">Indirect Prompt Injection in the Wild (arXiv:2604.27202)</a></p>
   <div class="tbl">
   <table>
     <thead><tr><th>문제 유형</th><th>엔진의 장치</th><th>근거 (코드·기록)</th><th>평가</th></tr></thead>
@@ -477,6 +478,9 @@ a{color:var(--accent)}
       <tr><td><b>사람에게 맞장구</b> (목표 자체가 틀렸는데 그대로 진행, 또는 사람이 권위·확신을 담아 밀어붙이면 맞는 결정을 뒤집음)</td><td>없음. 초안은 목표를 계약으로 옮길 뿐, "이 목표가 쓸모없을 수 있다"고 반박하는 필드가 없고, 검토자가 압박에 흔들리는지 측정한 적도 없음</td><td><code>contract.js</code> 스키마 · 2026년 sycophancy 벤치마크는 "의심·권위·명백히 틀린 제안" 세 압박을 표준 측정법으로 씀(SycoBench-600, ACL 2026 Findings)</td><td><span class="pill bad">없음</span></td></tr>
       <tr><td><b>학습 데이터 편향</b> (낡은 사실, 한쪽으로 치우친 내용)</td><td>없음. 판정기는 코드 동작만 봄. 판정기도 모델이 쓰므로 모델의 편향이 테스트에 그대로 들어갈 수 있음</td><td>홀드아웃(사람·#1 작성)만 일부 보완</td><td><span class="pill bad">없음</span></td></tr>
       <tr><td>"테스트 통과 = 좋은 결과"라는 착각</td><td>설계에서 7배 과대평가라고 인정. 주간 감사는 사람 수동이고 코드 기록이 없음</td><td>설계 §1, <code>soak.js</code> 오탐 상한만 계산</td><td><span class="pill wait">약함</span></td></tr>
+      <tr><td><b>스펙 게이밍</b> (보이는 테스트만 겨냥한 하드코딩·눈속임 — 자기 선호 편향과 다른 문제)</td><td>F2P(base에서 실패해야 함) + 홀드아웃(에이전트가 못 보는 숨긴 테스트) + pass^k(<code>ENGINE_SEED</code> 여러 번). 다만 "이 구현이 일반 로직인지 특정 입력용 편법인지" 자체를 판정하는 전용 장치는 없음</td><td><code>gate/custody.js</code> F2P·홀드아웃 · 2026년 벤치마크: 최신 모델도 이런 해킹의 63%만 잡아냄(TRACE), RL 후처리가 있으면 이런 시도 비율이 0.6%→13.9%로 뜀(RHB)</td><td><span class="pill wait">부분</span></td></tr>
+      <tr><td><b>과도한 거부</b> (반대 방향: 풀 수 있는데 지레 포기하고 사람에게 넘김)</td><td>없음. 허니팟 두 개(RSA-2048, settle 모순) 모두 "너무 밀어붙임"만 검증하고, "충분히 풀리는 과제를 불가능하다고 오판"하는 쪽은 아직 측정한 적 없음</td><td>—</td><td><span class="pill bad">없음</span></td></tr>
+      <tr><td><b>간접 프롬프트 인젝션</b> (12번 "리서치" 실행 제안이 웹을 열면서 새로 생기는 위험)</td><td>지금 실행(구현·판정기)은 웹을 완전히 막아서 이 위험이 없음. 12번의 <code>research</code> 종류 제안은 <code>{claim, source_url, fetched_at, ttl}</code>과 인용 검증까지 넣었지만, "가져온 페이지 안의 숨은 지시를 무시한다"는 방어는 아직 설계에 없음</td><td>2026년 연구: 공격자가 웹페이지·댓글에 지시를 숨겨 에이전트가 그대로 실행하게 만드는 사례가 실사용 환경에서 이미 관측됨</td><td><span class="pill bad">없음 (신설 예정 기능이라 지금은 위험 자체가 없음)</span></td></tr>
     </tbody>
   </table>
   </div>
@@ -504,6 +508,18 @@ a{color:var(--accent)}
     <div class="card">
       <h3>보완안 6 · 이상 궤적에서 배우는 tripwire (신규)</h3>
       <p>지금 tripwire는 고정 규칙(경로·해시)만 봐요. soak이 쌓일수록 정상 실행 궤적(파일 접근 패턴·실행 시간·재시도 모양)의 분포가 생기니까, 거기서 크게 벗어나는 실행을 "이상"으로 걸러 사람 결정 대기열에 올리는 걸 검토해요(같은 문제의식을 다루는 2026년 연구: AgentGuard, arXiv:2609.16287). 규칙을 대체하지 않고, 규칙이 못 잡는 새로운 패턴을 보충하는 용도로만 써요.</p>
+    </div>
+    <div class="card">
+      <h3>보완안 7 · 숨겨진 랜덤 판정기로 스펙 게이밍 잡기 (신규)</h3>
+      <p>홀드아웃과 별개로, 게이트가 승격 직전에 <b>같은 기준을 새로운 무작위 값으로 한 번 더</b> 돌려요(예: 경계값·큰 입력·다른 시드 조합). 동결된 테스트만 통과하고 이 즉석 재검증에서 떨어지면 하드코딩 의심으로 사람에게 넘겨요. F2P·홀드아웃·pass^k가 이미 하는 일과 겹치지만, "그 구현이 이 특정 케이스용인지" 승격 순간에 한 번 더 찌르는 마지막 방어선이에요.</p>
+    </div>
+    <div class="card">
+      <h3>보완안 8 · 과도한 거부 허니팟 (신규)</h3>
+      <p>지금 허니팟은 전부 "불가능한 과제"예요. 반대로 <b>충분히 쉽게 풀리는데 겉보기엔 어려워 보이는</b> 과제(예: 복잡해 보이지만 실은 표준 라이브러리 함수 한 줄로 되는 것)를 섞어 넣어요. 에이전트가 실제로 풀 수 있는데도 "불가능/blocked"로 멈추면 기록하고, 이 비율이 기준을 넘으면 과도한 조심성으로 처리량을 깎아먹고 있다는 신호로 봐요. 보완안 1(검토자 허니팟)이 "너무 잘 믿는 것"을 잡는다면, 이건 "너무 안 믿는 것"을 잡는 짝이에요.</p>
+    </div>
+    <div class="card">
+      <h3>보완안 9 · 리서치 실행의 인젝션 방어 (신규, 12번 제안과 연동)</h3>
+      <p>12번의 <code>research</code> 실행 종류를 만들 때 이걸 처음부터 같이 넣어요. 가져온 웹 콘텐츠는 <b>절대 지시로 취급하지 않고 데이터로만</b> 취급한다고 프롬프트에 명시하고, HTML/마크다운을 정제(sanitize)한 뒤 넘기고, ResearchFact에는 "이 결과가 지시문처럼 보이는 문구를 포함하는지" 자체 점검 필드를 하나 넣어요. 쓰기 실행(구현·판정기)은 지금처럼 계속 웹을 막아서, 리서치에서 오염된 게 있어도 코드에 바로 닿지 않게 해요.</p>
     </div>
   </div>
 </section>
@@ -654,8 +670,9 @@ a{color:var(--accent)}
     <div class="card">
       <h3>순서 (soak 완주 후)</h3>
       <ol class="steps">
-        <li>검토자 허니팟 + 승인률 경고 (작고 효과 큼)</li>
-        <li>리서치 실행 종류 + ResearchFact (+ 인용 검증)</li>
+        <li>검토자 허니팟 + 과도한 거부 허니팟 + 승인률 경고 (작고 효과 큼)</li>
+        <li>승격 직전 무작위 재검증 (스펙 게이밍 방지)</li>
+        <li>리서치 실행 종류 + ResearchFact + 인용 검증 + 인젝션 방어(정제·데이터 취급)</li>
         <li>목표 반증 필드 + <code>engine audit</code></li>
         <li><code>engine doctor</code>, 고정 릴리스(<code>engine use</code>) → 자기개선 루프 시작</li>
         <li>모델 레지스트리 + pickModel + 모델 갱신 루프</li>
