@@ -69,7 +69,7 @@ a{color:var(--accent)}
 
 <div class="wrap">
 <header>
-  <span class="eyebrow">C:\AI · src/ · 2026-09-28 기준</span>
+  <span class="eyebrow">노트북 1대 · src/ · 2026-09-28 기준</span>
   <h1>AI Core Engine 구조도</h1>
   <p class="lead">엔진은 코드를 짜는 AI가 아니라 <b>작은 심판</b>이에요. 계획과 코딩은 강한 주 에이전트 하나(Claude 또는 Codex)가 실행 안에서 전부 하고, 엔진은 어떤 모델도 가져서는 안 되는 권한만 가집니다.</p>
   <p class="lead">엔진이 가진 권한은 다섯 가지예요. ① 동결된 완료 정의 ② 에이전트가 건드릴 수 없는 판정기 ③ main에 쓰는 유일한 경로 ④ 모델을 부를지 말지 ⑤ 원장과 사람 결정 대기열.</p>
@@ -260,31 +260,27 @@ a{color:var(--accent)}
 
 <section id="roles">
   <span class="sec-no">05 · 누가 무엇을 하나</span>
-  <h2>운영 구조: 데스크탑 엔진 + 노트북 검토자</h2>
+  <h2>운영 구조: 노트북 1대, 역할은 로그인으로 분리</h2>
   <figure>
     <div class="scroll">
-    <svg viewBox="0 0 960 330" role="img" aria-label="데스크탑의 예약 작업 3개가 엔진을 돌리고, 엔진은 Claude #2에게 초안과 구현을, Codex에게 판정기 작성을 맡기며, 노트북의 Claude #1이 SSH로 결정을 검토하고 사람은 최종 승인과 배포를 한다">
+    <svg viewBox="0 0 960 330" role="img" aria-label="노트북 한 대에서 예약 작업 하나가 엔진을 돌리고, 엔진은 Claude #2에게 초안과 구현을, Codex에게 판정기 작성을 맡기며, 같은 기기의 다른 로그인인 Claude #1이 결정을 검토하고 사람은 최종 승인과 배포를 한다. Claude #1이 45분 무응답이면 대리 감독(#2)이 retry만 대신한다">
       <defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10z" fill="currentColor"/></marker></defs>
-      <rect x="8" y="8" width="660" height="314" rx="12" fill="none" stroke="currentColor" stroke-dasharray="4 4"/>
-      <text x="20" y="28" font-size="12" font-weight="700" fill="currentColor">데스크탑 (엔진 홈 C:\AI)</text>
-      <rect x="700" y="8" width="252" height="314" rx="12" fill="none" stroke="currentColor" stroke-dasharray="4 4"/>
-      <text x="712" y="28" font-size="12" font-weight="700" fill="currentColor">노트북</text>
+      <rect x="8" y="8" width="944" height="314" rx="12" fill="none" stroke="currentColor" stroke-dasharray="4 4"/>
+      <text x="20" y="28" font-size="12" font-weight="700" fill="currentColor">이 노트북 한 대 (엔진 홈: Desktop\AI-old) — 데스크탑은 더 이상 쓰지 않음</text>
       <g font-size="12">
-        <rect x="24" y="48" width="170" height="54" rx="7" class="f-soft" stroke="currentColor"/><text x="36" y="70" font-weight="700" fill="currentColor">AIEngineTick</text><text x="36" y="88" class="t-muted">15분 · overnight.mjs</text>
-        <rect x="24" y="118" width="170" height="54" rx="7" class="f-soft" stroke="currentColor"/><text x="36" y="140" font-weight="700" fill="currentColor">AIEngineDelegate</text><text x="36" y="158" class="t-muted">15분 · tools/delegate.mjs</text>
-        <rect x="24" y="188" width="170" height="54" rx="7" class="f-soft" stroke="currentColor"/><text x="36" y="210" font-weight="700" fill="currentColor">AIEngineBackup</text><text x="36" y="228" class="t-muted">매일 09:00 · D: + GitHub</text>
+        <rect x="24" y="48" width="170" height="54" rx="7" class="f-soft" stroke="currentColor"/><text x="36" y="70" font-weight="700" fill="currentColor">AIEngineTick</text><text x="36" y="88" class="t-muted">15분 · overnight.mjs fallback</text>
+        <text x="24" y="196" class="t-muted" font-size="11">tools/backup.mjs — 예약 없음, 수동 실행</text>
         <rect x="262" y="100" width="150" height="100" rx="10" class="f-accent" stroke="var(--accent)" stroke-width="1.6"/><text x="337" y="140" font-weight="700" text-anchor="middle" fill="currentColor">엔진</text><text x="337" y="160" text-anchor="middle" class="t-muted">src · var/ledger</text><text x="337" y="176" text-anchor="middle" class="t-muted">canon · holdouts</text>
         <rect x="492" y="48" width="160" height="62" rx="7" class="f-surface" stroke="currentColor"/><text x="504" y="72" font-weight="700" fill="currentColor">Claude #2</text><text x="504" y="92" class="t-muted">초안 · 구현 (Opus 5.5)</text>
         <rect x="492" y="136" width="160" height="62" rx="7" class="f-surface" stroke="currentColor"/><text x="504" y="160" font-weight="700" fill="currentColor">Codex</text><text x="504" y="180" class="t-muted">판정기 작성 · 구현 대체</text>
         <rect x="492" y="236" width="160" height="62" rx="7" class="f-surface" stroke="currentColor"/><text x="504" y="260" font-weight="700" fill="currentColor">대리 감독 (#2)</text><text x="504" y="280" class="t-muted">retry만 · 45분 무응답 시</text>
-        <rect x="716" y="60" width="220" height="80" rx="7" class="f-surface" stroke="currentColor"/><text x="728" y="84" font-weight="700" fill="currentColor">Claude #1 (검토·위임)</text><text x="728" y="104" class="t-muted">판정기 승인 검토 · 동결 검토</text><text x="728" y="122" class="t-muted">숨긴 테스트 열람 가능</text>
+        <rect x="716" y="60" width="220" height="80" rx="7" class="f-surface" stroke="currentColor"/><text x="728" y="84" font-weight="700" fill="currentColor">Claude #1 (검토, 별도 로그인)</text><text x="728" y="104" class="t-muted">판정기 승인 검토 · 동결 검토</text><text x="728" y="122" class="t-muted">숨긴 테스트 열람 가능</text>
         <rect x="716" y="200" width="220" height="80" rx="7" class="f-soft" stroke="currentColor"/><text x="728" y="224" font-weight="700" fill="currentColor">사람</text><text x="728" y="244" class="t-muted">하루 ≤15분 · 최종 승인</text><text x="728" y="262" class="t-muted">배포·돈·보안 설정은 항상 사람</text>
       </g>
       <g stroke="currentColor" fill="none" font-size="11">
         <line x1="194" y1="75" x2="260" y2="120" marker-end="url(#a4)"/>
         <line x1="412" y1="125" x2="490" y2="82" marker-end="url(#a4)"/>
         <line x1="412" y1="160" x2="490" y2="166" marker-end="url(#a4)"/>
-        <path d="M194,150 L240,150 L240,312 L688,312 L688,100 L714,100" marker-end="url(#a4)" stroke-dasharray="4 3"/>
         <path d="M716,126 L676,126 L676,216 L392,216 L392,202" marker-end="url(#a4)"/>
         <path d="M716,252 L664,252 L664,228 L352,228 L352,202" marker-end="url(#a4)"/>
         <path d="M194,92 L214,92 L214,272 L490,272" marker-end="url(#a4)" stroke-dasharray="2 3"/>
@@ -293,14 +289,13 @@ a{color:var(--accent)}
         <text x="210" y="112">tick</text>
         <text x="420" y="100">draft·implement</text>
         <text x="420" y="176">oracle</text>
-        <text x="250" y="306">위임 검토: SSH · claude -p</text>
         <text x="400" y="211">decide (actor=delegate)</text>
         <text x="254" y="244">사람: decide·freeze·submit</text>
         <text x="250" y="266">heartbeat 45분 끊기면</text>
       </g>
     </svg>
     </div>
-    <figcaption>벤더 역할은 <code>policy.json</code>의 <code>roles</code>로 정하고, <b>한 목표의 판정기를 쓴 벤더는 그 목표를 구현할 수 없어요</b>. 이 규칙은 선택, 실행, 정리 세 곳에서 강제돼요. 대리 감독(#2)은 구현자이기도 해서 승인은 못 하고 retry만 할 수 있어요. 결정은 먼저 노트북 Claude #1이 검토해요. #1이 "wait"라고 하거나 연결이 안 되면 사람을 기다려요.</figcaption>
+    <figcaption>벤더 역할은 <code>policy.json</code>의 <code>roles</code>로 정하고, <b>한 목표의 판정기를 쓴 벤더는 그 목표를 구현할 수 없어요</b>. 이 규칙은 선택, 실행, 정리 세 곳에서 강제돼요. 대리 감독(#2)은 구현자이기도 해서 승인은 못 하고 retry만 할 수 있어요. 결정은 먼저 Claude #1(같은 기기, 별도 로그인)이 검토해요. #1이 "wait"라고 하거나 45분간 응답이 없으면 <code>overnight.mjs fallback</code>이 대리 감독(#2)을 불러 retry만 대신 처리하고, 그 밖엔 사람을 기다려요. 원래는 데스크탑이 엔진을 돌리고 노트북이 SSH로 검토하는 2대 구성이었지만, 09-27부터 데스크탑(DESKTOP-STRHUVQ) 연결이 끊기면서 검토가 계속 사람 대기로 밀렸어요. 09-28에 이 노트북 한 대로 합쳤습니다 — SSH 왕복이 사라지고, Claude #1/#2는 물리적 기기가 아니라 로그인 계정(<code>C:/Users/hongs/.claude-engine</code> 등)으로만 구분해요.</figcaption>
   </figure>
 </section>
 
@@ -327,7 +322,7 @@ a{color:var(--accent)}
       <tr><td>L1</td><td><code>gate/custody.js</code></td><td class="num">350</td><td>실제 게이트 (04번 그림의 8단계)</td></tr>
       <tr><td>L1</td><td><code>snapshot.js</code> · <code>project.js</code> · <code>glob.js</code></td><td class="num">57 · 71 · 35</td><td>보관 복사, ProjectContract와 보호/보류 경로</td></tr>
       <tr><td>L0</td><td><code>canon.js</code> · <code>git.js</code> · <code>home.js</code></td><td class="num">170 · 62 · 35</td><td>정본·격리 bare 저장소, 훅·fsmonitor·사용자 설정 없는 강화 git, 경로</td></tr>
-      <tr><td>운영</td><td><code>soak.js</code> · <code>scripts/overnight.mjs</code> · <code>tools/delegate.mjs</code></td><td class="num">137 · 149 · 447</td><td>soak 리포트(원장에서 계산), 야간 운영과 대리 감독, 위임 검토와 목표 자동 동결 대기열</td></tr>
+      <tr><td>운영</td><td><code>soak.js</code> · <code>scripts/overnight.mjs</code></td><td class="num">137 · 149</td><td>soak 리포트(원장에서 계산), 야간 운영과 대리 감독(로컬 하트비트만 봄, SSH 없음)</td></tr>
     </tbody>
   </table>
   </div>
@@ -378,8 +373,8 @@ a{color:var(--accent)}
       <p>Claude #1 검토까지 끝났는데, 동결 단계에서 엔진이 거부했어요. void-cards의 기존 판정기 파일 <code>test/cards.test.js</code>, <code>test/model.test.js</code>에 <code>SENTINEL:</code> 테스트가 없기 때문이에요. 규칙상 맞는 거부예요. 해결하려면 두 파일에 센티널을 추가해서 사람 경로(<code>engine submit</code>)로 넣은 뒤 다시 동결해야 해요.</p>
     </div>
     <div class="card">
-      <h3 class="wait">노트북 검토자 연결</h3>
-      <p>09-27에 delegate가 "laptop unreachable (scp)"로 여러 번 재시도했어요. 노트북이 꺼지거나 절전 상태면 승인과 동결 검토가 사람 대기로 넘어가요.</p>
+      <h3>데스크탑↔노트북 2대 구성 폐기 (09-28 해결)</h3>
+      <p>09-27에 delegate가 "laptop unreachable (scp)"로 여러 번 재시도하다 실패했어요. 데스크탑(DESKTOP-STRHUVQ)이 엔진을 돌리고 노트북이 SSH로 검토하던 구성 자체가 단일 장애점이었어요. 09-28에 데스크탑을 완전히 빼고 이 노트북 한 대로 합쳤습니다 — <code>tools/delegate.mjs</code>는 폐기, 검토는 같은 기기의 별도 로그인(Claude #1)으로만 구분해요. 05번 그림 참고.</p>
     </div>
     <div class="card">
       <h3 class="wait">동결된 할 일 없음</h3>
@@ -672,7 +667,7 @@ a{color:var(--accent)}
 
 <section id="sources">
   <span class="sec-no">14 · 근거 문서</span>
-  <p class="note">설계 원본: <code>C:\AI\AI_Core_Engine_설계_검토.md</code> · 운영: <code>README.md</code>, <code>SOAK-PLAN.md</code>, <code>HANDOFF.md</code> · 근거: <code>research/00~14</code> (릴레이 포렌식, 비판 4개, 수정안, 모델 티어링 아이디어) · 코드 규칙: <code>src/AGENTS.md</code> · 수치: <code>engine status</code>, <code>engine soak</code>, <code>engine digest</code> (2026-09-28 11:42 기준)</p>
+  <p class="note">설계 원본: <code>AI_Core_Engine_설계_검토.md</code>(노트북 <code>Desktop\AI-old</code>) · 운영: <code>README.md</code>, <code>SOAK-PLAN.md</code>, <code>HANDOFF.md</code> · 근거: <code>research/00~14</code> (릴레이 포렌식, 비판 4개, 수정안, 모델 티어링 아이디어) · 코드 규칙: <code>src/AGENTS.md</code> · 수치: <code>engine status</code>, <code>engine soak</code>, <code>engine digest</code> (2026-09-28 기준)</p>
 </section>
 </div>
 
