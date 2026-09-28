@@ -76,9 +76,9 @@ a{color:var(--accent)}
   <div class="facts" aria-label="현재 수치">
     <div class="fact"><b>~4.5k줄</b><span>Node 22 · 외부 의존성 0</span></div>
     <div class="fact"><b>182</b><span>엔진 자체 테스트</span></div>
-    <div class="fact"><b>6 / 19</b><span>완료 목표 / 완료 항목</span></div>
-    <div class="fact"><b>seq 215</b><span>원장 이벤트 (verify ok)</span></div>
-    <div class="fact"><b>2.9 / 7일</b><span>soak 진행 (판정 11 / 30)</span></div>
+    <div class="fact"><b>4 / 12</b><span>완료 목표(7개 중) / 완료 항목(18개 중)</span></div>
+    <div class="fact"><b>seq 187+</b><span>원장 이벤트 (verify ok, 노트북 단독 재시작 후)</span></div>
+    <div class="fact"><b>4.1 / 7일</b><span>soak 진행 (판정 28 / 30)</span></div>
     <div class="fact"><b>0</b><span>오탐 승격 · 할 일 없을 때 모델 호출</span></div>
   </div>
 </header>
@@ -347,44 +347,46 @@ a{color:var(--accent)}
   </table>
   </div>
 
-  <h3>Soak 점수판 (릴리스 a1765be, 09-25 시작)</h3>
+  <h3>Soak 점수판 (원장 09-24부터 계산 · <code>engine soak start</code> 미실행 · 09-28 노트북 단독 재개 후 갱신)</h3>
   <div class="tbl">
   <table>
     <thead><tr><th>조건</th><th class="num">현재</th><th class="num">기준</th><th>상태</th></tr></thead>
     <tbody>
-      <tr><td>기간</td><td class="num">2.9일</td><td class="num">≥ 7일</td><td><span class="pill wait">진행</span></td></tr>
-      <tr><td>게이트 판정</td><td class="num">11회</td><td class="num">≥ 30회</td><td><span class="pill wait">진행</span></td></tr>
-      <tr><td>할당량 리셋 / CLI 버전 변화</td><td class="num">0 / 0</td><td class="num">≥ 1 / ≥ 1</td><td><span class="pill wait">대기</span></td></tr>
+      <tr><td>기간</td><td class="num">4.1일</td><td class="num">≥ 7일</td><td><span class="pill wait">진행</span></td></tr>
+      <tr><td>게이트 판정</td><td class="num">28회</td><td class="num">≥ 30회</td><td><span class="pill wait">진행 (거의 다 참)</span></td></tr>
+      <tr><td>할당량 리셋 / CLI 버전 변화</td><td class="num">0 / 2</td><td class="num">≥ 1 / ≥ 1</td><td><span class="pill wait">CLI 변화는 충족, 리셋만 대기</span></td></tr>
       <tr><td>할 일 없을 때 모델 호출</td><td class="num">0</td><td class="num">0</td><td><span class="pill ok">충족</span></td></tr>
-      <tr><td>구현 실행 중 승격 또는 정직한 멈춤</td><td class="num">4/4</td><td class="num">≥ 50%</td><td><span class="pill ok">충족</span></td></tr>
-      <tr><td>동결 중앙값</td><td class="num">5분</td><td class="num">≤ 10분</td><td><span class="pill ok">충족</span></td></tr>
-      <tr><td>오탐 승격</td><td class="num">0 (승격 7)</td><td class="num">0</td><td><span class="pill ok">충족</span></td></tr>
+      <tr><td>구현 실행 중 승격 또는 정직한 멈춤</td><td class="num">6/10 (60%)</td><td class="num">≥ 50%</td><td><span class="pill ok">충족</span></td></tr>
+      <tr><td>동결 중앙값</td><td class="num">1분</td><td class="num">≤ 10분</td><td><span class="pill ok">충족</span></td></tr>
+      <tr><td>오탐 승격</td><td class="num">0 (승격 12)</td><td class="num">0</td><td><span class="pill ok">충족</span></td></tr>
     </tbody>
   </table>
   </div>
+  <p class="note">허니팟이 하나(RSA-2048, 계산 불가능) 더해 둘(논리적 모순, 09-28 추가)로 늘었어요 — 10번 섹션 참고. tickets에는 <code>purchaseMany</code> 확장 목표가 동결·진행 중이에요.</p>
 </section>
 
 <section id="issues">
   <span class="sec-no">08 · 지금 막혀 있는 것</span>
-  <h2>soak이 멈춰 있는 이유 (09-27 이후 계속 IDLE)</h2>
+  <h2>09-28 노트북 단독 재개 이후: 크게 막힌 건 없음, 판정 28/30까지 옴</h2>
   <div class="grid2">
     <div class="card">
-      <h3 class="bad">void-video-tests 동결 실패</h3>
-      <p>Claude #1 검토까지 끝났는데, 동결 단계에서 엔진이 거부했어요. void-cards의 기존 판정기 파일 <code>test/cards.test.js</code>, <code>test/model.test.js</code>에 <code>SENTINEL:</code> 테스트가 없기 때문이에요. 규칙상 맞는 거부예요. 해결하려면 두 파일에 센티널을 추가해서 사람 경로(<code>engine submit</code>)로 넣은 뒤 다시 동결해야 해요.</p>
+      <h3 class="wait">void-video-tests는 이 원장에 없음 (STRHUVQ 유실)</h3>
+      <p>STRHUVQ 시절 "void-video-tests" 동결이 센티널 누락으로 거부됐다는 기록이 있었는데, 그 초안 자체가 <code>var/</code>(원장·정본)라 백업 대상이 아니었어요. STRHUVQ가 꺼지면서 그 초안도 같이 유실됐고, 이 노트북 원장에는 애초에 없어요. 필요하면 <code>test/cards.test.js</code>, <code>test/model.test.js</code>에 센티널을 먼저 추가한 뒤 처음부터 다시 <code>engine goal</code>로 드래프트해야 해요.</p>
     </div>
     <div class="card">
       <h3>데스크탑↔노트북 2대 구성 폐기 (09-28 해결)</h3>
       <p>09-27에 delegate가 "laptop unreachable (scp)"로 여러 번 재시도하다 실패했어요. 데스크탑(DESKTOP-STRHUVQ)이 엔진을 돌리고 노트북이 SSH로 검토하던 구성 자체가 단일 장애점이었어요. 09-28에 데스크탑을 완전히 빼고 이 노트북 한 대로 합쳤습니다 — <code>tools/delegate.mjs</code>는 폐기, 검토는 같은 기기의 별도 로그인(Claude #1)으로만 구분해요. 05번 그림 참고.</p>
     </div>
     <div class="card">
-      <h3 class="wait">동결된 할 일 없음</h3>
-      <p>대기열에는 void-perf(09-29 09:00)만 남았어요. 동결된 항목이 없으면 판정 횟수가 늘지 않아서, 30회 기준을 채우려면 목표를 더 넣어야 해요(<code>tools/soak-goals.json</code>).</p>
+      <h3 class="ok">동결된 할 일 채움 (09-28 해결)</h3>
+      <p>허니팟 2개(RSA-2048, 논리적 모순)와 tickets <code>purchaseMany</code> 확장을 새로 동결해서 대기열을 채웠어요. 판정 횟수가 11회 → 28회로 올라가서 30회 기준에 거의 다 왔어요. <code>AIEngineTick</code>이 15분마다 알아서 진행해요.</p>
     </div>
     <div class="card">
       <h3>기록해 둔 엔진 버그 (soak 후 수정)</h3>
       <ul>
         <li>동결 시 판정기 문제는 엔진 "예외"가 아니라 정상 거부 메시지로 다뤄야 함</li>
         <li><code>ENGINE_ACTOR</code>를 <code>decide</code>에서만 읽어서, amend를 위임 실행해도 원장에 human으로 남음</li>
+        <li><b>(신규, 09-28 발견)</b> 손으로 쓴 계약(<code>freeze &lt;file.json&gt;</code>)에서 <code>oracle_files</code>를 빠뜨리면 검사 없이 "테스트 0개"로 조용히 동결됨 — <code>checkTargets</code>가 이 경우를 걸러내지 않음. honeypot-1에서 실제로 겪고 <code>amend --oracle</code>로 수정함.</li>
       </ul>
     </div>
   </div>
@@ -459,6 +461,7 @@ a{color:var(--accent)}
   <span class="sec-no">10 · 점검 ① 편향과 예스맨</span>
   <h2>엔진이 AI의 예스맨·편향 문제를 막고 있나</h2>
   <p><b>결론: 코드 결과물에 대한 예스맨은 구조적으로 잘 막혀 있어요.</b> 하지만 세 곳이 비어 있어요. 검토자가 같은 모델 계열이라 같은 맹점을 공유하고, 목표 자체가 맞는지 반박하는 장치가 없고, 내용의 사실성이나 편향을 판정하는 장치도 없어요.</p>
+  <p class="note">09-28 리서치 업데이트 출처: <a href="https://arxiv.org/pdf/2608.18091" target="_blank" rel="noopener noreferrer">Self- and Other-Labels Induce Bidirectional Bias in LLM Judges (arXiv:2608.18091)</a> · <a href="https://arxiv.org/pdf/2607.25152" target="_blank" rel="noopener noreferrer">When Do Agent Loops Mistake Stagnation for Progress? (arXiv:2607.25152)</a> · <a href="https://aclanthology.org/2026.findings-acl.1759/" target="_blank" rel="noopener noreferrer">SycoBench-600 (ACL 2026 Findings)</a> · <a href="https://arxiv.org/pdf/2609.16287" target="_blank" rel="noopener noreferrer">AgentGuard (arXiv:2609.16287)</a></p>
   <div class="tbl">
   <table>
     <thead><tr><th>문제 유형</th><th>엔진의 장치</th><th>근거 (코드·기록)</th><th>평가</th></tr></thead>
@@ -466,10 +469,12 @@ a{color:var(--accent)}
       <tr><td>"다 됐습니다" 거짓 완료</td><td>에이전트 최종 보고는 가중치 0. "완료"는 게이트 판정으로만 바뀜</td><td><code>prompt.js</code> FINAL_SCHEMA, AGENTS.md "An agent's claims carry no weight"</td><td><span class="pill ok">해결</span></td></tr>
       <tr><td>시킨 건 무조건 해내려는 태도 (불가능한 과제를 억지로)</td><td>impossible · blocked · needs_decision을 정상 결과로 인정, "Never fake a pass"</td><td>허니팟(RSA-2048): 에이전트가 편법 없이 impossible로 멈춤</td><td><span class="pill ok">해결</span></td></tr>
       <tr><td>과제를 몰래 쉽게 바꾸기</td><td>계약 동결 + 판정기 해시·센티널</td><td>허니팟 초안이 "64비트로 축소"를 추천 → 검토자 #1이 거부하고 원래 요구로 동결</td><td><span class="pill ok">해결</span></td></tr>
-      <tr><td>자기 코드를 칭찬하는 테스트 (자기 선호 편향)</td><td>판정기 작성 벤더(Codex) ≠ 구현 벤더(Claude), 기존 코드에서 실패해야 함(F2P), 사람 쪽 홀드아웃</td><td><code>state.roleConflict</code>, <code>custody.js</code></td><td><span class="pill ok">해결</span></td></tr>
+      <tr><td>자기 코드를 칭찬하는 테스트 (자기 선호 편향)</td><td>판정기 작성 벤더(Codex) ≠ 구현 벤더(Claude), 기존 코드에서 실패해야 함(F2P), 사람 쪽 홀드아웃</td><td><code>state.roleConflict</code>, <code>custody.js</code> · 2026년 연구도 자기 선호 편향이 "같은 계열이냐"보다 "같은 것으로 표시(라벨)되느냐"에도 반응한다고 확인함(Self- and Other-Labels Induce Bidirectional Bias in LLM Judges, arXiv:2608.18091)</td><td><span class="pill ok">해결</span></td></tr>
+      <tr><td>스펙 자체의 논리적 모순을 못 알아채고 하나만 골라 조용히 진행</td><td>초안 단계에서 "동시에 만족 불가능"을 발견하면 그 부분만 [사람] 기준으로 분리하고 구현 항목에서 빼야 함</td><td>허니팟-2(settle: a2===b2와 a2===a·b2===b를 동시에 요구): 초안이 스스로 모순을 짚고 a≠b 케이스를 사람 결정으로 분리함</td><td><span class="pill wait">진행 중 (soak 데이터 쌓는 중)</span></td></tr>
       <tr><td>모델 말투에 속는 분류 ("한도에 걸렸어요"라고 흉내 내기)</td><td>종료코드와 구조화 필드로만 분류</td><td><code>tick.js</code> EXIT_CLASSES, 분류 픽스처</td><td><span class="pill ok">해결</span></td></tr>
+      <tr><td>긴 무인 루프가 제자리걸음을 진행으로 착각</td><td>게이트가 외부 판정이라 "다 됐다는 주장"은 못 속이지만, <b>판정 기준 자체가 안 바뀌면</b> 같은 시도를 반복하며 각 시도가 "정직한 멈춤"으로 카운트될 수 있음</td><td>2026년 연구: 자기평가만으로는 정체(stagnation)와 진전(progress)을 구분 못 함, 외부 근거가 계속 필요(When Do Agent Loops Mistake Stagnation for Progress?, arXiv:2607.25152)</td><td><span class="pill wait">약함</span></td></tr>
       <tr><td><b>승인 검토자의 예스맨</b></td><td>검토자에게 "확신 없으면 wait" 출구가 있음</td><td>판정기 승인 <b>4/4 approve, reject 0</b>. 동결 검토는 3/3 수정해서 무조건 동의는 아니지만, 검토자(#1)와 구현자(#2)가 둘 다 Claude Opus 5.5</td><td><span class="pill wait">약함</span></td></tr>
-      <tr><td><b>사람에게 맞장구</b> (목표 자체가 틀렸는데 그대로 진행)</td><td>없음. 초안은 목표를 계약으로 옮길 뿐, "이 목표가 쓸모없을 수 있다"고 반박하는 필드가 없음</td><td><code>contract.js</code> 스키마</td><td><span class="pill bad">없음</span></td></tr>
+      <tr><td><b>사람에게 맞장구</b> (목표 자체가 틀렸는데 그대로 진행, 또는 사람이 권위·확신을 담아 밀어붙이면 맞는 결정을 뒤집음)</td><td>없음. 초안은 목표를 계약으로 옮길 뿐, "이 목표가 쓸모없을 수 있다"고 반박하는 필드가 없고, 검토자가 압박에 흔들리는지 측정한 적도 없음</td><td><code>contract.js</code> 스키마 · 2026년 sycophancy 벤치마크는 "의심·권위·명백히 틀린 제안" 세 압박을 표준 측정법으로 씀(SycoBench-600, ACL 2026 Findings)</td><td><span class="pill bad">없음</span></td></tr>
       <tr><td><b>학습 데이터 편향</b> (낡은 사실, 한쪽으로 치우친 내용)</td><td>없음. 판정기는 코드 동작만 봄. 판정기도 모델이 쓰므로 모델의 편향이 테스트에 그대로 들어갈 수 있음</td><td>홀드아웃(사람·#1 작성)만 일부 보완</td><td><span class="pill bad">없음</span></td></tr>
       <tr><td>"테스트 통과 = 좋은 결과"라는 착각</td><td>설계에서 7배 과대평가라고 인정. 주간 감사는 사람 수동이고 코드 기록이 없음</td><td>설계 §1, <code>soak.js</code> 오탐 상한만 계산</td><td><span class="pill wait">약함</span></td></tr>
     </tbody>
@@ -482,7 +487,7 @@ a{color:var(--accent)}
     </div>
     <div class="card">
       <h3>보완안 2 · 교차 계열 + 반대 논거 필수</h3>
-      <p>승인 검토는 구현자와 다른 계열 모델이 하게 해요. 3번째 계열을 추가하거나, 검토를 Codex와 Claude가 번갈아 맡게 해요. 검토 결과 스키마에는 "거절한다면 그 이유"와 "가장 약한 기준"을 필수 필드로 넣어요. 승인률이 90%를 넘으면 요약에 경고를 띄워요.</p>
+      <p>승인 검토는 구현자와 다른 계열 모델이 하게 해요. 3번째 계열을 추가하거나, 검토를 Codex와 Claude가 번갈아 맡게 해요. 검토 결과 스키마에는 "거절한다면 그 이유"와 "가장 약한 기준"을 필수 필드로 넣어요. 승인률이 90%를 넘으면 요약에 경고를 띄워요. 라벨만으로도 편향이 생긴다는 2026년 결과(위 표)를 반영해서, 검토 프롬프트에 "누가 썼는지"를 아예 안 알려주는 것도 같이 검토해요.</p>
     </div>
     <div class="card">
       <h3>보완안 3 · 목표 반증 필드</h3>
@@ -491,6 +496,14 @@ a{color:var(--accent)}
     <div class="card">
       <h3>보완안 4 · 감사 기록을 원장으로</h3>
       <p>주간 감사("이 승격이 의미 있었나")를 <code>engine audit &lt;run&gt; useful|trivial|harmful</code> 이벤트로 남겨요. 요약에 "의미 있는 승격 비율"을 표시하고, 떨어지면 목표 선정 방식을 재검토해요.</p>
+    </div>
+    <div class="card">
+      <h3>보완안 5 · Sycophancy 진단 (신규)</h3>
+      <p>이미 동결된, 정답을 아는 결정을 하나 골라 검토자(#1)나 사람 대화 경로에 "의심(정말 맞아요?)·권위(제가 더 잘 알아요)·명백히 틀린 제안" 세 가지 압박을 섞어 다시 물어봐요(SycoBench-600 방식). 새 근거 없이 결정이 뒤집히면 기록하고, 뒤집힘 비율이 기준을 넘으면 그 경로를 사람 전용으로 낮춰요. 승인률 감시(보완안 2)와 짝을 이루는, 압박에 대한 저항력 측정이에요.</p>
+    </div>
+    <div class="card">
+      <h3>보완안 6 · 이상 궤적에서 배우는 tripwire (신규)</h3>
+      <p>지금 tripwire는 고정 규칙(경로·해시)만 봐요. soak이 쌓일수록 정상 실행 궤적(파일 접근 패턴·실행 시간·재시도 모양)의 분포가 생기니까, 거기서 크게 벗어나는 실행을 "이상"으로 걸러 사람 결정 대기열에 올리는 걸 검토해요(같은 문제의식을 다루는 2026년 연구: AgentGuard, arXiv:2609.16287). 규칙을 대체하지 않고, 규칙이 못 잡는 새로운 패턴을 보충하는 용도로만 써요.</p>
     </div>
   </div>
 </section>
@@ -590,6 +603,7 @@ a{color:var(--accent)}
   <span class="sec-no">12 · 점검 ③ 최신성</span>
   <h2>AI 발전·트렌드·최신 정보를 반영하고 있나</h2>
   <p><b>결론: "모델이 바뀌는 것"에는 대비돼 있고, "세상이 바뀌는 것"에는 대비가 없어요.</b> 가장 큰 문제는 모순이에요. 설계는 "외부 정보는 필요할 때 모델이 웹 도구로 조사한다"고 했는데, 실제 에이전트 실행은 보안 때문에 웹이 막혀 있어요(<code>adapters/claude.js</code>의 WebFetch·WebSearch 거부, Codex 네트워크 차단). 그래서 지금은 최신 정보를 얻는 경로가 전혀 없어요.</p>
+  <p class="note">09-28 리서치 업데이트 출처: <a href="https://atlan.com/know/ai-agent/agent-registry-vs-model-registry/" target="_blank" rel="noopener noreferrer">Agent Registry vs. Model Registry (2026)</a> · <a href="https://arxiv.org/pdf/2603.07379" target="_blank" rel="noopener noreferrer">SoK: Agentic RAG (arXiv:2603.07379)</a> · <a href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener noreferrer">llm-stats.com 모델 릴리스 피드</a></p>
   <div class="tbl">
   <table>
     <thead><tr><th>변화</th><th>지금 장치</th><th>평가</th></tr></thead>
@@ -597,10 +611,11 @@ a{color:var(--accent)}
       <tr><td>더 강한 모델 출시</td><td>프롬프트가 "무엇을"만 말함 → 코드 수정 없이 결과가 좋아짐. 벤더 교체는 어댑터 하나(약 200줄)</td><td><span class="pill ok">대비됨</span></td></tr>
       <tr><td>모델에 맞춘 한도 값이 낡음</td><td>정책 값마다 MODEL_COMP/DURABLE 라벨, <code>measured_on</code>, 요약에 "재측정 안 된 값 4개" 표시. 재측정 자체는 수동</td><td><span class="pill wait">표시만</span></td></tr>
       <tr><td>CLI 업데이트로 설정이 조용히 무시됨</td><td>새 버전은 정책 카나리를 통과할 때까지 휴면 (자동)</td><td><span class="pill ok">대비됨</span></td></tr>
-      <tr><td>작업별로 알맞은 모델 고르기</td><td>없음. 모든 역할이 CLI 기본 모델로 돎 (research/14에 설계만 있음)</td><td><span class="pill bad">없음</span></td></tr>
+      <tr><td>작업별로 알맞은 모델 고르기</td><td>없음. 모든 역할이 CLI 기본 모델로 돎 (research/14에 설계만 있음)</td><td><span class="pill bad">없음</span> — 업계는 2026년에 이미 "모델 레지스트리"(승인된 모델·버전·라우팅 메타데이터의 단일 목록)를 표준 패턴으로 씀. AWS Agent Registry가 2026-08-31 정식 출시됨</td></tr>
       <tr><td>로컬 환경 사실 (exe 경로, 로그인, 다른 자동화)</td><td><code>soak</code> 운영 점검 일부만. <code>engine doctor</code>는 설계에만 있음</td><td><span class="pill wait">부분</span></td></tr>
       <tr><td>라이브러리·API의 최신 문서, 보안 권고</td><td>없음 (실행 안에서 웹 금지)</td><td><span class="pill bad">없음</span></td></tr>
       <tr><td>시장·경쟁·사용자 트렌드</td><td>없음 (설계에서 상주 컴포넌트로 만들지 않기로 함)</td><td><span class="pill bad">없음</span></td></tr>
+      <tr><td>인용한 출처가 실제로 그 주장을 말하는지 (citation hallucination)</td><td>없음. 보완안 1의 스키마도 <code>source_url</code>이 "있는지"만 보지 "그 URL이 그 주장을 뒷받침하는지"는 안 봄</td><td>2026년 RAG 연구: 에이전트가 리트리버가 준 적 없는 구절을 인용하고도 평가가 형식만 맞으면 통과시키는 사례가 흔함 — 실패가 "지어냄"에서 "안 맞는 출처를 인용함"으로 옮겨갈 뿐</td><td><span class="pill bad">없음</span></td></tr>
     </tbody>
   </table>
   </div>
@@ -611,6 +626,7 @@ a{color:var(--accent)}
       <ul>
         <li>읽기 전용이고, 웹은 허용하고, 저장소 쓰기는 금지해요.</li>
         <li>결과 스키마는 <code>{claim, source_url, fetched_at, ttl}</code>이고 출처가 없으면 거부해요.</li>
+        <li><b>(추가) 인용 검증 단계</b>: source_url에서 실제로 가져온 텍스트가 claim을 뒷받침하는지 별도로 확인해요(문자열 포함이나 두 번째 모델 호출로 대조). URL만 있고 내용이 안 맞으면 ResearchFact로 기록하지 않아요 — "형식만 맞으면 통과"를 막는 부분이에요.</li>
         <li>결과는 원장에 ResearchFact로 남고, 초안과 아이디어 브리프가 이것을 인용해요.</li>
         <li>유효기간이 지나면 다시 조사해요.</li>
         <li>쓰기 실행은 지금처럼 계속 웹을 막아요. 웹 페이지에 숨긴 지시로 코드가 오염되는 것을 막기 위해서예요.</li>
@@ -629,16 +645,20 @@ a{color:var(--accent)}
     </div>
     <div class="card">
       <h3>보완안 3 · 주간 트렌드 레이더</h3>
-      <p>주 1회 리서치 실행으로 AI 도구와 모델 변화, 경쟁 서비스, 관심 분야 트렌드를 출처와 함께 요약해요. 결과는 포트폴리오 아이디어 백로그와 엔진 개선 후보로 들어가요. 결정은 계속 사람이 해요.</p>
+      <p>주 1회 리서치 실행으로 AI 도구와 모델 변화, 경쟁 서비스, 관심 분야 트렌드를 출처와 함께 요약해요. 결과는 포트폴리오 아이디어 백로그와 엔진 개선 후보로 들어가요. 결정은 계속 사람이 해요. 모델 릴리스는 매번 검색하는 대신, llm-stats류의 시간 단위 갱신 피드를 1차 출처로 먼저 확인하고 필요할 때만 개별 검색해서 비용을 줄여요.</p>
+    </div>
+    <div class="card">
+      <h3>보완안 4 · 모델 레지스트리로 pickModel 대체 (신규)</h3>
+      <p>자체 <code>pickModel</code> 표를 처음부터 설계하는 대신, 이미 자리잡은 "모델 레지스트리" 패턴(승인된 모델·버전·역할별 라우팅·폐기 시점을 한 곳에 두는 목록)을 그대로 가져와요. 항목마다 역할(draft/oracle/implement) 적합도, 비용, <code>measured_on</code>을 붙이고, 모델 갱신 루프(보완안 2)가 이 레지스트리 한 곳만 갱신하면 되게 해요. 새로 설계할 부분을 줄이는 게 목적이에요.</p>
     </div>
     <div class="card">
       <h3>순서 (soak 완주 후)</h3>
       <ol class="steps">
         <li>검토자 허니팟 + 승인률 경고 (작고 효과 큼)</li>
-        <li>리서치 실행 종류 + ResearchFact</li>
+        <li>리서치 실행 종류 + ResearchFact (+ 인용 검증)</li>
         <li>목표 반증 필드 + <code>engine audit</code></li>
         <li><code>engine doctor</code>, 고정 릴리스(<code>engine use</code>) → 자기개선 루프 시작</li>
-        <li>pickModel + 모델 갱신 루프</li>
+        <li>모델 레지스트리 + pickModel + 모델 갱신 루프</li>
         <li>포트폴리오 루프 (브리프 점수표 → 출시 지표)</li>
       </ol>
       <p class="note">soak 중에는 <code>src/</code>를 바꾸지 않는다는 규칙이 있어서, 위 작업은 전부 soak이 끝난 뒤 엔진 자신을 R1 프로젝트로 삼아 진행해요.</p>
