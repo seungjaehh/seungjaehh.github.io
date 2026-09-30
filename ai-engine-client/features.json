@@ -1,5 +1,5 @@
 {
-  "product": "AI Core Engine Client",
+  "product": "클라이언트",
   "version": "0.1.0",
   "counts": {
     "screens": 8,
@@ -521,6 +521,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-09-30T00:16:39.715Z",
+  "generatedAt": "2026-09-30T00:42:12.209Z",
   "contentHash": "4671040fbbac"
 }
