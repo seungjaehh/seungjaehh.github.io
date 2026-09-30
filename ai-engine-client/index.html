@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f5f5f3">
-<meta name="description" content="AI Core Engine Client 기능 표 — 코드에서 자동 생성되어 실시간으로 갱신됩니다">
-<title>클라이언트 기능표 · seungjaehh</title>
+<meta name="description" content="클라이언트 — 설치 파일 다운로드와 기능 표 (코드에서 자동 생성, 실시간 갱신)">
+<title>클라이언트 · seungjaehh</title>
 <style>
 :root{color-scheme:light;--bg:#f5f5f3;--paper:#fff;--ink:#111;--muted:#707070;--line:#dededb;--soft:#efefec;--accent:#2f5fd0;--ok:#1f8f57;--new:#b4590b}
 @media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#080808;--paper:#151515;--ink:#f4f4f2;--muted:#aaa;--line:#303030;--soft:#242424;--accent:#7aa2ff;--ok:#4fd18b;--new:#f0a35a}}
@@ -21,7 +21,11 @@ h1{margin:10px 0 4px;font-size:26px;letter-spacing:-.8px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite}
 .dot.stale{background:#c9a227;animation:none}
 @keyframes pulse{50%{opacity:.35}}
-.chips{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 0}
+.dlrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:16px 0 0}
+.dl{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:650;border-radius:10px;padding:11px 20px}
+.dl small{font-weight:500;opacity:.7}.dlnote{color:var(--muted);font-size:13px}
+h1 small{font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:6px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
 .chip{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:9px 14px}
 .chip b{display:block;font-size:20px;letter-spacing:-.5px}.chip span{font-size:12px;color:var(--muted)}
 main{padding:24px 0 70px}
@@ -58,8 +62,9 @@ tr.flash td{animation:flash 2.6s ease-out}
       <a class="back" href="../">← 페이지·프로젝트 모음</a>
       <span class="live" id="live"><i class="dot" id="dot"></i><span id="liveText">불러오는 중…</span></span>
     </div>
-    <h1 id="title">AI Core Engine Client</h1>
+    <h1 id="title">클라이언트 <small id="ver"></small></h1>
     <div class="sub" id="sub">코드에서 자동 생성되는 기능 표 — 기능이 추가·변경되면 이 표도 저절로 바뀝니다.</div>
+    <div class="dlrow"><a class="dl" id="dl" hidden></a><span class="dlnote" id="dlnote">설치 파일 준비 중</span></div>
     <div class="chips" id="chips"></div>
   </header>
   <main>
@@ -148,7 +153,7 @@ async function load(first) {
     }
     data = next
     if (changed) {
-      $('#title').textContent = `${data.product} v${data.version}`
+      $('#ver').textContent = `v${data.version}`
       renderChips(); renderRows(flash); renderLog()
       if (!first && flash.size) toast(`기능표가 갱신됐어요 — ${flash.size}개 추가/변경`)
       else if (!first) toast('기능표가 갱신됐어요')
@@ -157,7 +162,22 @@ async function load(first) {
   } catch { if (data) renderLive(); else $('#liveText').textContent = '불러오기 실패 — 잠시 후 다시 시도' }
 }
 
+async function loadRelease() {
+  try {
+    const res = await fetch('https://api.github.com/repos/seungjaehh/seungjaehh.github.io/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+    if (!res.ok) throw new Error(res.status)
+    const rel = await res.json()
+    const exe = (rel.assets || []).find(a => a.name.endsWith('.exe'))
+    if (!exe) throw new Error('no exe')
+    const a = $('#dl')
+    a.href = exe.browser_download_url
+    a.replaceChildren(document.createTextNode('Windows 다운로드'), mk('small', null, `${rel.tag_name.replace(/^client-/, '')} · ${Math.round(exe.size / 1048576)}MB`))
+    a.hidden = false; $('#dlnote').textContent = '설치 후 설정 탭에서 서버 주소와 토큰을 입력하세요'
+  } catch { /* no release yet: keep the placeholder */ }
+}
+
 renderSeg()
+loadRelease()
 $('#q').addEventListener('input', () => data && renderRows())
 load(true)
 setInterval(load, 30_000)
