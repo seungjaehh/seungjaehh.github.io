@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "counts": {
     "screens": 8,
-    "tools": 10,
-    "api": 22,
-    "total": 48
+    "tools": 11,
+    "api": 23,
+    "total": 50
   },
   "features": [
     {
@@ -217,6 +217,16 @@
       "where": "도구",
       "firstSeen": null,
       "changedAt": "2026-09-30T01:38:59.855Z"
+    },
+    {
+      "id": "tool:원격 제어 (아이폰·아이패드)",
+      "kind": "도구",
+      "category": "배포·백업",
+      "name": "원격 제어 (아이폰·아이패드)",
+      "description": "켜면 나오는 코드를 폰에서 입력해 이 PC의 화면을 보고 마우스·키보드로 조작합니다. 이 PC에서만 켜고 끌 수 있고, 시간이 지나면 저절로 꺼져요.",
+      "where": "도구",
+      "firstSeen": "2026-09-30T04:46:23.047Z",
+      "changedAt": null
     },
     {
       "id": "tool:구조도·브리핑 페이지 열기",
@@ -459,6 +469,16 @@
       "changedAt": null
     },
     {
+      "id": "api:GET /api/remote-link",
+      "kind": "API",
+      "category": "도구",
+      "name": "GET /api/remote-link",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-09-30T04:46:23.047Z",
+      "changedAt": null
+    },
+    {
       "id": "api:GET /api/backup-status",
       "kind": "API",
       "category": "엔진",
@@ -490,6 +510,16 @@
     }
   ],
   "changeLog": [
+    {
+      "at": "2026-09-30T04:46:23.047Z",
+      "type": "추가",
+      "name": "원격 제어 (아이폰·아이패드)"
+    },
+    {
+      "at": "2026-09-30T04:46:23.047Z",
+      "type": "추가",
+      "name": "GET /api/remote-link"
+    },
     {
       "at": "2026-09-30T01:38:59.855Z",
       "type": "변경",
@@ -541,6 +571,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-09-30T01:38:59.855Z",
-  "contentHash": "e317a2621cd7"
+  "generatedAt": "2026-09-30T04:46:23.047Z",
+  "contentHash": "cb2d02cbe2c3"
 }
