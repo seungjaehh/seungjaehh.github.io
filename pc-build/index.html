@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f6f4">
+<meta name="description" content="게임 + 개발용 PC 본체 견적 — 6개 구성, 부품 근거, 구매 전 확인 목록 (다나와 2026-09-30 기준)">
+<title>PC 견적 2026-09 · seungjaehh</title>
+<link rel="stylesheet" href="../assets/ds.css">
+<style>
+.verdict{border-left:4px solid var(--brand);background:var(--brand-soft)}
+.verdict ul{margin:8px 0 0;padding-left:1.2em}.verdict li{margin:4px 0}
+.builds{display:grid;gap:var(--s-3);grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.build{display:flex;flex-direction:column;gap:var(--s-2);position:relative}
+.build.pick{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand)}
+.build .price{font-size:26px;font-weight:720;letter-spacing:-.03em}
+.build .price small{font-size:13px;font-weight:500;color:var(--muted);margin-left:6px}
+.build dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:14px}
+.build dt{color:var(--muted)}.build dd{margin:0}
+.build p{color:var(--ink-2);font-size:14px}
+.badge{position:absolute;right:16px;top:16px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{text-align:left;font-size:12px;color:var(--muted);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line)}
+.tbl td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tbl tr:last-child td{border-bottom:0}
+.tbl tfoot td{font-weight:700}
+.scroll{overflow-x:auto}
+.note{color:var(--muted);font-size:13px}
+.warn{border-left:4px solid var(--warn)}
+ul.rules{margin:8px 0 0;padding-left:1.2em;color:var(--ink-2)}ul.rules li{margin:5px 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s-3)}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="back" href="../">← 모음집</a><span class="grow"></span>
+  <button class="btn btn-quiet btn-sm" type="button" data-theme-toggle>자동</button>
+</div></header>
+<main class="container">
+  <div class="page-head">
+    <h1>PC 본체 견적</h1>
+    <p>게임 + 개발(엔진·Node·Blender), 1440p 기준. 모니터·OS·배송비 제외. 가격은 <b>2026-09-30 다나와 최저가 검색 결과</b>이며 재고와 실제 가격은 상품 페이지에서 다시 확인해야 합니다.</p>
+  </div>
+
+  <section class="card verdict stack">
+    <h2>결론</h2>
+    <ul>
+      <li><b>예산이 유연하면 375만원 구성(9600X + RTX 5070 Ti)이 최선입니다.</b> GPU에 돈을 몰고 CPU는 나중에 9800X3D로 바꾸는 순서가 가장 손해가 적습니다.</li>
+      <li><b>RTX 5070 12GB는 어중간합니다.</b> 5060 Ti 16GB와 값 차이는 약 24만원인데 VRAM이 4GB 적고, 5070 Ti와는 약 48만원 차이에 성능은 25~30% 벌어집니다. 사려면 5060 Ti 16GB(실속) 또는 5070 Ti(권장)로 건너뛰는 편이 낫습니다.</li>
+      <li><b>파워는 750W가 아니라 850W로.</b> 값 차이 약 2.3만원이고, 5080이나 X3D로 올릴 때 파워를 다시 살 일이 없습니다.</li>
+      <li><b>램이 지금 가장 비쌉니다.</b> 32GB가 65~76만원(5070급 GPU 가격)이고 64GB는 150~185만원입니다. 32GB만 사고, 늘릴 때는 슬롯을 채우지 말고 2×32GB로 교체하세요.</li>
+    </ul>
+  </section>
+
+  <section class="section"><h2>견적 6종 <small>본체, 배송비·OS 제외, 원</small></h2>
+    <div class="builds">
+      <article class="card build">
+        <h3>① 실속</h3><div class="price">3,024,130<small>≈ 302만</small></div>
+        <dl><dt>CPU</dt><dd>Ryzen 5 9600X</dd><dt>GPU</dt><dd>RTX 5060 Ti 16GB</dd><dt>램·SSD</dt><dd>32GB · 2TB</dd></dl>
+        <p>1440p 고옵션은 대부분 가능하고 최고 옵션+레이트레이싱은 프레임이 부족합니다. 기가바이트 WINDFORCE MAX OC가 목록가 83.4만원으로 실제 재고가 있다면 약 281만원까지 내려갑니다.</p>
+      </article>
+      <article class="card build">
+        <h3>② 균형 (NVIDIA)</h3><div class="price">3,267,600<small>≈ 327만</small></div>
+        <dl><dt>CPU</dt><dd>Ryzen 5 9600X</dd><dt>GPU</dt><dd>RTX 5070 12GB</dd><dt>램·SSD</dt><dd>32GB · 2TB</dd></dl>
+        <p>지금 성능은 좋지만 VRAM 12GB가 2~3년 뒤 텍스처 옵션에서 먼저 막힙니다. 이 예산이라면 ③을 먼저 보세요.</p>
+      </article>
+      <article class="card build">
+        <h3>③ 균형 (AMD)</h3><div class="price">3,349,130<small>≈ 335만</small></div>
+        <dl><dt>CPU</dt><dd>Ryzen 5 9600X</dd><dt>GPU</dt><dd>RX 9070 XT 16GB</dd><dt>램·SSD</dt><dd>32GB · 2TB</dd></dl>
+        <p>순수 게임이면 가성비가 가장 좋습니다(5070 Ti와 비슷한 성능, 약 40만원 저렴). 다만 Blender Cycles, NVENC, CUDA 기반 도구는 NVIDIA가 유리합니다.</p>
+      </article>
+      <article class="card build pick">
+        <span class="pill pill-brand badge">추천</span>
+        <h3>④ 권장</h3><div class="price">3,752,520<small>≈ 375만</small></div>
+        <dl><dt>CPU</dt><dd>Ryzen 5 9600X</dd><dt>GPU</dt><dd>RTX 5070 Ti 16GB</dd><dt>램·SSD</dt><dd>32GB · 2TB</dd></dl>
+        <p>1440p 최고 옵션을 안정적으로 넘는 첫 구간. 16GB VRAM이라 오래 갑니다. CPU는 AM5라서 나중에 9800X3D로 교체할 수 있습니다.</p>
+      </article>
+      <article class="card build">
+        <h3>⑤ 고성능</h3><div class="price">4,120,650<small>≈ 412만</small></div>
+        <dl><dt>CPU</dt><dd>Ryzen 7 9800X3D</dd><dt>GPU</dt><dd>RTX 5070 Ti 16GB</dd><dt>램·SSD</dt><dd>32GB · 2TB</dd></dl>
+        <p>CPU가 병목인 게임(Roblox, 발로란트, 시뮬레이션)과 병렬 빌드·테스트에서 이득이 큽니다. 8코어라 개발용으로도 9600X(6코어)보다 여유가 있습니다.</p>
+      </article>
+      <article class="card build">
+        <h3>⑥ 최상</h3><div class="price">4,400,080<small>≈ 440만</small></div>
+        <dl><dt>CPU</dt><dd>Ryzen 5 9600X</dd><dt>GPU</dt><dd>RTX 5080 16GB</dd><dt>램·SSD</dt><dd>32GB · 2TB</dd></dl>
+        <p>1440p에서 5070 Ti보다 10~15% 빠르지만 값은 65만원 더 듭니다. 1440p 한정이라면 효율은 ⑤가 낫습니다. 4K로 갈 계획이 있을 때만 의미가 있습니다.</p>
+      </article>
+    </div>
+    <p class="note" style="margin-top:12px">예산 구간으로 매핑: 300만 → ① · 350만 → ③(AMD) 또는 ②(NVIDIA) · 400만 → ④ · 450만 → ⑤ (약 38만원 여유, Windows 라이선스나 SSD 추가 정도).</p>
+  </section>
+
+  <section class="section"><h2>공통 부품 <small>①~⑥ 모두 같음</small></h2>
+    <div class="card scroll"><table class="tbl">
+      <thead><tr><th>부품</th><th>선택</th><th style="text-align:right">가격</th><th>이유 / 대안</th></tr></thead>
+      <tbody>
+        <tr><td>메인보드</td><td>GIGABYTE B850M AORUS ELITE WIFI6E ICE</td><td class="n">218,180</td><td>9600X·9800X3D에는 충분한 VRM. 이전 견적의 TUF B850M-PLUS(258,260)보다 약 4만원 저렴. Wi-Fi 6E/7 차이는 게임에 영향이 없습니다. <b>M.2 슬롯 수와 PCIe 5.0 x16 슬롯은 구매 전 확인</b>. 더 아끼려면 B850M GAMING X WIFI6E(188,070).</td></tr>
+        <tr><td>램</td><td>ESSENCORE KLEVV FIT V BLACK AMD DDR5-6000 32GB (16×2)</td><td class="n">739,000</td><td>AMD EXPO 프로파일 명시. 성능 차이는 1~3%뿐이라 더 아끼려면 PATRIOT VIPER Elite 5(650,000) 같은 6000MHz 제품도 가능하지만 CL·EXPO를 확인해야 합니다.</td></tr>
+        <tr><td>SSD</td><td>삼성 990 EVO Plus 2TB</td><td class="n">514,990</td><td>1TB는 327,500이라 TB당 값이 더 비쌉니다. 게임+프로젝트 용량을 생각하면 2TB. 대안 WD SN7100(504,500). PCIe 5.0 SSD는 체감 차이 없이 비싸서 불필요.</td></tr>
+        <tr><td>파워</td><td>마이크로닉스 Classic II 850W</td><td class="n">148,840</td><td>750W(126,110)보다 22,730원 더 내고 5080·X3D 업그레이드 여유를 확보. <b>12V-2x6 네이티브 케이블 포함 여부 확인</b>.</td></tr>
+        <tr><td>케이스</td><td>DAVEN D7 Mesh</td><td class="n">49,380</td><td>이전 견적 그대로 유지한 저가 메쉬 케이스입니다. 열·소음 검증 자료는 확인하지 못했으니 <b>GPU 길이 제한과 쿨러 높이 제한, 리뷰를 확인</b>하세요.</td></tr>
+        <tr><td>쿨러</td><td>Thermalright PA120 SE</td><td class="n">38,200</td><td>9600X·9800X3D(120W)까지 충분한 가성비 공랭 쿨러.</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">공통 합계 (CPU·GPU 제외)</td><td class="n">1,708,590</td><td></td></tr></tfoot>
+    </table></div>
+  </section>
+
+  <section class="section"><h2>CPU · GPU 가격과 효율 <small>1440p 성능은 제3자 벤치 종합의 근사치</small></h2>
+    <div class="card scroll"><table class="tbl">
+      <thead><tr><th>부품</th><th>선택한 제품</th><th style="text-align:right">가격</th><th style="text-align:right">상대 성능*</th><th style="text-align:right">성능 1점당</th></tr></thead>
+      <tbody>
+        <tr><td>Ryzen 5 9600X</td><td>정품 멀티팩</td><td class="n">271,540</td><td class="n">—</td><td class="n">—</td></tr>
+        <tr><td>Ryzen 7 9800X3D</td><td>정품 멀티팩</td><td class="n">639,670</td><td class="n">—</td><td class="n">—</td></tr>
+        <tr><td>RTX 5060 Ti 16GB</td><td>COLORFUL GAMING DUO (최저 83.4만 제품 별도)</td><td class="n">1,044,000</td><td class="n">100</td><td class="n">10,440</td></tr>
+        <tr><td>RTX 5070 12GB</td><td>MSI 게이밍 트리오 OC</td><td class="n">1,287,470</td><td class="n">≈125</td><td class="n">10,300</td></tr>
+        <tr><td>RX 9070 XT 16GB</td><td>GIGABYTE GAMING OC</td><td class="n">1,369,000</td><td class="n">≈160</td><td class="n">8,560</td></tr>
+        <tr><td>RTX 5070 Ti 16GB</td><td>GALAX BLACK 2X OC</td><td class="n">1,772,390</td><td class="n">≈160</td><td class="n">11,080</td></tr>
+        <tr><td>RTX 5080 16GB</td><td>ZOTAC AMP EXTREME INFINITY</td><td class="n">2,419,950</td><td class="n">≈180</td><td class="n">13,440</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note" style="margin-top:8px">* 5060 Ti 16GB를 100으로 둔 대략치입니다. 출처별 편차가 크고(5070은 5060 Ti보다 20~35% 빠르다는 보고, 5080은 5070 Ti보다 10~15%), 게임마다 다릅니다. 순위와 격차의 감을 잡는 용도로만 쓰세요.</p>
+  </section>
+
+  <section class="section"><h2>이전 견적에서 바꾼 것</h2>
+    <div class="cols">
+      <div class="card card-pad-sm"><h3>파워 750W → 850W</h3><p class="muted">5070 Ti의 권장 최소가 750W라 여유가 0이었습니다. +22,730원으로 5080급 교체까지 대비.</p></div>
+      <div class="card card-pad-sm"><h3>메인보드 −4만원</h3><p class="muted">TUF(258,260) → AORUS ELITE(218,180). 사용 목적에서 실사용 차이가 거의 없습니다.</p></div>
+      <div class="card card-pad-sm"><h3>300만 구간도 SSD 2TB</h3><p class="muted">이전에는 1TB로 줄여 맞췄지만, 메인보드·파워 조정으로 2TB를 유지해도 약 302만원입니다.</p></div>
+      <div class="card card-pad-sm"><h3>5070 12GB 비추천</h3><p class="muted">VRAM 12GB가 이 구간의 약점입니다. 350만 구간에는 9070 XT(16GB) 또는 5070 중 사용 도구로 결정하세요.</p></div>
+    </div>
+  </section>
+
+  <section class="section"><h2>구매 전 확인 목록</h2>
+    <div class="card warn stack">
+      <ul class="rules">
+        <li>모든 가격은 다나와 검색 결과를 자동 수집·요약한 값입니다. <b>상품 페이지에서 가격·재고를 직접 확인</b>하세요. 특히 5060 Ti 83.4만원과 램 가격은 변동이 큽니다.</li>
+        <li>메인보드: M.2 슬롯 개수, 첫 번째 M.2·그래픽 슬롯 세대, 후면 USB 구성, BIOS 플래시백.</li>
+        <li>파워: 12V-2x6(16핀) 케이블 포함 여부, ATX 3.1 지원.</li>
+        <li>케이스: GPU 최대 길이(카드 길이 확인), 쿨러 최대 높이(PA120 SE는 약 155mm), 앞면 팬 구성.</li>
+        <li>램: AMD EXPO 지원과 CL 값, 1.35V 이하인지(9000 시리즈 안정성).</li>
+        <li>GPU 브랜드: 정식 유통 여부와 A/S 기간. 값이 가장 낮은 제품이 정식이 아닐 수 있습니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section"><h2>이 견적의 한계</h2>
+    <div class="card stack">
+      <ul class="rules">
+        <li>엔진 빌드·컴파일 벤치마크는 없습니다. 개발 용도(Node, 브라우저, VS Code, Blender)는 코어 수와 램·SSD 속도가 중요하고 GPU는 거의 영향이 없습니다. 게임 성능 위주로 GPU에 예산을 쓴 구성입니다.</li>
+        <li>NVIDIA 선택 이유: Blender OptiX, NVENC, CUDA(ComfyUI 등) 호환. 로컬 AI를 쓰지 않고 순수 게임만 한다면 ③(AMD)이 더 효율적입니다.</li>
+        <li>제외: 모니터, Windows 라이선스, 배송비, 키보드·마우스, 추가 케이스 팬.</li>
+        <li>성능 수치는 제3자 집계라 게임별·드라이버별로 바뀝니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section"><h2>참고 자료</h2>
+    <div class="card card-pad-sm"><ul class="rules" style="margin:0">
+      <li><a href="https://search.danawa.com/dsearch.php?query=RTX+5070+Ti" target="_blank" rel="noopener noreferrer">다나와 — RTX 5070 Ti 검색 ↗</a> (부품별 검색 결과가 가격 출처)</li>
+      <li><a href="https://www.techspot.com/review/3130-geforce-rtx-5070-ti-vs-radeon-rx-9070-xt/" target="_blank" rel="noopener noreferrer">TechSpot — RTX 5070 Ti vs RX 9070 XT (52게임) ↗</a></li>
+      <li><a href="https://www.techpowerup.com/338591/amd-radeon-rx-9070-xt-gains-9-performance-at-1440p-with-latest-driver-beats-rtx-5070-ti" target="_blank" rel="noopener noreferrer">TechPowerUp — RX 9070 XT vs 5070 Ti 1440p ↗</a></li>
+      <li><a href="https://thepcenthusiast.com/rtx-5060-ti-16gb-vs-rtx-5070-12gb-gpu-comparison/" target="_blank" rel="noopener noreferrer">ThePCEnthusiast — 5060 Ti 16GB vs 5070 ↗</a></li>
+      <li><a href="https://www.bestgpusforgaming.com/gpu-comparison/5070-ti-vs-5080" target="_blank" rel="noopener noreferrer">BestGPUsForGaming — 5070 Ti vs 5080 ↗</a></li>
+    </ul></div>
+  </section>
+  <p class="footer">기준일 2026-09-30 · 견적은 참고용이며 구매 전 재확인 필요 · <a href="../ds/">디자인 가이드</a></p>
+</main>
+<script src="../assets/ds.js"></script>
+</body>
+</html>
