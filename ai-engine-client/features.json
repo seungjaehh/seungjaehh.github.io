@@ -4,8 +4,8 @@
   "counts": {
     "screens": 8,
     "tools": 10,
-    "api": 21,
-    "total": 47
+    "api": 22,
+    "total": 48
   },
   "features": [
     {
@@ -213,10 +213,10 @@
       "kind": "도구",
       "category": "배포·백업",
       "name": "백업 + GitHub 반영",
-      "description": "E드라이브 백업 후 seungjaehh/ai-core-backup에 푸시합니다.",
+      "description": "E드라이브(연결이 없으면 C: 드라이브의 AI-backup 폴더)에 백업하고 seungjaehh/ai-core-backup에 푸시합니다.",
       "where": "도구",
       "firstSeen": null,
-      "changedAt": null
+      "changedAt": "2026-09-30T01:38:59.855Z"
     },
     {
       "id": "tool:구조도·브리핑 페이지 열기",
@@ -459,6 +459,16 @@
       "changedAt": null
     },
     {
+      "id": "api:GET /api/backup-status",
+      "kind": "API",
+      "category": "엔진",
+      "name": "GET /api/backup-status",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-09-30T01:38:59.855Z",
+      "changedAt": null
+    },
+    {
       "id": "api:POST /api/backup-push",
       "kind": "API",
       "category": "도구",
@@ -480,6 +490,16 @@
     }
   ],
   "changeLog": [
+    {
+      "at": "2026-09-30T01:38:59.855Z",
+      "type": "변경",
+      "name": "백업 + GitHub 반영"
+    },
+    {
+      "at": "2026-09-30T01:38:59.855Z",
+      "type": "추가",
+      "name": "GET /api/backup-status"
+    },
     {
       "at": "2026-09-30T00:10:49.158Z",
       "type": "변경",
@@ -521,6 +541,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-09-30T00:42:12.209Z",
-  "contentHash": "4671040fbbac"
+  "generatedAt": "2026-09-30T01:38:59.855Z",
+  "contentHash": "e317a2621cd7"
 }
