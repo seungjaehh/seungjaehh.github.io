@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f6f4">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="원격">
+<title>원격 제어 · seungjaehh</title>
+<link rel="stylesheet" href="../assets/ds.css">
+<style>
+.wrap{max-width:520px;margin:0 auto}
+.addr{font-family:var(--mono);font-size:13px;word-break:break-all;color:var(--ink-2)}
+#err{min-height:22px;color:var(--bad);font-size:14px}
+ol{margin:8px 0 0;padding-left:1.2em;color:var(--ink-2)}ol li{margin:6px 0}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="back" href="../">← 모음집</a><span class="grow"></span>
+  <button class="btn btn-quiet btn-sm" type="button" data-theme-toggle>자동</button>
+</div></header>
+<main class="container">
+  <div class="page-head wrap">
+    <h1>원격 제어</h1>
+    <p>아이폰·아이패드로 내 PC 화면을 보고 조작합니다. 이 페이지는 주소를 기억해 두었다가 열어 주기만 하고, PC 주소는 서버에 저장되지 않습니다.</p>
+  </div>
+
+  <section class="card wrap stack" id="ready" hidden>
+    <h2>저장된 PC</h2>
+    <div class="addr" id="saved"></div>
+    <div class="row">
+      <button class="btn btn-primary btn-lg grow" id="open" type="button">열기</button>
+      <button class="btn" id="forget" type="button">지우기</button>
+    </div>
+    <p class="muted small">PC에서 원격 제어를 켠 뒤 나오는 코드를 다음 화면에서 입력하세요. 열리지 않으면 PC가 꺼져 있거나 터널 주소가 바뀐 것입니다.</p>
+  </section>
+
+  <section class="card wrap stack" id="setup" style="margin-top:12px">
+    <h2>주소 등록</h2>
+    <input class="field" id="addr" type="url" inputmode="url" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="https://….trycloudflare.com" aria-label="터널 주소">
+    <button class="btn" id="save" type="button">저장</button>
+    <div id="err" role="alert"></div>
+    <ol class="small">
+      <li>PC에서 원격 제어를 켭니다 (클라이언트 앱 → 도구 → 원격 제어).</li>
+      <li>나온 주소(<code>https://….trycloudflare.com</code>)를 위 칸에 붙여넣고 저장합니다.</li>
+      <li>임시 터널 주소는 PC나 터널을 다시 시작하면 바뀝니다. 그때는 새 주소를 다시 저장하세요.</li>
+    </ol>
+  </section>
+  <p class="footer wrap">코드는 PC 화면에 나오며, 5번 틀리면 원격 제어가 저절로 꺼집니다.</p>
+</main>
+<script src="../assets/ds.js"></script>
+<script>
+(() => {
+  const KEY = 'remote-host', RE = /^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/
+  const $ = id => document.getElementById(id)
+  const store = { get: () => { try { return localStorage.getItem(KEY) } catch { return null } }, set: v => { try { v ? localStorage.setItem(KEY, v) : localStorage.removeItem(KEY) } catch { /* private mode */ } } }
+  const norm = s => String(s || '').trim().replace(/\/remote\/?$/, '').replace(/\/+$/, '')
+
+  function paint() {
+    const a = store.get()
+    $('ready').hidden = !a
+    $('saved').textContent = a || ''
+  }
+  function save(raw) {
+    const a = norm(raw)
+    if (!RE.test(a)) { $('err').textContent = '주소 형식이 달라요. https://….trycloudflare.com 형태여야 해요'; return false }
+    $('err').textContent = ''
+    store.set(a); paint(); return true
+  }
+
+  // A link like  …/remote/#https://xxxx.trycloudflare.com  saves the address on this phone, then it is
+  // removed from the address bar (the fragment is never sent to any server).
+  if (location.hash.length > 1) {
+    const ok = save(decodeURIComponent(location.hash.slice(1)))
+    history.replaceState(null, '', location.pathname)
+    if (!ok) $('err').textContent = '링크의 주소가 올바르지 않아요'
+  }
+  $('save').addEventListener('click', () => { if (save($('addr').value)) $('addr').value = '' })
+  $('open').addEventListener('click', () => { const a = store.get(); if (a && RE.test(a)) location.href = `${a}/remote/` })
+  $('forget').addEventListener('click', () => { store.set(null); paint() })
+  paint()
+})()
+</script>
+</body>
+</html>
