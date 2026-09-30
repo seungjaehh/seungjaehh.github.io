@@ -39,13 +39,13 @@ ol{margin:8px 0 0;padding-left:1.2em;color:var(--ink-2)}ol li{margin:6px 0}
 
   <section class="card wrap stack" id="setup" style="margin-top:12px">
     <h2>주소 등록</h2>
-    <input class="field" id="addr" type="url" inputmode="url" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="https://….trycloudflare.com" aria-label="터널 주소">
+    <input class="field" id="addr" type="url" inputmode="url" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="https://….workers.dev" aria-label="터널 주소">
     <button class="btn" id="save" type="button">저장</button>
     <div id="err" role="alert"></div>
     <ol class="small">
       <li>PC에서 원격 제어를 켭니다 (클라이언트 앱 → 도구 → 원격 제어).</li>
-      <li>나온 주소(<code>https://….trycloudflare.com</code>)를 위 칸에 붙여넣고 저장합니다.</li>
-      <li>임시 터널 주소는 PC나 터널을 다시 시작하면 바뀝니다. 그때는 새 주소를 다시 저장하세요.</li>
+      <li>나온 주소(<code>https://….workers.dev</code>)를 위 칸에 붙여넣고 저장합니다.</li>
+      <li>고정 주소(workers.dev)는 PC를 다시 시작해도 바뀌지 않습니다. 임시 터널 주소(trycloudflare.com)를 쓰는 경우에만 바뀔 때마다 다시 저장하세요.</li>
     </ol>
   </section>
   <p class="footer wrap">코드는 PC 화면에 나오며, 5번 틀리면 원격 제어가 저절로 꺼집니다.</p>
@@ -65,7 +65,7 @@ ol{margin:8px 0 0;padding-left:1.2em;color:var(--ink-2)}ol li{margin:6px 0}
   }
   function save(raw) {
     const a = norm(raw)
-    if (!RE.test(a)) { $('err').textContent = '주소 형식이 달라요. https://….trycloudflare.com 형태여야 해요'; return false }
+    if (!RE.test(a)) { $('err').textContent = '주소 형식이 달라요. https://….workers.dev (또는 trycloudflare.com) 형태여야 해요'; return false }
     $('err').textContent = ''
     store.set(a); paint(); return true
   }
