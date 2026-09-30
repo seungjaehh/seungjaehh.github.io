@@ -93,80 +93,80 @@
       "kind": "구성요소",
       "category": "상태",
       "name": "사람 개입함",
-      "description": "",
+      "description": "엔진이 사람 판단을 기다리는 결정을 카드로 표시 — 등급(A~D)별 색, 추천안, 선택지 버튼으로 바로 처리",
       "where": "상태",
       "firstSeen": null,
-      "changedAt": null
+      "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:status:Soak 조건",
       "kind": "구성요소",
       "category": "상태",
       "name": "Soak 조건",
-      "description": "",
+      "description": "soak 완료 조건별 충족 여부 (7일·판정 30회 등)",
       "where": "상태",
       "firstSeen": null,
-      "changedAt": null
+      "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:status:목표",
       "kind": "구성요소",
       "category": "상태",
       "name": "목표",
-      "description": "",
+      "description": "동결된 목표 목록과 진행 상태 (항목 n/m)",
       "where": "상태",
       "firstSeen": null,
-      "changedAt": null
+      "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:status:실시간 활동",
       "kind": "구성요소",
       "category": "상태",
       "name": "실시간 활동",
-      "description": "",
+      "description": "원장 이벤트 피드 — 3초마다 커서로 이어받아 새 이벤트를 강조 표시",
       "where": "상태",
       "firstSeen": null,
-      "changedAt": null
+      "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:incidents:오답노트 (반복 실패 유형)",
       "kind": "구성요소",
       "category": "사건",
       "name": "오답노트 (반복 실패 유형)",
-      "description": "",
+      "description": "같은 원인으로 반복된 실패를 유형별로 묶어 횟수·해결 여부·의미를 보여줌",
       "where": "사건",
       "firstSeen": null,
-      "changedAt": null
+      "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:incidents:사건 목록",
       "kind": "구성요소",
       "category": "사건",
       "name": "사건 목록",
-      "description": "",
+      "description": "거절·격리·STOP·크래시·정직한 멈춤을 최신순으로, 해결된 사건은 흐리게",
       "where": "사건",
       "firstSeen": null,
-      "changedAt": null
+      "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:logs:night-log",
       "kind": "구성요소",
       "category": "로그",
       "name": "night-log",
-      "description": "",
+      "description": "야간 운영 로그(가장 최근 파일)의 최근 80줄",
       "where": "로그",
       "firstSeen": null,
-      "changedAt": null
+      "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:logs:var/tick.log",
       "kind": "구성요소",
       "category": "로그",
       "name": "var/tick.log",
-      "description": "",
+      "description": "엔진 tick 결과 로그의 최근 40줄",
       "where": "로그",
       "firstSeen": null,
-      "changedAt": null
+      "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "tool:지금 tick 한 번 실행",
@@ -479,7 +479,48 @@
       "changedAt": null
     }
   ],
-  "changeLog": [],
-  "generatedAt": "2026-09-30T00:08:31.419Z",
-  "contentHash": "f2e60f420f7f"
+  "changeLog": [
+    {
+      "at": "2026-09-30T00:10:49.158Z",
+      "type": "변경",
+      "name": "사람 개입함"
+    },
+    {
+      "at": "2026-09-30T00:10:49.158Z",
+      "type": "변경",
+      "name": "Soak 조건"
+    },
+    {
+      "at": "2026-09-30T00:10:49.158Z",
+      "type": "변경",
+      "name": "목표"
+    },
+    {
+      "at": "2026-09-30T00:10:49.158Z",
+      "type": "변경",
+      "name": "실시간 활동"
+    },
+    {
+      "at": "2026-09-30T00:10:49.158Z",
+      "type": "변경",
+      "name": "오답노트 (반복 실패 유형)"
+    },
+    {
+      "at": "2026-09-30T00:10:49.158Z",
+      "type": "변경",
+      "name": "사건 목록"
+    },
+    {
+      "at": "2026-09-30T00:10:49.158Z",
+      "type": "변경",
+      "name": "night-log"
+    },
+    {
+      "at": "2026-09-30T00:10:49.158Z",
+      "type": "변경",
+      "name": "var/tick.log"
+    }
+  ],
+  "generatedAt": "2026-09-30T00:10:49.158Z",
+  "contentHash": "4671040fbbac"
 }
