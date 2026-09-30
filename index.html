@@ -3,81 +3,126 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f5f3">
+  <meta name="theme-color" content="#f6f6f4">
   <meta name="description" content="seungjaehh의 페이지·프로젝트 모음">
   <title>페이지·프로젝트 모음 · seungjaehh</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23152133'/%3E%3Cpath d='M12 14h16M12 20h10M12 26h16' stroke='%239ebcff' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./assets/ds.css">
   <style>
-    :root{color-scheme:light;--bg:#f5f5f3;--paper:#fff;--ink:#111;--muted:#707070;--line:#dededb;--blue:#111;--soft:#efefec}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}a{color:inherit;text-decoration:none}button,input{font:inherit}a:focus-visible,input:focus-visible{outline:3px solid #888;outline-offset:3px}::selection{background:#d8d8d4;color:#111}.wrap{width:min(1080px,calc(100% - 64px));margin:auto}.skip{position:fixed;left:18px;top:-80px;z-index:10;padding:11px 16px;background:var(--ink);color:#fff;border-radius:8px}.skip:focus{top:12px}
-    header{padding:42px 0 30px;border-bottom:1px solid var(--line)}.header-row{display:flex;align-items:center;justify-content:space-between;gap:24px}.name{font-size:26px;font-weight:760;letter-spacing:-1px;line-height:1}.github{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--muted);font-size:14px;font-weight:600}.github:hover{color:var(--ink)}.github svg{width:19px;height:19px}.search{position:relative;margin-top:28px}.search svg{position:absolute;left:17px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:#777;pointer-events:none}.search input{width:100%;height:58px;border:1px solid var(--line);border-radius:13px;background:var(--paper);color:var(--ink);padding:0 48px;font-size:15px;box-shadow:0 5px 20px #0000000a}.search input::placeholder{color:#858585}.search input:focus{border-color:#777}.clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:0;background:transparent;color:var(--muted);border-radius:8px;cursor:pointer;font-size:19px}.clear:hover{background:var(--soft)}.clear[hidden]{display:none}
-    main{padding:36px 0 70px}.list-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.list-head h1{font-size:14px;margin:0;letter-spacing:.3px}.count{font-size:13px;color:var(--muted)}.projects{display:grid;gap:14px}.project{display:grid;grid-template-columns:minmax(230px,.72fr) minmax(360px,1.28fr);min-height:330px;background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 14px 40px -30px #0005;transition:border-color .18s,transform .18s}.project:hover{border-color:#999;transform:translateY(-2px)}.project-info{padding:34px;display:flex;flex-direction:column;align-items:flex-start}.project-type{font-size:11px;font-weight:650;color:var(--ink);background:var(--soft);padding:5px 9px;border-radius:6px}.project h2{font-size:36px;letter-spacing:-1.3px;line-height:1.2;margin:22px 0 0}.actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:auto}.open{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;min-width:160px;min-height:50px;padding:11px 18px;border-radius:9px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:650}.open:hover{background:#333}.source{display:inline-flex;align-items:center;min-height:44px;color:var(--muted);font-size:13px}.source:hover{color:var(--ink)}
-    .project{display:block;min-height:0;border-radius:12px}.project-info{min-height:0;padding:20px 22px;flex-direction:row;align-items:center;gap:16px}.project h2{margin:0;font-size:22px;letter-spacing:-.5px}.actions{margin:0 0 0 auto}.open{min-height:42px;min-width:132px;padding:8px 14px}.empty{display:none;padding:70px 20px;text-align:center;border:1px dashed var(--line);border-radius:16px;color:var(--muted)}.empty strong{display:block;color:var(--ink);font-size:18px;margin-bottom:7px}.projects.no-results+.empty{display:block}.project[hidden]{display:none}.footer{border-top:1px solid var(--line);padding:24px 0 32px;color:var(--muted);font-size:12px}
-    @media(max-width:780px){.wrap{width:calc(100% - 40px)}header{padding-top:29px}.name{font-size:24px}.search{margin-top:22px}.search input{height:54px}.project:hover{transform:none}}
-    @media(max-width:560px){.project-info{padding:17px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:11px}.project h2{font-size:20px}.actions{grid-column:1/-1;width:100%;margin:2px 0 0;gap:12px}.open{flex:1;min-width:0}.source{padding:0 5px}}
-    @media(max-width:390px){.wrap{width:calc(100% - 32px)}header{padding-bottom:24px}.name{font-size:21px}.github span{display:none}.search{margin-top:19px}.search input{font-size:14px}.project-info{padding:15px}.project h2{font-size:19px}.list-head{margin-bottom:12px}main{padding-top:29px}}
-    @media(prefers-reduced-motion:reduce){*{transition:none!important}.project,.preview-window{transform:none!important}}
-    @media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#080808;--paper:#151515;--ink:#f4f4f2;--muted:#aaa;--line:#303030;--blue:#f4f4f2;--soft:#242424}.project-type{color:var(--ink)}.open{background:#f4f4f2;color:#090909}.open:hover{background:#d8d8d5}.github:hover,.source:hover{color:#fff}}
-    .actions{display:grid;grid-template-columns:160px 78px;column-gap:18px;align-items:center;justify-content:end}
-    @media(max-width:560px){.actions{grid-template-columns:minmax(0,1fr) 78px;justify-content:stretch}.open{min-width:0}}
+    .list{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-2)}
+    .item{position:relative;display:flex;align-items:center;gap:var(--s-4);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-3);padding:var(--s-4) var(--s-5);transition:border-color .15s,box-shadow .15s}
+    .item:hover{border-color:color-mix(in srgb,var(--ink) 30%,var(--line));box-shadow:var(--shadow)}
+    .item[hidden]{display:none}
+    .item-main{flex:1;min-width:0;color:inherit;text-decoration:none;display:grid;gap:2px}
+    .item-main::after{content:"";position:absolute;inset:0;border-radius:inherit} /* whole card is the tap target */
+    .item-title{display:flex;align-items:center;gap:var(--s-2)}
+    .item-title b{font-size:17px;letter-spacing:-.02em}
+    .item-desc{color:var(--ink-2);font-size:14px}
+    .item-side{display:flex;align-items:center;gap:var(--s-2)}
+    .item-side .btn-quiet{position:relative;z-index:2}
+    .item-go{pointer-events:none}
+    .item:hover .item-go{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+    .search-wrap{margin-top:var(--s-5)}
+    .empty{display:none;text-align:center;padding:var(--s-7) 0;color:var(--muted)}
+    @media(max-width:600px){
+      .item{flex-wrap:wrap;padding:var(--s-4)}
+      .item-side{width:100%}
+      .item-go{flex:1}
+      .item-side .btn-quiet{order:2;min-width:88px}
+      .item-side.no-gh::after{content:"";min-width:88px;order:2}
+    }
   </style>
 </head>
 <body>
   <a class="skip" href="#projects">프로젝트 목록으로 이동</a>
-  <div class="wrap">
-    <header>
-      <div class="header-row">
-        <a class="name" href="./">페이지·프로젝트 모음</a>
-        <a class="github" href="https://github.com/seungjaehh" target="_blank" rel="noopener noreferrer" aria-label="seungjaehh GitHub 프로필, 새 탭">
-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.74-1.55-2.57-.29-5.27-1.28-5.27-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.05 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.19-1.49 3.15-1.18 3.15-1.18.63 1.58.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.71 5.39-5.29 5.68.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg><span>GitHub 프로필</span><span aria-hidden="true">↗</span>
-        </a>
-      </div>
-      <div class="search">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-        <label for="project-search" class="skip">프로젝트 검색</label>
-        <input id="project-search" type="search" placeholder="프로젝트 검색" autocomplete="off" spellcheck="false">
-        <button class="clear" type="button" aria-label="검색어 지우기" hidden>×</button>
-      </div>
-    </header>
-    <main id="projects">
-      <div class="list-head"><h1>페이지·프로젝트</h1><span class="count" aria-live="polite">7개</span></div>
-      <div class="projects">
-        <article class="project" data-search="입시 레이더 대학 선택 비서 탐색 학생부 면접 점수 환산 일정">
-          <div class="project-info"><span class="project-type">WEB</span><h2>입시 레이더</h2><div class="actions"><a class="open" aria-label="입시 레이더 열기" href="https://seungjaehh.github.io/ipsi-radar-site/" target="_blank" rel="noopener noreferrer">열기 <span aria-hidden="true">→</span></a><a class="source" href="https://github.com/seungjaehh/ipsi-radar-site" target="_blank" rel="noopener noreferrer" aria-label="입시 레이더 GitHub 저장소, 새 탭">GitHub ↗</a></div></div>
-        </article>
-        <article class="project" data-search="답모아 국어 영어 모의고사 수능 정답 학습">
-          <div class="project-info"><span class="project-type">WEB</span><h2>답모아</h2><div class="actions"><a class="open" aria-label="답모아 열기" href="./exam-answers/">열기 <span aria-hidden="true">→</span></a><a class="source" href="https://github.com/seungjaehh/exam-answers" target="_blank" rel="noopener noreferrer" aria-label="답모아 GitHub 저장소, 새 탭">GitHub ↗</a></div></div>
-        </article>
-        <article class="project" data-search="국제관계 분석 국가 뉴스 외교 안보 경제">
-          <div class="project-info"><span class="project-type">WEB</span><h2>국제관계 분석</h2><div class="actions"><a class="open" aria-label="국제관계 분석 열기" href="./country-relation-analyzer/">열기 <span aria-hidden="true">→</span></a><a class="source" href="https://github.com/seungjaehh/country-relation-analyzer" target="_blank" rel="noopener noreferrer" aria-label="국제관계 분석 GitHub 저장소, 새 탭">GitHub ↗</a></div></div>
-        </article>
-        <article class="project" data-search="AI Core Engine 인공지능 엔진 개발 브리핑 작업 현황">
-          <div class="project-info"><span class="project-type">BRIEFING</span><h2>AI Engine Briefing</h2><div class="actions"><a class="open" aria-label="AI Engine Briefing 열기" href="./ai-engine-briefing/">열기 <span aria-hidden="true">→</span></a><a class="source" href="https://github.com/seungjaehh/ai-engine-briefing" target="_blank" rel="noopener noreferrer" aria-label="AI Engine Briefing GitHub 저장소, 새 탭">GitHub ↗</a></div></div>
-        </article>
-        <article class="project" data-search="AI Core Engine 엔진 구조도 아키텍처 게이트 판정기 원장 MVP 로드맵 설계 문서">
-          <div class="project-info"><span class="project-type">DOCS</span><h2>AI Core Engine 구조도</h2><div class="actions"><a class="open" aria-label="AI Core Engine 구조도 열기" href="./ai-engine/">열기 <span aria-hidden="true">→</span></a></div></div>
-        </article>
-        <article class="project" data-search="AI Core Engine Client 클라이언트 기능표 데스크톱 앱 대시보드 실시간">
-          <div class="project-info"><span class="project-type">DOCS</span><h2>클라이언트</h2><div class="actions"><a class="open" aria-label="클라이언트 열기" href="./ai-engine-client/">열기 <span aria-hidden="true">→</span></a></div></div>
-        </article>
-        <article class="project" data-search="VOID Cards 카드 컬렉션 디지털 수집 3D">
-          <div class="project-info"><span class="project-type">COLLECTION</span><h2>VOID Cards</h2><div class="actions"><a class="open" aria-label="VOID Cards 열기" href="https://void-collectible-society.seungjaehh.chatgpt.site/#collection" target="_blank" rel="noopener noreferrer">열기 <span aria-hidden="true">↗</span></a></div></div>
-        </article>
-      </div>
-      <div class="empty"><strong>검색 결과가 없습니다.</strong>다른 검색어를 입력해 보세요.</div>
-    </main>
-    <footer class="footer">© 2026 seungjaehh</footer>
-  </div>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="./">seungjaehh</a>
+      <span class="grow"></span>
+      <a class="btn btn-quiet btn-sm" href="https://github.com/seungjaehh" target="_blank" rel="noopener noreferrer" aria-label="seungjaehh GitHub 프로필, 새 탭">GitHub ↗</a>
+      <button class="btn btn-quiet btn-sm" type="button" data-theme-toggle>자동</button>
+    </div>
+  </header>
+  <main class="container" id="projects">
+    <div class="page-head">
+      <h1>페이지·프로젝트 모음</h1>
+      <p>만든 것들을 한곳에. 카드를 누르면 바로 열려요.</p>
+      <div class="search-wrap"><input class="field" data-search type="search" placeholder="검색  ( / 키로 이동 )" aria-label="프로젝트 검색" autocomplete="off" spellcheck="false"></div>
+    </div>
+      <section class="section" data-group>
+        <h2>서비스 <small>학생·일반 사용자가 쓰는 웹</small></h2>
+        <ul class="list">
+          <li class="item" data-search="입시 레이더 대학 선택 비서 탐색 학생부 면접 점수 환산 일정">
+            <a class="item-main" href="https://seungjaehh.github.io/ipsi-radar-site/" target="_blank" rel="noopener noreferrer" aria-label="입시 레이더 열기, 새 탭">
+              <span class="item-title"><b>입시 레이더</b><span class="tag">WEB</span></span>
+              <span class="item-desc">대학 선택 비서 — 학생부·면접·점수 환산·일정을 한 곳에서</span>
+            </a>
+            <span class="item-side"><a class="btn btn-quiet btn-sm" href="https://github.com/seungjaehh/ipsi-radar-site" target="_blank" rel="noopener noreferrer" aria-label="입시 레이더 GitHub 저장소, 새 탭">GitHub</a><span class="btn btn-fixed item-go" aria-hidden="true">열기 <span>↗</span></span></span>
+          </li>
+          <li class="item" data-search="답모아 국어 영어 모의고사 수능 정답 학습">
+            <a class="item-main" href="./exam-answers/" aria-label="답모아 열기">
+              <span class="item-title"><b>답모아</b><span class="tag">WEB</span></span>
+              <span class="item-desc">국어·영어 모의고사·수능 정답과 학습 자료 모음</span>
+            </a>
+            <span class="item-side"><a class="btn btn-quiet btn-sm" href="https://github.com/seungjaehh/exam-answers" target="_blank" rel="noopener noreferrer" aria-label="답모아 GitHub 저장소, 새 탭">GitHub</a><span class="btn btn-fixed item-go" aria-hidden="true">열기</span></span>
+          </li>
+          <li class="item" data-search="국제관계 분석 국가 뉴스 외교 안보 경제">
+            <a class="item-main" href="./country-relation-analyzer/" aria-label="국제관계 분석 열기">
+              <span class="item-title"><b>국제관계 분석</b><span class="tag">WEB</span></span>
+              <span class="item-desc">국가별 뉴스로 외교·안보·경제 흐름을 읽는 분석 도구</span>
+            </a>
+            <span class="item-side no-gh"><span class="btn btn-fixed item-go" aria-hidden="true">열기</span></span>
+          </li>
+          <li class="item" data-search="VOID Cards 카드 컬렉션 디지털 수집 3D">
+            <a class="item-main" href="https://void-collectible-society.seungjaehh.chatgpt.site/#collection" target="_blank" rel="noopener noreferrer" aria-label="VOID Cards 열기, 새 탭">
+              <span class="item-title"><b>VOID Cards</b><span class="tag">WEB</span></span>
+              <span class="item-desc">디지털 카드 수집 컬렉션 (3D)</span>
+            </a>
+            <span class="item-side no-gh"><span class="btn btn-fixed item-go" aria-hidden="true">열기 <span>↗</span></span></span>
+          </li>
+        </ul>
+      </section>
+      <section class="section" data-group>
+        <h2>AI 엔진 <small>혼자 굴리는 AI Core Engine — 현황·설계·도구</small></h2>
+        <ul class="list">
+          <li class="item" data-search="AI Core Engine 인공지능 엔진 개발 브리핑 작업 현황">
+            <a class="item-main" href="./ai-engine-briefing/" aria-label="AI Engine Briefing 열기">
+              <span class="item-title"><b>AI Engine Briefing</b><span class="tag">현황</span></span>
+              <span class="item-desc">엔진 개발 현황과 오늘의 작업 브리핑</span>
+            </a>
+            <span class="item-side no-gh"><span class="btn btn-fixed item-go" aria-hidden="true">열기</span></span>
+          </li>
+          <li class="item" data-search="AI Core Engine 엔진 구조도 아키텍처 게이트 판정기 원장 MVP 로드맵 설계 문서">
+            <a class="item-main" href="./ai-engine/" aria-label="AI Core Engine 구조도 열기">
+              <span class="item-title"><b>AI Core Engine 구조도</b><span class="tag">문서</span></span>
+              <span class="item-desc">게이트·판정기·원장·로드맵까지, 엔진 설계 문서</span>
+            </a>
+            <span class="item-side no-gh"><span class="btn btn-fixed item-go" aria-hidden="true">열기</span></span>
+          </li>
+          <li class="item" data-search="AI Core Engine Client 클라이언트 기능표 데스크톱 앱 대시보드 실시간 다운로드">
+            <a class="item-main" href="./ai-engine-client/" aria-label="클라이언트 열기">
+              <span class="item-title"><b>클라이언트</b><span class="tag">앱</span></span>
+              <span class="item-desc">Windows 앱 다운로드와 실시간 기능표</span>
+            </a>
+            <span class="item-side no-gh"><span class="btn btn-fixed item-go" aria-hidden="true">열기</span></span>
+          </li>
+        </ul>
+      </section>
+    <p class="empty" id="empty">검색 결과가 없어요</p>
+    <p class="footer">디자인 규칙은 <a href="./ds/">디자인 가이드</a>에 있어요.</p>
+  </main>
+  <script src="./assets/ds.js"></script>
   <script>
-    const search = document.querySelector('#project-search');
-    const clear = document.querySelector('.clear');
-    const projects = document.querySelector('.projects');
-    const cards = [...document.querySelectorAll('.project')];
-    const count = document.querySelector('.count');
-    function filterProjects(){const query=search.value.trim().toLocaleLowerCase('ko');let visible=0;for(const card of cards){const match=!query||card.dataset.search.toLocaleLowerCase('ko').includes(query);card.hidden=!match;if(match)visible++}projects.classList.toggle('no-results',visible===0);count.textContent=visible+'개';clear.hidden=!search.value}
-    search.addEventListener('input',filterProjects);
-    clear.addEventListener('click',()=>{search.value='';filterProjects();search.focus()});
+    (() => {
+      const q = document.querySelector('[data-search]'), items = [...document.querySelectorAll('.item')]
+      const groups = [...document.querySelectorAll('[data-group]')], empty = document.getElementById('empty')
+      q.addEventListener('input', () => {
+        const v = q.value.trim().toLowerCase()
+        items.forEach(i => i.hidden = !!v && !(i.dataset.search + ' ' + i.textContent).toLowerCase().includes(v))
+        groups.forEach(g => g.hidden = !g.querySelector('.item:not([hidden])'))
+        empty.style.display = groups.every(g => g.hidden) ? 'block' : 'none'
+      })
+    })()
   </script>
 </body>
 </html>
-

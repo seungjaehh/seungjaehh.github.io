@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f6f4">
+<meta name="description" content="seungjaehh 사이트 공통 디자인 규칙 — 색, 버튼, 카드, 표">
+<title>디자인 가이드 · seungjaehh</title>
+<link rel="stylesheet" href="../assets/ds.css">
+<style>
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:var(--s-2)}
+.sw{border:1px solid var(--line);border-radius:var(--r-2);overflow:hidden;background:var(--surface);font-size:12px}
+.sw i{display:block;height:44px}.sw span{display:block;padding:6px 10px;color:var(--ink-2)}
+.demo{display:flex;gap:var(--s-2);flex-wrap:wrap;align-items:center}
+.rules{margin:0;padding-left:1.2em;color:var(--ink-2)} .rules li{margin:6px 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s-3)}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="back" href="../">← 모음집</a><span class="grow"></span>
+  <button class="btn btn-quiet btn-sm" type="button" data-theme-toggle>자동</button>
+</div></header>
+<main class="container">
+  <div class="page-head">
+    <h1>디자인 가이드</h1>
+    <p>모든 새 페이지는 <code>assets/ds.css</code> 한 장만 불러오면 같은 색·버튼·카드·표를 씁니다. 이 페이지가 그 규칙의 원본이에요.</p>
+  </div>
+
+  <section class="section"><h2>공통 vs 개별 <small>무엇을 맞추고 무엇을 자유롭게 둘지</small></h2>
+    <div class="cols">
+      <div class="card card-pad-sm stack"><h3>반드시 공통</h3>
+        <ul class="rules"><li>색 토큰 · 라이트/다크</li><li>버튼 · 칩 · 태그 · 입력창</li><li>상단바(← 모음집 / 테마)</li><li>44px 터치 높이, 포커스 링</li><li>표 → 모바일 카드 전환</li></ul></div>
+      <div class="card card-pad-sm stack"><h3>페이지 성격별 템플릿</h3>
+        <ul class="rules"><li><b>목록형</b> — 모음집 (그룹 + 카드 전체 탭)</li><li><b>문서형</b> — 구조도 (긴 글, 목차)</li><li><b>대시보드형</b> — 브리핑·클라이언트 (통계 + 표)</li></ul></div>
+      <div class="card card-pad-sm stack"><h3>개별 자유</h3>
+        <ul class="rules"><li>입시 레이더 · 답모아 · 국제관계 · VOID Cards 같은 독립 서비스는 자기 개성(브랜드 색, 레이아웃)을 유지</li><li>단, 모음집 카드와 “← 모음집” 링크만 공통</li></ul></div>
+    </div>
+  </section>
+
+  <section class="section"><h2>색 <small>브랜드 색은 하나, 나머지는 중립</small></h2>
+    <div class="swatches">
+      <div class="sw"><i style="background:var(--bg)"></i><span>--bg 바탕</span></div>
+      <div class="sw"><i style="background:var(--surface)"></i><span>--surface 카드</span></div>
+      <div class="sw"><i style="background:var(--ink)"></i><span>--ink 글자</span></div>
+      <div class="sw"><i style="background:var(--muted)"></i><span>--muted 보조</span></div>
+      <div class="sw"><i style="background:var(--brand)"></i><span>--brand 강조</span></div>
+      <div class="sw"><i style="background:var(--ok)"></i><span>--ok 정상</span></div>
+      <div class="sw"><i style="background:var(--warn)"></i><span>--warn 주의</span></div>
+      <div class="sw"><i style="background:var(--bad)"></i><span>--bad 위험</span></div>
+    </div>
+  </section>
+
+  <section class="section"><h2>버튼 <small>한 영역에 주 버튼은 하나</small></h2>
+    <div class="card stack">
+      <div class="demo"><button class="btn btn-primary">주 동작</button><button class="btn">보조 동작</button><button class="btn btn-quiet">약한 동작</button><button class="btn btn-danger">위험 동작</button><button class="btn" disabled>비활성</button></div>
+      <div class="demo"><button class="btn btn-sm">작게 34px</button><button class="btn">기본 44px</button><button class="btn btn-lg btn-primary">크게 52px</button><button class="btn btn-fixed">열기</button><button class="btn btn-fixed">열기 ↗</button></div>
+      <ul class="rules">
+        <li>라벨은 동사만: <b>열기</b>, <b>다운로드</b>, <b>저장</b>. “~ 열기”처럼 대상 이름을 반복하지 않음 (대상은 카드 제목이 말해줌)</li>
+        <li>나란히 놓이는 버튼은 <code>btn-fixed</code>로 너비를 맞춤. 외부 링크는 <b>↗</b>를 붙임</li>
+        <li>파괴적 동작은 <code>btn-danger</code>, 되돌릴 수 없으면 확인 한 번 더</li>
+        <li>모바일에서 손가락 크기: 최소 44px(<code>--tap</code>). 작은 버튼(<code>btn-sm</code>)은 보조 링크에만</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section"><h2>상태·태그·칩</h2>
+    <div class="card stack">
+      <div class="demo"><span class="pill pill-ok pill-live">실시간</span><span class="pill pill-warn">확인 중</span><span class="pill pill-bad">오류</span><span class="pill pill-brand">새 기능</span><span class="tag">WEB</span><span class="tag">문서</span></div>
+      <div class="chips"><button class="chip" aria-pressed="true">전체</button><button class="chip" aria-pressed="false">화면</button><button class="chip" aria-pressed="false">도구</button></div>
+      <div class="stats"><div class="stat"><b>42</b><span>전체 기능</span></div><div class="stat"><b>7</b><span>화면</span></div><div class="stat"><b>18</b><span>API</span></div></div>
+    </div>
+  </section>
+
+  <section class="section"><h2>입력창</h2>
+    <div class="card"><input class="field" placeholder="검색  ( / 키로 이동 )" aria-label="예시 입력"></div>
+  </section>
+
+  <section class="section"><h2>표 <small>좁은 화면에서 카드로 바뀜</small></h2>
+    <div class="table-wrap"><table class="table">
+      <thead><tr><th>종류</th><th>분류</th><th>기능</th><th>설명</th><th>위치</th></tr></thead>
+      <tbody>
+        <tr><td data-area="kind"><span class="tag">도구</span></td><td data-area="cat">엔진</td><td data-area="name">상태 확인</td><td data-area="desc">엔진 상태와 soak 진행을 한 번에 봄</td><td data-area="where">도구 탭</td></tr>
+        <tr><td data-area="kind"><span class="tag">API</span></td><td data-area="cat">시스템</td><td data-area="name"><code>GET /api/snapshot</code></td><td data-area="desc">대시보드용 한 방 스냅샷</td><td data-area="where">server</td></tr>
+      </tbody></table></div>
+    <p class="muted small" style="margin-top:8px">각 <code>td</code>에 <code>data-area</code>(name·kind·desc·cat·where)를 달면 모바일 카드 배치가 자동으로 적용돼요.</p>
+  </section>
+
+  <section class="section"><h2>새 페이지 시작하기</h2>
+    <div class="card"><pre style="margin:0;overflow:auto;font-family:var(--mono);font-size:13px">&lt;link rel="stylesheet" href="../assets/ds.css"&gt;
+&lt;header class="topbar"&gt;&lt;div class="container"&gt;
+  &lt;a class="back" href="../"&gt;← 모음집&lt;/a&gt;&lt;span class="grow"&gt;&lt;/span&gt;
+  &lt;button class="btn btn-quiet btn-sm" data-theme-toggle&gt;자동&lt;/button&gt;
+&lt;/div&gt;&lt;/header&gt;
+&lt;main class="container"&gt;…&lt;/main&gt;
+&lt;script src="../assets/ds.js"&gt;&lt;/script&gt;</pre></div>
+  </section>
+  <p class="footer">v1 · 규칙을 바꾸면 <code>assets/ds.css</code>만 고치면 모든 페이지에 반영돼요.</p>
+</main>
+<script src="../assets/ds.js"></script>
+</body>
+</html>
