@@ -4,8 +4,8 @@
   "counts": {
     "screens": 8,
     "tools": 11,
-    "api": 23,
-    "total": 50
+    "api": 24,
+    "total": 51
   },
   "features": [
     {
@@ -433,10 +433,10 @@
       "kind": "API",
       "category": "시스템",
       "name": "POST /api/mem-kill",
-      "description": "지정한 프로세스 종료",
+      "description": "지정한 프로세스 종료 (이 서버·감시 프로그램·터널·Windows 핵심 프로세스는 거부)",
       "where": "서버",
       "firstSeen": null,
-      "changedAt": null
+      "changedAt": "2026-09-30T14:49:03.340Z"
     },
     {
       "id": "api:GET /api/schedule",
@@ -507,9 +507,29 @@
       "where": "서버",
       "firstSeen": null,
       "changedAt": null
+    },
+    {
+      "id": "api:GET /api/job/:id",
+      "kind": "API",
+      "category": "도구",
+      "name": "GET /api/job/:id",
+      "description": "오래 걸리는 도구(tick·빌드·백업)를 백그라운드로 돌린 작업의 진행·결과 조회 (?async=1로 시작)",
+      "where": "서버",
+      "firstSeen": "2026-09-30T14:49:03.340Z",
+      "changedAt": null
     }
   ],
   "changeLog": [
+    {
+      "at": "2026-09-30T14:49:03.340Z",
+      "type": "변경",
+      "name": "POST /api/mem-kill"
+    },
+    {
+      "at": "2026-09-30T14:49:03.340Z",
+      "type": "추가",
+      "name": "GET /api/job/:id"
+    },
     {
       "at": "2026-09-30T04:46:23.047Z",
       "type": "추가",
@@ -571,6 +591,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-09-30T08:02:20.541Z",
-  "contentHash": "cee713b01567"
+  "generatedAt": "2026-09-30T14:49:03.340Z",
+  "contentHash": "866b48abe7fd"
 }
