@@ -1,0 +1,485 @@
+{
+  "product": "AI Core Engine Client",
+  "version": "0.1.0",
+  "counts": {
+    "screens": 8,
+    "tools": 10,
+    "api": 21,
+    "total": 47
+  },
+  "features": [
+    {
+      "id": "tab:status",
+      "kind": "화면",
+      "category": "탭",
+      "name": "상태",
+      "description": "엔진 상태·열린 결정·soak 조건·목표·실시간 활동을 한 화면에서 (첫 화면)",
+      "where": "상태",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tab:decisions",
+      "kind": "화면",
+      "category": "탭",
+      "name": "결정",
+      "description": "결정 ID로 상세를 보고 직접 답변",
+      "where": "결정",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tab:incidents",
+      "kind": "화면",
+      "category": "탭",
+      "name": "사건",
+      "description": "거절·격리·STOP·크래시를 원장에서 모아 해결 여부와 반복 유형(오답노트)을 보여줌",
+      "where": "사건",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tab:logs",
+      "kind": "화면",
+      "category": "탭",
+      "name": "로그",
+      "description": "야간 로그와 tick 로그의 최근 줄",
+      "where": "로그",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tab:soak",
+      "kind": "화면",
+      "category": "탭",
+      "name": "Soak",
+      "description": "soak(무인 관찰) 완료 조건 리포트",
+      "where": "Soak",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tab:tools",
+      "kind": "화면",
+      "category": "탭",
+      "name": "도구",
+      "description": "엔진 제어·배포/백업·예약 작업·시스템 진단 도구 모음",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tab:memory",
+      "kind": "화면",
+      "category": "탭",
+      "name": "메모리",
+      "description": "메모리 상위 프로세스 확인과 선택 종료",
+      "where": "메모리",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tab:settings",
+      "kind": "화면",
+      "category": "탭",
+      "name": "설정",
+      "description": "접속할 서버 주소와 토큰 설정 (다른 기기에서 원격 접속용)",
+      "where": "설정",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "part:status:사람 개입함",
+      "kind": "구성요소",
+      "category": "상태",
+      "name": "사람 개입함",
+      "description": "",
+      "where": "상태",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "part:status:Soak 조건",
+      "kind": "구성요소",
+      "category": "상태",
+      "name": "Soak 조건",
+      "description": "",
+      "where": "상태",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "part:status:목표",
+      "kind": "구성요소",
+      "category": "상태",
+      "name": "목표",
+      "description": "",
+      "where": "상태",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "part:status:실시간 활동",
+      "kind": "구성요소",
+      "category": "상태",
+      "name": "실시간 활동",
+      "description": "",
+      "where": "상태",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "part:incidents:오답노트 (반복 실패 유형)",
+      "kind": "구성요소",
+      "category": "사건",
+      "name": "오답노트 (반복 실패 유형)",
+      "description": "",
+      "where": "사건",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "part:incidents:사건 목록",
+      "kind": "구성요소",
+      "category": "사건",
+      "name": "사건 목록",
+      "description": "",
+      "where": "사건",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "part:logs:night-log",
+      "kind": "구성요소",
+      "category": "로그",
+      "name": "night-log",
+      "description": "",
+      "where": "로그",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "part:logs:var/tick.log",
+      "kind": "구성요소",
+      "category": "로그",
+      "name": "var/tick.log",
+      "description": "",
+      "where": "로그",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tool:지금 tick 한 번 실행",
+      "kind": "도구",
+      "category": "엔진 제어",
+      "name": "지금 tick 한 번 실행",
+      "description": "대기 중인 항목이 있으면 즉시 한 단계 진행합니다.",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tool:STOP 해제 (resume)",
+      "kind": "도구",
+      "category": "엔진 제어",
+      "name": "STOP 해제 (resume)",
+      "description": "STOP 래치가 걸려 자동 실행이 멈췄을 때만 씁니다. 원인 확인 없이 누르지 마세요.",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tool:원장 무결성 검증",
+      "kind": "도구",
+      "category": "엔진 제어",
+      "name": "원장 무결성 검증",
+      "description": "ledger.jsonl의 접두 앵커·해시 체인이 온전한지 확인합니다.",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tool:void-cards 빌드+테스트",
+      "kind": "도구",
+      "category": "배포·백업",
+      "name": "void-cards 빌드+테스트",
+      "description": "배포 준비물만 만듭니다. 실제 배포는 Codex 앱에서 해야 해요.",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tool:백업 + GitHub 반영",
+      "kind": "도구",
+      "category": "배포·백업",
+      "name": "백업 + GitHub 반영",
+      "description": "E드라이브 백업 후 seungjaehh/ai-core-backup에 푸시합니다.",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tool:구조도·브리핑 페이지 열기",
+      "kind": "도구",
+      "category": "배포·백업",
+      "name": "구조도·브리핑 페이지 열기",
+      "description": "seungjaehh.github.io의 최신 문서를 기본 브라우저로 엽니다.",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tool:AIEngineTick 상태 확인",
+      "kind": "도구",
+      "category": "예약 작업",
+      "name": "AIEngineTick 상태 확인",
+      "description": "등록 여부·다음 실행 시각·경로를 확인합니다.",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tool:예약 작업 복구",
+      "kind": "도구",
+      "category": "예약 작업",
+      "name": "예약 작업 복구",
+      "description": "경로가 깨졌거나(폴더 이름 바뀜 등) 꺼져 있을 때 이 노트북 경로로 다시 등록합니다.",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tool:드라이브 용량",
+      "kind": "도구",
+      "category": "시스템 진단",
+      "name": "드라이브 용량",
+      "description": "C·E 드라이브 전체/여유 공간을 확인합니다.",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "tool:최근 원장 이벤트",
+      "kind": "도구",
+      "category": "시스템 진단",
+      "name": "최근 원장 이벤트",
+      "description": "ledger.jsonl의 최근 15개 이벤트를 요약해서 보여줍니다.",
+      "where": "도구",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/snapshot",
+      "kind": "API",
+      "category": "엔진",
+      "name": "GET /api/snapshot",
+      "description": "엔진 상태·열린 결정·목표·soak를 한 번에 (원장 seq 포함)",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/incidents",
+      "kind": "API",
+      "category": "엔진",
+      "name": "GET /api/incidents",
+      "description": "사건 목록과 오답노트(반복 실패 유형) 집계",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/events",
+      "kind": "API",
+      "category": "엔진",
+      "name": "GET /api/events",
+      "description": "원장 이벤트를 커서(after=seq)로 이어받기 — 재접속해도 빠짐없이 재생",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/decide",
+      "kind": "API",
+      "category": "엔진",
+      "name": "POST /api/decide",
+      "description": "열린 결정에 답변 — 이미 처리된 결정이면 409로 거부(오래된 화면 방지)",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/status",
+      "kind": "API",
+      "category": "엔진",
+      "name": "GET /api/status",
+      "description": "엔진 status 원문",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/digest",
+      "kind": "API",
+      "category": "엔진",
+      "name": "GET /api/digest",
+      "description": "엔진 digest 원문",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/soak",
+      "kind": "API",
+      "category": "엔진",
+      "name": "GET /api/soak",
+      "description": "soak 리포트 원문",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/tick",
+      "kind": "API",
+      "category": "엔진",
+      "name": "POST /api/tick",
+      "description": "tick 한 번 수동 실행",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/resume",
+      "kind": "API",
+      "category": "엔진",
+      "name": "POST /api/resume",
+      "description": "STOP 해제",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/verify",
+      "kind": "API",
+      "category": "엔진",
+      "name": "POST /api/verify",
+      "description": "원장 무결성 검증",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/logs",
+      "kind": "API",
+      "category": "엔진",
+      "name": "GET /api/logs",
+      "description": "야간 로그·tick 로그 최근 줄",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/ledger",
+      "kind": "API",
+      "category": "엔진",
+      "name": "GET /api/ledger",
+      "description": "최근 원장 이벤트 15개 요약",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/disk",
+      "kind": "API",
+      "category": "시스템",
+      "name": "GET /api/disk",
+      "description": "C·E 드라이브 용량",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/mem",
+      "kind": "API",
+      "category": "시스템",
+      "name": "GET /api/mem",
+      "description": "메모리 상위 25개 프로세스",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/mem-percent",
+      "kind": "API",
+      "category": "시스템",
+      "name": "GET /api/mem-percent",
+      "description": "전체 메모리 사용률",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/mem-kill",
+      "kind": "API",
+      "category": "시스템",
+      "name": "POST /api/mem-kill",
+      "description": "지정한 프로세스 종료",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/schedule",
+      "kind": "API",
+      "category": "도구",
+      "name": "GET /api/schedule",
+      "description": "AIEngineTick 예약 작업 상태",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/fix-schedule",
+      "kind": "API",
+      "category": "도구",
+      "name": "POST /api/fix-schedule",
+      "description": "예약 작업을 현재 경로로 재등록",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/build-void-cards",
+      "kind": "API",
+      "category": "도구",
+      "name": "POST /api/build-void-cards",
+      "description": "void-cards 테스트+정적 빌드",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/backup-push",
+      "kind": "API",
+      "category": "도구",
+      "name": "POST /api/backup-push",
+      "description": "E드라이브 백업 후 GitHub 푸시",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/show/:id",
+      "kind": "API",
+      "category": "엔진",
+      "name": "GET /api/show/:id",
+      "description": "결정 상세 보기",
+      "where": "서버",
+      "firstSeen": null,
+      "changedAt": null
+    }
+  ],
+  "changeLog": [],
+  "generatedAt": "2026-09-30T00:08:31.419Z",
+  "contentHash": "f2e60f420f7f"
+}

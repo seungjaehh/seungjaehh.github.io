@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f5f3">
+<meta name="description" content="AI Core Engine Client 기능 표 — 코드에서 자동 생성되어 실시간으로 갱신됩니다">
+<title>클라이언트 기능표 · seungjaehh</title>
+<style>
+:root{color-scheme:light;--bg:#f5f5f3;--paper:#fff;--ink:#111;--muted:#707070;--line:#dededb;--soft:#efefec;--accent:#2f5fd0;--ok:#1f8f57;--new:#b4590b}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#080808;--paper:#151515;--ink:#f4f4f2;--muted:#aaa;--line:#303030;--soft:#242424;--accent:#7aa2ff;--ok:#4fd18b;--new:#f0a35a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;font-size:14px;line-height:1.55}
+.wrap{width:min(1080px,calc(100% - 40px));margin:0 auto}
+header{padding:38px 0 22px;border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+a.back{color:var(--muted);text-decoration:none;font-size:13px}
+h1{margin:10px 0 4px;font-size:26px;letter-spacing:-.8px}
+.sub{color:var(--muted);font-size:13px}
+.live{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite}
+.dot.stale{background:#c9a227;animation:none}
+@keyframes pulse{50%{opacity:.35}}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 0}
+.chip{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:9px 14px}
+.chip b{display:block;font-size:20px;letter-spacing:-.5px}.chip span{font-size:12px;color:var(--muted)}
+main{padding:24px 0 70px}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 13px;font-size:13px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input[type=search]{flex:1;min-width:180px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:10px;padding:8px 12px;font-size:14px}
+.tbl{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:auto}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th{position:sticky;top:0;background:var(--paper);text-align:left;font-size:12px;color:var(--muted);font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.k span{font-size:11.5px;background:var(--soft);border-radius:6px;padding:2px 8px;white-space:nowrap}
+td.n{font-weight:640;min-width:180px}td.n code{font-family:"Cascadia Mono",Consolas,monospace;font-size:12.5px;font-weight:600}
+td.d{color:var(--muted);min-width:260px}td.w{white-space:nowrap;color:var(--muted)}
+.badge{display:inline-block;font-size:11px;font-weight:700;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:1px}
+.badge.new{background:color-mix(in srgb,var(--new) 16%,transparent);color:var(--new)}
+.badge.chg{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+tr.flash td{animation:flash 2.6s ease-out}
+@keyframes flash{from{background:color-mix(in srgb,var(--accent) 22%,transparent)}to{background:transparent}}
+.log{margin-top:22px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.log h2{margin:0 0 8px;font-size:14px}.log ul{margin:0;padding:0;list-style:none;font-size:13px}
+.log li{display:flex;gap:12px;padding:4px 0;color:var(--muted)}.log li time{min-width:118px}.log li b{color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:13px;opacity:0;pointer-events:none;transition:.25s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.empty{padding:26px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="top">
+      <a class="back" href="../">← 페이지·프로젝트 모음</a>
+      <span class="live" id="live"><i class="dot" id="dot"></i><span id="liveText">불러오는 중…</span></span>
+    </div>
+    <h1 id="title">AI Core Engine Client</h1>
+    <div class="sub" id="sub">코드에서 자동 생성되는 기능 표 — 기능이 추가·변경되면 이 표도 저절로 바뀝니다.</div>
+    <div class="chips" id="chips"></div>
+  </header>
+  <main>
+    <div class="bar">
+      <div class="seg" id="seg" role="group" aria-label="종류 필터"></div>
+      <input id="q" type="search" placeholder="기능·설명 검색" autocomplete="off" spellcheck="false" aria-label="검색">
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>종류</th><th>분류</th><th>기능</th><th>설명</th><th>위치</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+    <div class="log" id="logBox" hidden><h2>최근 변경</h2><ul id="log"></ul></div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const $ = s => document.querySelector(s)
+const KINDS = ['전체', '화면', '구성요소', '도구', 'API']
+const WEEK = 7 * 24 * 3600 * 1000
+let data = null, kind = '전체', lastOkAt = 0
+let seen = new Set()
+
+const mk = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n }
+const ago = ts => { const s = Math.max(0, (Date.now() - ts) / 1000); return s < 60 ? '방금' : s < 3600 ? `${Math.floor(s / 60)}분 전` : s < 86400 ? `${Math.floor(s / 3600)}시간 전` : `${Math.floor(s / 86400)}일 전` }
+
+function renderSeg() {
+  const seg = $('#seg'); seg.replaceChildren()
+  for (const k of KINDS) {
+    const b = mk('button', null, k); b.setAttribute('aria-pressed', String(k === kind))
+    b.onclick = () => { kind = k; renderSeg(); renderRows() }
+    seg.append(b)
+  }
+}
+
+function renderChips() {
+  const c = data.counts, box = $('#chips'); box.replaceChildren()
+  for (const [label, n] of [['화면', c.screens], ['도구', c.tools], ['API', c.api], ['전체 기능', c.total]]) {
+    const d = mk('div', 'chip'); d.append(mk('b', null, String(n)), mk('span', null, label)); box.append(d)
+  }
+}
+
+function renderRows(flashIds = new Set()) {
+  const q = $('#q').value.trim().toLowerCase(), body = $('#rows'); body.replaceChildren()
+  const rows = data.features.filter(r => (kind === '전체' || r.kind === kind) && (!q || `${r.name} ${r.description} ${r.category} ${r.where}`.toLowerCase().includes(q)))
+  if (!rows.length) { const tr = mk('tr'), td = mk('td', 'empty', '해당하는 기능 없음'); td.colSpan = 5; tr.append(td); body.append(tr); return }
+  for (const r of rows) {
+    const tr = mk('tr', flashIds.has(r.id) ? 'flash' : ''), name = mk('td', 'n')
+    name.append(r.kind === 'API' ? mk('code', null, r.name) : document.createTextNode(r.name))
+    if (r.firstSeen && Date.now() - Date.parse(r.firstSeen) < WEEK) name.append(mk('span', 'badge new', 'NEW'))
+    else if (r.changedAt && Date.now() - Date.parse(r.changedAt) < WEEK) name.append(mk('span', 'badge chg', '변경'))
+    const kd = mk('td', 'k'); kd.append(mk('span', null, r.kind))
+    tr.append(kd, mk('td', null, r.category), name, mk('td', 'd', r.description || '—'), mk('td', 'w', r.where))
+    body.append(tr)
+  }
+}
+
+function renderLog() {
+  const list = $('#log'); list.replaceChildren()
+  const items = (data.changeLog ?? []).slice(0, 12)
+  $('#logBox').hidden = !items.length
+  for (const c of items) {
+    const li = mk('li'), t = mk('time', null, new Date(c.at).toLocaleString('ko-KR', { hour12: false }))
+    li.append(t, mk('b', null, c.type), document.createTextNode(c.name)); list.append(li)
+  }
+}
+
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3800) }
+
+function renderLive() {
+  const stale = Date.now() - lastOkAt > 150_000
+  $('#dot').classList.toggle('stale', stale)
+  $('#liveText').textContent = stale ? '연결 확인 중…' : `실시간 · 코드 기준 ${ago(Date.parse(data.generatedAt))} 갱신`
+}
+
+async function load(first) {
+  try {
+    const res = await fetch(`features.json?t=${Date.now()}`, { cache: 'no-store' })
+    if (!res.ok) throw new Error(res.status)
+    const next = await res.json()
+    lastOkAt = Date.now()
+    const changed = !data || next.contentHash !== data.contentHash
+    const flash = new Set()
+    if (data && changed) {
+      const before = new Map(data.features.map(f => [f.id, f.description + f.name]))
+      for (const f of next.features) if (!before.has(f.id) || before.get(f.id) !== f.description + f.name) flash.add(f.id)
+    }
+    data = next
+    if (changed) {
+      $('#title').textContent = `${data.product} v${data.version}`
+      renderChips(); renderRows(flash); renderLog()
+      if (!first && flash.size) toast(`기능표가 갱신됐어요 — ${flash.size}개 추가/변경`)
+      else if (!first) toast('기능표가 갱신됐어요')
+    }
+    renderLive()
+  } catch { if (data) renderLive(); else $('#liveText').textContent = '불러오기 실패 — 잠시 후 다시 시도' }
+}
+
+renderSeg()
+$('#q').addEventListener('input', () => data && renderRows())
+load(true)
+setInterval(load, 30_000)
+setInterval(() => data && renderLive(), 15_000)
+</script>
+</body>
+</html>
