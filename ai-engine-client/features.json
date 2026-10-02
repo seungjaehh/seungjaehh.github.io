@@ -4,8 +4,8 @@
   "counts": {
     "screens": 0,
     "tools": 13,
-    "api": 29,
-    "total": 59
+    "api": 31,
+    "total": 61
   },
   "features": [
     {
@@ -399,6 +399,26 @@
       "changedAt": null
     },
     {
+      "id": "api:GET /api/models",
+      "kind": "API",
+      "category": "도구",
+      "name": "GET /api/models",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-02T13:14:49.738Z",
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/models",
+      "kind": "API",
+      "category": "도구",
+      "name": "POST /api/models",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-02T13:14:49.738Z",
+      "changedAt": null
+    },
+    {
       "id": "api:GET /api/reports",
       "kind": "API",
       "category": "도구",
@@ -601,6 +621,16 @@
   ],
   "changeLog": [
     {
+      "at": "2026-10-02T13:14:49.738Z",
+      "type": "추가",
+      "name": "GET /api/models"
+    },
+    {
+      "at": "2026-10-02T13:14:49.738Z",
+      "type": "추가",
+      "name": "POST /api/models"
+    },
+    {
       "at": "2026-10-02T12:22:06.009Z",
       "type": "추가",
       "name": "진행 중인 목표"
@@ -801,6 +831,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-10-02T12:22:06.009Z",
-  "contentHash": "b8ee31e3ca57"
+  "generatedAt": "2026-10-02T13:14:49.738Z",
+  "contentHash": "e3fc0a73721f"
 }
