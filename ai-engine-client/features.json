@@ -2,171 +2,101 @@
   "product": "클라이언트",
   "version": "0.1.1",
   "counts": {
-    "screens": 8,
+    "screens": 0,
     "tools": 11,
-    "api": 24,
-    "total": 51
+    "api": 25,
+    "total": 45
   },
   "features": [
     {
-      "id": "tab:status",
-      "kind": "화면",
-      "category": "탭",
-      "name": "상태",
-      "description": "엔진 상태·열린 결정·soak 조건·목표·실시간 활동을 한 화면에서 (첫 화면)",
-      "where": "상태",
-      "firstSeen": null,
-      "changedAt": null
-    },
-    {
-      "id": "tab:decisions",
-      "kind": "화면",
-      "category": "탭",
-      "name": "결정",
-      "description": "결정 ID로 상세를 보고 직접 답변",
-      "where": "결정",
-      "firstSeen": null,
-      "changedAt": null
-    },
-    {
-      "id": "tab:incidents",
-      "kind": "화면",
-      "category": "탭",
-      "name": "사건",
-      "description": "거절·격리·STOP·크래시를 원장에서 모아 해결 여부와 반복 유형(오답노트)을 보여줌",
-      "where": "사건",
-      "firstSeen": null,
-      "changedAt": null
-    },
-    {
-      "id": "tab:logs",
-      "kind": "화면",
-      "category": "탭",
-      "name": "로그",
-      "description": "야간 로그와 tick 로그의 최근 줄",
-      "where": "로그",
-      "firstSeen": null,
-      "changedAt": null
-    },
-    {
-      "id": "tab:soak",
-      "kind": "화면",
-      "category": "탭",
-      "name": "Soak",
-      "description": "soak(무인 관찰) 완료 조건 리포트",
-      "where": "Soak",
-      "firstSeen": null,
-      "changedAt": null
-    },
-    {
-      "id": "tab:tools",
-      "kind": "화면",
-      "category": "탭",
-      "name": "도구",
-      "description": "엔진 제어·배포/백업·예약 작업·시스템 진단 도구 모음",
-      "where": "도구",
-      "firstSeen": null,
-      "changedAt": null
-    },
-    {
-      "id": "tab:memory",
-      "kind": "화면",
-      "category": "탭",
-      "name": "메모리",
-      "description": "메모리 상위 프로세스 확인과 선택 종료",
-      "where": "메모리",
-      "firstSeen": null,
-      "changedAt": null
-    },
-    {
-      "id": "tab:settings",
-      "kind": "화면",
-      "category": "탭",
-      "name": "설정",
-      "description": "접속할 서버 주소와 토큰 설정 (다른 기기에서 원격 접속용)",
-      "where": "설정",
-      "firstSeen": null,
-      "changedAt": null
-    },
-    {
       "id": "part:status:사람 개입함",
       "kind": "구성요소",
-      "category": "상태",
+      "category": "status",
       "name": "사람 개입함",
       "description": "엔진이 사람 판단을 기다리는 결정을 카드로 표시 — 등급(A~D)별 색, 추천안, 선택지 버튼으로 바로 처리",
-      "where": "상태",
+      "where": "status",
       "firstSeen": null,
       "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
-      "id": "part:status:Soak 조건",
+      "id": "part:status:Soak 조건 자세히 →",
       "kind": "구성요소",
-      "category": "상태",
-      "name": "Soak 조건",
-      "description": "soak 완료 조건별 충족 여부 (7일·판정 30회 등)",
-      "where": "상태",
-      "firstSeen": null,
-      "changedAt": "2026-09-30T00:10:49.158Z"
+      "category": "status",
+      "name": "Soak 조건 자세히 →",
+      "description": "",
+      "where": "status",
+      "firstSeen": "2026-10-02T11:26:14.630Z",
+      "changedAt": null
     },
     {
       "id": "part:status:목표",
       "kind": "구성요소",
-      "category": "상태",
+      "category": "status",
       "name": "목표",
       "description": "동결된 목표 목록과 진행 상태 (항목 n/m)",
-      "where": "상태",
+      "where": "status",
       "firstSeen": null,
       "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:status:실시간 활동",
       "kind": "구성요소",
-      "category": "상태",
+      "category": "status",
       "name": "실시간 활동",
       "description": "원장 이벤트 피드 — 3초마다 커서로 이어받아 새 이벤트를 강조 표시",
-      "where": "상태",
+      "where": "status",
       "firstSeen": null,
       "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:incidents:오답노트 (반복 실패 유형)",
       "kind": "구성요소",
-      "category": "사건",
+      "category": "incidents",
       "name": "오답노트 (반복 실패 유형)",
       "description": "같은 원인으로 반복된 실패를 유형별로 묶어 횟수·해결 여부·의미를 보여줌",
-      "where": "사건",
+      "where": "incidents",
       "firstSeen": null,
       "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:incidents:사건 목록",
       "kind": "구성요소",
-      "category": "사건",
+      "category": "incidents",
       "name": "사건 목록",
       "description": "거절·격리·STOP·크래시·정직한 멈춤을 최신순으로, 해결된 사건은 흐리게",
-      "where": "사건",
+      "where": "incidents",
       "firstSeen": null,
       "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:logs:night-log",
       "kind": "구성요소",
-      "category": "로그",
+      "category": "logs",
       "name": "night-log",
       "description": "야간 운영 로그(가장 최근 파일)의 최근 80줄",
-      "where": "로그",
+      "where": "logs",
       "firstSeen": null,
       "changedAt": "2026-09-30T00:10:49.158Z"
     },
     {
       "id": "part:logs:var/tick.log",
       "kind": "구성요소",
-      "category": "로그",
+      "category": "logs",
       "name": "var/tick.log",
       "description": "엔진 tick 결과 로그의 최근 40줄",
-      "where": "로그",
+      "where": "logs",
       "firstSeen": null,
       "changedAt": "2026-09-30T00:10:49.158Z"
+    },
+    {
+      "id": "part:soak:일일 엔진 요약 (digest)",
+      "kind": "구성요소",
+      "category": "soak",
+      "name": "일일 엔진 요약 (digest)",
+      "description": "",
+      "where": "soak",
+      "firstSeen": "2026-10-02T11:26:14.630Z",
+      "changedAt": null
     },
     {
       "id": "tool:지금 tick 한 번 실행",
@@ -174,7 +104,7 @@
       "category": "엔진 제어",
       "name": "지금 tick 한 번 실행",
       "description": "대기 중인 항목이 있으면 즉시 한 단계 진행합니다.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": null,
       "changedAt": null
     },
@@ -184,7 +114,7 @@
       "category": "엔진 제어",
       "name": "STOP 해제 (resume)",
       "description": "STOP 래치가 걸려 자동 실행이 멈췄을 때만 씁니다. 원인 확인 없이 누르지 마세요.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": null,
       "changedAt": null
     },
@@ -194,7 +124,7 @@
       "category": "엔진 제어",
       "name": "원장 무결성 검증",
       "description": "ledger.jsonl의 접두 앵커·해시 체인이 온전한지 확인합니다.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": null,
       "changedAt": null
     },
@@ -204,7 +134,7 @@
       "category": "배포·백업",
       "name": "void-cards 빌드+테스트",
       "description": "배포 준비물만 만듭니다. 실제 배포는 Codex 앱에서 해야 해요.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": null,
       "changedAt": null
     },
@@ -214,7 +144,7 @@
       "category": "배포·백업",
       "name": "백업 + GitHub 반영",
       "description": "E드라이브(연결이 없으면 C: 드라이브의 AI-backup 폴더)에 백업하고 seungjaehh/ai-core-backup에 푸시합니다.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": null,
       "changedAt": "2026-09-30T01:38:59.855Z"
     },
@@ -224,7 +154,7 @@
       "category": "배포·백업",
       "name": "원격 제어 (아이폰·아이패드)",
       "description": "켜면 나오는 코드를 폰에서 입력해 이 PC의 화면을 보고 마우스·키보드로 조작합니다. 이 PC에서만 켜고 끌 수 있고, 시간이 지나면 저절로 꺼져요.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": "2026-09-30T04:46:23.047Z",
       "changedAt": null
     },
@@ -234,7 +164,7 @@
       "category": "배포·백업",
       "name": "구조도·브리핑 페이지 열기",
       "description": "seungjaehh.github.io의 최신 문서를 기본 브라우저로 엽니다.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": null,
       "changedAt": null
     },
@@ -244,7 +174,7 @@
       "category": "예약 작업",
       "name": "AIEngineTick 상태 확인",
       "description": "등록 여부·다음 실행 시각·경로를 확인합니다.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": null,
       "changedAt": null
     },
@@ -254,7 +184,7 @@
       "category": "예약 작업",
       "name": "예약 작업 복구",
       "description": "경로가 깨졌거나(폴더 이름 바뀜 등) 꺼져 있을 때 이 노트북 경로로 다시 등록합니다.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": null,
       "changedAt": null
     },
@@ -264,7 +194,7 @@
       "category": "시스템 진단",
       "name": "드라이브 용량",
       "description": "C·E 드라이브 전체/여유 공간을 확인합니다.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": null,
       "changedAt": null
     },
@@ -274,7 +204,7 @@
       "category": "시스템 진단",
       "name": "최근 원장 이벤트",
       "description": "ledger.jsonl의 최근 15개 이벤트를 요약해서 보여줍니다.",
-      "where": "도구",
+      "where": "tools",
       "firstSeen": null,
       "changedAt": null
     },
@@ -346,6 +276,16 @@
       "description": "soak 리포트 원문",
       "where": "서버",
       "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/reports",
+      "kind": "API",
+      "category": "도구",
+      "name": "GET /api/reports",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-02T11:26:14.630Z",
       "changedAt": null
     },
     {
@@ -521,6 +461,66 @@
   ],
   "changeLog": [
     {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "추가",
+      "name": "Soak 조건 자세히 →"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "추가",
+      "name": "일일 엔진 요약 (digest)"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "추가",
+      "name": "GET /api/reports"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "삭제",
+      "name": "상태"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "삭제",
+      "name": "결정"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "삭제",
+      "name": "사건"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "삭제",
+      "name": "로그"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "삭제",
+      "name": "Soak"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "삭제",
+      "name": "도구"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "삭제",
+      "name": "메모리"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "삭제",
+      "name": "설정"
+    },
+    {
+      "at": "2026-10-02T11:26:14.630Z",
+      "type": "삭제",
+      "name": "Soak 조건"
+    },
+    {
       "at": "2026-09-30T14:49:03.340Z",
       "type": "변경",
       "name": "POST /api/mem-kill"
@@ -591,6 +591,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-09-30T14:49:03.340Z",
-  "contentHash": "866b48abe7fd"
+  "generatedAt": "2026-10-02T11:26:14.630Z",
+  "contentHash": "71e346993414"
 }
