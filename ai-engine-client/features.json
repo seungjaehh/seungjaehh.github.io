@@ -3,9 +3,9 @@
   "version": "0.1.1",
   "counts": {
     "screens": 0,
-    "tools": 11,
-    "api": 25,
-    "total": 45
+    "tools": 12,
+    "api": 26,
+    "total": 47
   },
   "features": [
     {
@@ -169,6 +169,16 @@
       "changedAt": null
     },
     {
+      "id": "tool:UI 업데이트",
+      "kind": "도구",
+      "category": "클라이언트 UI",
+      "name": "UI 업데이트",
+      "description": "",
+      "where": "tools",
+      "firstSeen": "2026-10-02T11:31:45.787Z",
+      "changedAt": null
+    },
+    {
       "id": "tool:AIEngineTick 상태 확인",
       "kind": "도구",
       "category": "예약 작업",
@@ -276,6 +286,16 @@
       "description": "soak 리포트 원문",
       "where": "서버",
       "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/ui-version",
+      "kind": "API",
+      "category": "도구",
+      "name": "GET /api/ui-version",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-02T11:31:45.787Z",
       "changedAt": null
     },
     {
@@ -461,6 +481,16 @@
   ],
   "changeLog": [
     {
+      "at": "2026-10-02T11:31:45.787Z",
+      "type": "추가",
+      "name": "UI 업데이트"
+    },
+    {
+      "at": "2026-10-02T11:31:45.787Z",
+      "type": "추가",
+      "name": "GET /api/ui-version"
+    },
+    {
       "at": "2026-10-02T11:26:14.630Z",
       "type": "추가",
       "name": "Soak 조건 자세히 →"
@@ -591,6 +621,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-10-02T11:26:14.630Z",
-  "contentHash": "71e346993414"
+  "generatedAt": "2026-10-02T11:31:45.787Z",
+  "contentHash": "86c03295121b"
 }
