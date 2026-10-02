@@ -5,9 +5,19 @@
     "screens": 0,
     "tools": 13,
     "api": 28,
-    "total": 50
+    "total": 51
   },
   "features": [
+    {
+      "id": "part:status:에이전트",
+      "kind": "구성요소",
+      "category": "status",
+      "name": "에이전트",
+      "description": "",
+      "where": "status",
+      "firstSeen": "2026-10-02T11:43:43.436Z",
+      "changedAt": null
+    },
     {
       "id": "part:status:사람 개입함",
       "kind": "구성요소",
@@ -511,6 +521,11 @@
   ],
   "changeLog": [
     {
+      "at": "2026-10-02T11:43:43.436Z",
+      "type": "추가",
+      "name": "에이전트"
+    },
+    {
       "at": "2026-10-02T11:37:23.666Z",
       "type": "추가",
       "name": "앱 재빌드·설치"
@@ -666,6 +681,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-10-02T11:37:23.666Z",
-  "contentHash": "d94ba57ad79f"
+  "generatedAt": "2026-10-02T11:43:43.436Z",
+  "contentHash": "6ac85be289a1"
 }
