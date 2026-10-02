@@ -4,8 +4,8 @@
   "counts": {
     "screens": 0,
     "tools": 13,
-    "api": 28,
-    "total": 52
+    "api": 29,
+    "total": 59
   },
   "features": [
     {
@@ -67,6 +67,66 @@
       "where": "status",
       "firstSeen": null,
       "changedAt": "2026-09-30T00:10:49.158Z"
+    },
+    {
+      "id": "part:overview:진행 중인 목표",
+      "kind": "구성요소",
+      "category": "overview",
+      "name": "진행 중인 목표",
+      "description": "",
+      "where": "overview",
+      "firstSeen": "2026-10-02T12:22:06.009Z",
+      "changedAt": null
+    },
+    {
+      "id": "part:overview:오늘 승격된 작업",
+      "kind": "구성요소",
+      "category": "overview",
+      "name": "오늘 승격된 작업",
+      "description": "",
+      "where": "overview",
+      "firstSeen": "2026-10-02T12:22:06.009Z",
+      "changedAt": null
+    },
+    {
+      "id": "part:overview:에이전트 오늘 사용",
+      "kind": "구성요소",
+      "category": "overview",
+      "name": "에이전트 오늘 사용",
+      "description": "",
+      "where": "overview",
+      "firstSeen": "2026-10-02T12:22:06.009Z",
+      "changedAt": null
+    },
+    {
+      "id": "part:overview:운영 설정",
+      "kind": "구성요소",
+      "category": "overview",
+      "name": "운영 설정",
+      "description": "",
+      "where": "overview",
+      "firstSeen": "2026-10-02T12:22:06.009Z",
+      "changedAt": null
+    },
+    {
+      "id": "part:overview:현황 메모",
+      "kind": "구성요소",
+      "category": "overview",
+      "name": "현황 메모",
+      "description": "",
+      "where": "overview",
+      "firstSeen": "2026-10-02T12:22:06.009Z",
+      "changedAt": null
+    },
+    {
+      "id": "part:overview:최근 브리핑",
+      "kind": "구성요소",
+      "category": "overview",
+      "name": "최근 브리핑",
+      "description": "",
+      "where": "overview",
+      "firstSeen": "2026-10-02T12:22:06.009Z",
+      "changedAt": null
     },
     {
       "id": "part:incidents:오답노트 (반복 실패 유형)",
@@ -256,6 +316,16 @@
       "description": "엔진 상태·열린 결정·목표·soak를 한 번에 (원장 seq 포함)",
       "where": "서버",
       "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/overview",
+      "kind": "API",
+      "category": "도구",
+      "name": "GET /api/overview",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-02T12:22:06.009Z",
       "changedAt": null
     },
     {
@@ -531,6 +601,41 @@
   ],
   "changeLog": [
     {
+      "at": "2026-10-02T12:22:06.009Z",
+      "type": "추가",
+      "name": "진행 중인 목표"
+    },
+    {
+      "at": "2026-10-02T12:22:06.009Z",
+      "type": "추가",
+      "name": "오늘 승격된 작업"
+    },
+    {
+      "at": "2026-10-02T12:22:06.009Z",
+      "type": "추가",
+      "name": "에이전트 오늘 사용"
+    },
+    {
+      "at": "2026-10-02T12:22:06.009Z",
+      "type": "추가",
+      "name": "운영 설정"
+    },
+    {
+      "at": "2026-10-02T12:22:06.009Z",
+      "type": "추가",
+      "name": "현황 메모"
+    },
+    {
+      "at": "2026-10-02T12:22:06.009Z",
+      "type": "추가",
+      "name": "최근 브리핑"
+    },
+    {
+      "at": "2026-10-02T12:22:06.009Z",
+      "type": "추가",
+      "name": "GET /api/overview"
+    },
+    {
       "at": "2026-10-02T11:51:00.996Z",
       "type": "추가",
       "name": "브리핑 오류와 자동 처리 내역"
@@ -696,6 +801,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-10-02T11:51:00.996Z",
-  "contentHash": "cf9031a43bea"
+  "generatedAt": "2026-10-02T12:22:06.009Z",
+  "contentHash": "b8ee31e3ca57"
 }
