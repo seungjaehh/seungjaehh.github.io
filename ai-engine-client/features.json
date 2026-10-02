@@ -3,9 +3,9 @@
   "version": "0.1.1",
   "counts": {
     "screens": 0,
-    "tools": 12,
-    "api": 26,
-    "total": 47
+    "tools": 13,
+    "api": 28,
+    "total": 50
   },
   "features": [
     {
@@ -176,6 +176,16 @@
       "description": "",
       "where": "tools",
       "firstSeen": "2026-10-02T11:31:45.787Z",
+      "changedAt": null
+    },
+    {
+      "id": "tool:앱 재빌드·설치",
+      "kind": "도구",
+      "category": "클라이언트 UI",
+      "name": "앱 재빌드·설치",
+      "description": "",
+      "where": "tools",
+      "firstSeen": "2026-10-02T11:37:23.666Z",
       "changedAt": null
     },
     {
@@ -429,6 +439,26 @@
       "changedAt": null
     },
     {
+      "id": "api:POST /api/build-app",
+      "kind": "API",
+      "category": "도구",
+      "name": "POST /api/build-app",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-02T11:37:23.666Z",
+      "changedAt": null
+    },
+    {
+      "id": "api:GET /api/app-build",
+      "kind": "API",
+      "category": "도구",
+      "name": "GET /api/app-build",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-02T11:37:23.666Z",
+      "changedAt": null
+    },
+    {
       "id": "api:GET /api/remote-link",
       "kind": "API",
       "category": "도구",
@@ -480,6 +510,21 @@
     }
   ],
   "changeLog": [
+    {
+      "at": "2026-10-02T11:37:23.666Z",
+      "type": "추가",
+      "name": "앱 재빌드·설치"
+    },
+    {
+      "at": "2026-10-02T11:37:23.666Z",
+      "type": "추가",
+      "name": "POST /api/build-app"
+    },
+    {
+      "at": "2026-10-02T11:37:23.666Z",
+      "type": "추가",
+      "name": "GET /api/app-build"
+    },
     {
       "at": "2026-10-02T11:31:45.787Z",
       "type": "추가",
@@ -621,6 +666,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-10-02T11:31:45.787Z",
-  "contentHash": "86c03295121b"
+  "generatedAt": "2026-10-02T11:37:23.666Z",
+  "contentHash": "d94ba57ad79f"
 }
