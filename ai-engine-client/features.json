@@ -5,7 +5,7 @@
     "screens": 0,
     "tools": 13,
     "api": 31,
-    "total": 61
+    "total": 62
   },
   "features": [
     {
@@ -106,6 +106,16 @@
       "description": "",
       "where": "overview",
       "firstSeen": "2026-10-02T12:22:06.009Z",
+      "changedAt": null
+    },
+    {
+      "id": "part:overview:개선 후보",
+      "kind": "구성요소",
+      "category": "overview",
+      "name": "개선 후보",
+      "description": "",
+      "where": "overview",
+      "firstSeen": "2026-10-02T13:27:31.345Z",
       "changedAt": null
     },
     {
@@ -621,6 +631,11 @@
   ],
   "changeLog": [
     {
+      "at": "2026-10-02T13:27:31.345Z",
+      "type": "추가",
+      "name": "개선 후보"
+    },
+    {
       "at": "2026-10-02T13:14:49.738Z",
       "type": "추가",
       "name": "GET /api/models"
@@ -831,6 +846,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-10-02T13:14:49.738Z",
-  "contentHash": "e3fc0a73721f"
+  "generatedAt": "2026-10-02T13:27:31.345Z",
+  "contentHash": "b48367c70676"
 }
