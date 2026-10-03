@@ -281,7 +281,7 @@
     {
       "id": "tool:AIEngineTick 상태 확인",
       "kind": "도구",
-      "category": "예약 작업",
+      "category": "AI 모델 수준",
       "name": "AIEngineTick 상태 확인",
       "description": "등록 여부·다음 실행 시각·경로를 확인합니다.",
       "where": "tools",
@@ -291,7 +291,7 @@
     {
       "id": "tool:예약 작업 복구",
       "kind": "도구",
-      "category": "예약 작업",
+      "category": "AI 모델 수준",
       "name": "예약 작업 복구",
       "description": "경로가 깨졌거나(폴더 이름 바뀜 등) 꺼져 있을 때 이 노트북 경로로 다시 등록합니다.",
       "where": "tools",
@@ -846,6 +846,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-10-02T13:27:31.345Z",
-  "contentHash": "b48367c70676"
+  "generatedAt": "2026-10-03T00:02:56.116Z",
+  "contentHash": "8484cc214475"
 }
