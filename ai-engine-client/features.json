@@ -1,6 +1,6 @@
 {
   "product": "클라이언트",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "counts": {
     "screens": 0,
     "tools": 13,
@@ -861,6 +861,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-10-03T00:05:06.316Z",
-  "contentHash": "a17768b9bbfa"
+  "generatedAt": "2026-10-03T00:06:21.403Z",
+  "contentHash": "3d3ebc876558"
 }
