@@ -3,9 +3,9 @@
   "version": "0.1.2",
   "counts": {
     "screens": 0,
-    "tools": 13,
-    "api": 31,
-    "total": 62
+    "tools": 12,
+    "api": 30,
+    "total": 60
   },
   "features": [
     {
@@ -237,16 +237,6 @@
       "where": "tools",
       "firstSeen": null,
       "changedAt": "2026-09-30T01:38:59.855Z"
-    },
-    {
-      "id": "tool:void-cards 빌드+테스트",
-      "kind": "도구",
-      "category": "배포·백업",
-      "name": "void-cards 빌드+테스트",
-      "description": "배포 준비물만 만듭니다. 실제 배포는 Codex 앱에서 해야 해요.",
-      "where": "tools",
-      "firstSeen": null,
-      "changedAt": null
     },
     {
       "id": "tool:구조도·브리핑 페이지 열기",
@@ -549,16 +539,6 @@
       "changedAt": null
     },
     {
-      "id": "api:POST /api/build-void-cards",
-      "kind": "API",
-      "category": "도구",
-      "name": "POST /api/build-void-cards",
-      "description": "void-cards 테스트+정적 빌드",
-      "where": "서버",
-      "firstSeen": null,
-      "changedAt": null
-    },
-    {
       "id": "api:POST /api/build-app",
       "kind": "API",
       "category": "도구",
@@ -630,6 +610,16 @@
     }
   ],
   "changeLog": [
+    {
+      "at": "2026-10-08T07:31:58.007Z",
+      "type": "삭제",
+      "name": "void-cards 빌드+테스트"
+    },
+    {
+      "at": "2026-10-08T07:31:58.007Z",
+      "type": "삭제",
+      "name": "POST /api/build-void-cards"
+    },
     {
       "at": "2026-10-03T00:05:06.316Z",
       "type": "추가",
@@ -861,6 +851,6 @@
       "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-10-03T00:06:21.403Z",
-  "contentHash": "3d3ebc876558"
+  "generatedAt": "2026-10-08T07:31:58.007Z",
+  "contentHash": "e59df007c969"
 }
