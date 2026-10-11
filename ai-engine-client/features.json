@@ -3,9 +3,9 @@
   "version": "0.1.2",
   "counts": {
     "screens": 0,
-    "tools": 12,
-    "api": 30,
-    "total": 60
+    "tools": 14,
+    "api": 34,
+    "total": 66
   },
   "features": [
     {
@@ -209,6 +209,26 @@
       "changedAt": null
     },
     {
+      "id": "tool:목표 제출 (이 PC 전용)",
+      "kind": "도구",
+      "category": "엔진 제어",
+      "name": "목표 제출 (이 PC 전용)",
+      "description": "프로젝트 ID, 목표 ID, 한두 문장 목표를 적으면 계약 초안을 만듭니다. 초안을 확인한 뒤 동결하세요.",
+      "where": "tools",
+      "firstSeen": "2026-10-11T04:57:15.531Z",
+      "changedAt": null
+    },
+    {
+      "id": "tool:STOP (이 PC 전용)",
+      "kind": "도구",
+      "category": "엔진 제어",
+      "name": "STOP (이 PC 전용)",
+      "description": "엔진의 모든 자동 실행을 다음 tick부터 멈춥니다. 해제는 아래 resume.",
+      "where": "tools",
+      "firstSeen": "2026-10-11T04:57:15.531Z",
+      "changedAt": null
+    },
+    {
       "id": "tool:원장 무결성 검증",
       "kind": "도구",
       "category": "엔진 제어",
@@ -356,6 +376,46 @@
       "description": "열린 결정에 답변 — 이미 처리된 결정이면 409로 거부(오래된 화면 방지)",
       "where": "서버",
       "firstSeen": null,
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/goal",
+      "kind": "API",
+      "category": "도구",
+      "name": "POST /api/goal",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-11T04:57:15.531Z",
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/freeze",
+      "kind": "API",
+      "category": "도구",
+      "name": "POST /api/freeze",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-11T04:57:15.531Z",
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/packet",
+      "kind": "API",
+      "category": "도구",
+      "name": "POST /api/packet",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-11T04:57:15.531Z",
+      "changedAt": null
+    },
+    {
+      "id": "api:POST /api/stop",
+      "kind": "API",
+      "category": "도구",
+      "name": "POST /api/stop",
+      "description": "—",
+      "where": "서버",
+      "firstSeen": "2026-10-11T04:57:15.531Z",
       "changedAt": null
     },
     {
@@ -611,6 +671,36 @@
   ],
   "changeLog": [
     {
+      "at": "2026-10-11T04:57:15.531Z",
+      "type": "추가",
+      "name": "목표 제출 (이 PC 전용)"
+    },
+    {
+      "at": "2026-10-11T04:57:15.531Z",
+      "type": "추가",
+      "name": "STOP (이 PC 전용)"
+    },
+    {
+      "at": "2026-10-11T04:57:15.531Z",
+      "type": "추가",
+      "name": "POST /api/goal"
+    },
+    {
+      "at": "2026-10-11T04:57:15.531Z",
+      "type": "추가",
+      "name": "POST /api/freeze"
+    },
+    {
+      "at": "2026-10-11T04:57:15.531Z",
+      "type": "추가",
+      "name": "POST /api/packet"
+    },
+    {
+      "at": "2026-10-11T04:57:15.531Z",
+      "type": "추가",
+      "name": "POST /api/stop"
+    },
+    {
       "at": "2026-10-08T07:31:58.007Z",
       "type": "삭제",
       "name": "void-cards 빌드+테스트"
@@ -829,28 +919,8 @@
       "at": "2026-09-30T00:10:49.158Z",
       "type": "변경",
       "name": "실시간 활동"
-    },
-    {
-      "at": "2026-09-30T00:10:49.158Z",
-      "type": "변경",
-      "name": "오답노트 (반복 실패 유형)"
-    },
-    {
-      "at": "2026-09-30T00:10:49.158Z",
-      "type": "변경",
-      "name": "사건 목록"
-    },
-    {
-      "at": "2026-09-30T00:10:49.158Z",
-      "type": "변경",
-      "name": "night-log"
-    },
-    {
-      "at": "2026-09-30T00:10:49.158Z",
-      "type": "변경",
-      "name": "var/tick.log"
     }
   ],
-  "generatedAt": "2026-10-08T07:31:58.007Z",
-  "contentHash": "e59df007c969"
+  "generatedAt": "2026-10-11T04:57:15.531Z",
+  "contentHash": "ed03e2f3d0c5"
 }
